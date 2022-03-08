@@ -2,6 +2,6 @@
 # Rules
 |     Rule      |  Participants  |
 |:-------------:|:--------------:|
-|  **DevOps**   | Mohab Alnajjar |
-|    **DBA**    | Mohab Alnajjar |
-| **ERD & Mapping** | * |
+|  DevOps   | Mohab Alnajjar |
+|    DBA    | Mohab Alnajjar |
+| ERD & Mapping | * |
