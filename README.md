@@ -4,4 +4,4 @@
 |:-------------:|:--------------:|
 |  DevOps ♾️   | Mohab Alnajjar |
 |    DBA 👤  | Mohab Alnajjar |
-| ERD & Mapping 📐 |  |
+| ERD & Mapping 📐 | Abdo <br> Elham <br> Doha <br> Bebars <br> Som3a |
