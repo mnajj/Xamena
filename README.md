@@ -6,7 +6,7 @@
 |    DBA 👤  | Mohab Alnajjar |
 | ERD & Mapping 📐 | Abdo <br> Elham <br> Doha <br> Bebars <br> Som3a |
 |    Data Entry 🗂️  | Doha <br> Som3a |
-|    SP 📦  |  |
+|    SP 📦  | * |
 |    Reports 📋  |  |
 |    App Data Access Layer 🔌  |  |
 |   Doc 📄   |  |
