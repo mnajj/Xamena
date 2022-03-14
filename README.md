@@ -2,7 +2,7 @@
 
 A project submitted in partial fulfillment of the requirement to complete Advanced SQL Server course at ITI.
 
-![Logo](https://imgur.com/lrNglhN.png)
+![Logo](https://imgur.com/yRNHCqQ.png)
 
 
 
