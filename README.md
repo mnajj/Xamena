@@ -1,6 +1,6 @@
 # Examination System
 
-![Logo](https://imgur.com/xHMSku8.png)
+![Logo](https://imgur.com/ls2RAW6.png)
 
 A project submitted in partial fulfillment of the requirement to complete Advanced SQL Server course at ITI.
 
