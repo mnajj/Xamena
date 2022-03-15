@@ -15,14 +15,22 @@ namespace Examination_system.Forms
         string ins_username;
         Form logform;
         ExamSystemEntities ent;
+       static Dictionary<string,int> instructorData = new Dictionary<string, int>();
+        public static int InstructorDataProp
+        {
+            get { return instructorData["id"]; }
+        }
         public instructorForm(string username,Form logform)
         {
             InitializeComponent();
             ent = new ExamSystemEntities();            
             ins_username = username;
             this.logform = logform;
-            lbl_username.Text = username;
-            
+            var result = ent.Instructors.Where(i => i.User.U_UserName == username).ToList();
+            lbl_username.Text = result[0].Ins_Fname +" "+ result[0].Ins_Lname;
+            instructorData.Add("id", result[0].Ins_Id);
+
+
         }
 
         private void instructorForm_FormClosing(object sender, FormClosingEventArgs e)
