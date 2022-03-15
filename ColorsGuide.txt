@@ -8,3 +8,4 @@ panels 1: #FFD07D
 panels 2: #52C3FF
 panels 3: #BDE2C3
 text : #1E1F20
+font-size 12pt
