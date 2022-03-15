@@ -55,3 +55,46 @@ D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\stdole.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.generateExam.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\stdole.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.xml
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.AssemblyReference.cache
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.generateExam.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.instructorForm.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.LogIn.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Reports.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Properties.Resources.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.GenerateResource.cache
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CoreCompileInputs.cache
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CopyComplete
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources
+C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources

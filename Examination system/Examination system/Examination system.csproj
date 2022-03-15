@@ -116,6 +116,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChooseCrsExamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseCrsExamDialog.Designer.cs">
+      <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Exam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Exam.Designer.cs">
+      <DependentUpon>Exam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\generateExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </Compile>
     <Compile Include="Forms\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
     </Compile>
     <Compile Include="InsertInsForCrs_Result.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
@@ -298,6 +316,9 @@
     <Compile Include="User.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ChooseCrsExamDialog.resx">
+      <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\generateExam.resx">
       <DependentUpon>generateExam.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

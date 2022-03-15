@@ -35,7 +35,9 @@ namespace Examination_system
                 {
                     if (result[0].U_IsStd)
                     {
-                       
+                      Forms.Student studentForm = new Forms.Student(this, username);
+                      studentForm.Show();
+                      this.Hide();
                     }
                     if (result[0].U_IsStd!=true)
                     {
