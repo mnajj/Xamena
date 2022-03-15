@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Examination_system
 {
-    public partial class Model1 : DbContext
+    public partial class ExaminationSystemEntity : DbContext
     {
-        public Model1()
+        public ExaminationSystemEntity()
             : base("name=Model1")
         {
         }

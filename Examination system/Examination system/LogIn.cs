@@ -13,11 +13,11 @@ namespace Examination_system
 {
     public partial class LogIn : Form
     {
-        User usr = null;         
+        ExaminationSystemEntity ent;
         public LogIn()
         {
             InitializeComponent();
-            usr = new User();
+            ent = new ExaminationSystemEntity();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -27,13 +27,28 @@ namespace Examination_system
             {
                 username = txt_username.Text;
                 password = txt_password.Text;
-                if (rad_instructor.Checked)
+
+                var result = ent.Users.Where(u => u.U_UserName == username
+                && u.U_Password == password).ToList();
+                if (result.Count > 0)
                 {
-                    //var result = (usr=>)
+                    if (result[0].U_IsStd)
+                    {
+                       
+                    }
+                    if (result[0].U_IsStd!=true)
+                    {
+
+                    }
+                }
+                else {
+                    MessageBox.Show("Incorrect user name or password");
                 }
 
+
             }
-            else {
+            else
+            {
                 MessageBox.Show("Enter missing field data");
             }
 

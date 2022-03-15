@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.btn_login = new System.Windows.Forms.Button();
-            this.rad_student = new System.Windows.Forms.RadioButton();
-            this.rad_instructor = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.txt_username = new System.Windows.Forms.TextBox();
@@ -45,37 +43,13 @@
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(327, 394);
+            this.btn_login.Location = new System.Drawing.Point(327, 340);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(150, 57);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Log in";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
-            // 
-            // rad_student
-            // 
-            this.rad_student.AutoSize = true;
-            this.rad_student.Checked = true;
-            this.rad_student.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_student.Location = new System.Drawing.Point(352, 300);
-            this.rad_student.Name = "rad_student";
-            this.rad_student.Size = new System.Drawing.Size(101, 29);
-            this.rad_student.TabIndex = 1;
-            this.rad_student.TabStop = true;
-            this.rad_student.Text = "Student";
-            this.rad_student.UseVisualStyleBackColor = true;
-            // 
-            // rad_instructor
-            // 
-            this.rad_instructor.AutoSize = true;
-            this.rad_instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_instructor.Location = new System.Drawing.Point(352, 339);
-            this.rad_instructor.Name = "rad_instructor";
-            this.rad_instructor.Size = new System.Drawing.Size(113, 29);
-            this.rad_instructor.TabIndex = 2;
-            this.rad_instructor.Text = "Instructor";
-            this.rad_instructor.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -85,12 +59,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_login);
-            this.panel1.Controls.Add(this.rad_student);
-            this.panel1.Controls.Add(this.rad_instructor);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 496);
+            this.panel1.Size = new System.Drawing.Size(804, 441);
             this.panel1.TabIndex = 3;
             // 
             // txt_password
@@ -144,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 496);
+            this.ClientSize = new System.Drawing.Size(804, 441);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -161,8 +133,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_login;
-        private System.Windows.Forms.RadioButton rad_student;
-        private System.Windows.Forms.RadioButton rad_instructor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
