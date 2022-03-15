@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a77e654a-3eab-4253-86b8-ab25b617a1e1": {
+      "ProjectGuid": "a77e654a-3eab-4253-86b8-ab25b617a1e1",
+      "DisplayName": "Examination system",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
