@@ -14,3 +14,19 @@ D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.xml
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.xml
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CopyComplete
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.dll
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.xml
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.AssemblyReference.cache
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.LogIn.resources
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Properties.Resources.resources
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.GenerateResource.cache
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CoreCompileInputs.cache
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CopyComplete
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
+C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb

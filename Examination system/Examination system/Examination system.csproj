@@ -58,27 +58,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Choice.cs" />
-    <Compile Include="Course.cs" />
-    <Compile Include="Crs_Top.cs" />
-    <Compile Include="Department.cs" />
-    <Compile Include="Exam.cs" />
-    <Compile Include="Instructor.cs" />
-    <Compile Include="LogIn.cs">
+    <Compile Include="Forms\Instructor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Forms\Instructor.Designer.cs">
+      <DependentUpon>Instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Choice.cs" />
+    <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\Crs_Top.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Exam.cs" />
+    <Compile Include="Model\Instructor.cs" />
+    <Compile Include="Forms\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExaminationSystemEntity.cs" />
+    <Compile Include="Model\ExaminationSystemEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs" />
-    <Compile Include="Std_Crs.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="sysdiagram.cs" />
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="LogIn.resx">
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\Std_Crs.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\sysdiagram.cs" />
+    <Compile Include="Model\User.cs" />
+    <EmbeddedResource Include="Forms\Instructor.resx">
+      <DependentUpon>Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

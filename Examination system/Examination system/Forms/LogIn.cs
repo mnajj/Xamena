@@ -41,7 +41,8 @@ namespace Examination_system
 
                     }
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Incorrect user name or password");
                 }
 
