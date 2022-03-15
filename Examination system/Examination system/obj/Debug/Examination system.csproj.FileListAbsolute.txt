@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb
@@ -31,7 +30,3 @@ C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination 
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CopyComplete
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
-=======
-C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
-C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
->>>>>>> 8a3a7c6bbd14b7bc0cf751819af163e56d601ab7
