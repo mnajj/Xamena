@@ -1,7 +1,6 @@
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.AssemblyReference.cache
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.SuggestedBindingRedirects.cache
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.LogIn.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Properties.Resources.resources
@@ -30,3 +29,29 @@ C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination 
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.CopyComplete
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.instructorForm.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.AssemblyReference.cache
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Reports.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\AxShockwaveFlashObjects.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Shared.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\ShockwaveFlashObjects.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\stdole.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.generateExam.resources

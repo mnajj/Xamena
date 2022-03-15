@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Examination_system.Forms;
 
 
 namespace Examination_system
 {
     public partial class LogIn : Form
     {
-        ExaminationSystemEntity ent;
+        ExamSystemEntities ent;
         public LogIn()
         {
             InitializeComponent();
-            ent = new ExaminationSystemEntity();
+            ent = new ExamSystemEntities();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -38,7 +39,10 @@ namespace Examination_system
                     }
                     if (result[0].U_IsStd!=true)
                     {
-
+                        instructorForm insForm = new instructorForm(username,this);
+                         this.Hide();
+                        insForm.Show();
+                        
                     }
                 }
                 else

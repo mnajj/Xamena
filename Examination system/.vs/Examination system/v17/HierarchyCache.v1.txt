@@ -1,0 +1,226 @@
+﻿++Solution 'Examination system' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:Examination system.sln
+++Examination system
+i:{00000000-0000-0000-0000-000000000000}:Examination system
+++Properties
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\
+++References
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++Forms
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\
+++instructorForm.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\instructorform.cs
+++instructorForm.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\instructorform.designer.cs
+++instructorForm.resx
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\instructorform.resx
+++LogIn.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\login.cs
+++images
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\images\
+++Model
+++Choice.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\choice.cs
+++Course.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\course.cs
+++Crs_Top.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\crs_top.cs
+++Department.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\department.cs
+++Exam.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\exam.cs
+++ExaminationSystemEntity.cs
+++Instructor.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\instructor.cs
+++Question.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\question.cs
+++Std_Crs.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\std_crs.cs
+++Student.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\student.cs
+++sysdiagram.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sysdiagram.cs
+++User.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\user.cs
+++App.config
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\app.config
+++Capture-removebg-preview.ico
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\capture-removebg-preview.ico
+++packages.config
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\packages.config
+++Program.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\program.cs
+++AssemblyInfo.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\assemblyinfo.cs
+++Resources.resx
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\resources.resx
+++Settings.settings
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\settings.settings
+++EntityFramework
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++EntityFramework.SqlServer
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++Microsoft.CSharp
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.ComponentModel.DataAnnotations
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Core
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Data
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Data.DataSetExtensions
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Deployment
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Drawing
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Net.Http
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Runtime.Serialization
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Security
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Windows.Forms
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Xml
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++System.Xml.Linq
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++LogIn.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\login.designer.cs
+++LogIn.resx
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\login.resx
+++Capture2-removebg-preview.png
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\images\capture2-removebg-preview.png
+++Resources.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\resources.designer.cs
+++Settings.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\properties\settings.designer.cs
+++ExaminationSystem.edmx
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.edmx
+++ExaminationSystem.Context.tt
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.context.tt
+++ExaminationSystem.Context.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.context.cs
+++ExaminationSystem.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.designer.cs
+++ExaminationSystem.edmx.diagram
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.edmx.diagram
+++ExaminationSystem.tt
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.tt
+++DelCrsIns_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\delcrsins_result.cs
+++DeleteInstructor_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\deleteinstructor_result.cs
+++DeleteStdById_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\deletestdbyid_result.cs
+++DeleteUserByUserName_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\deleteuserbyusername_result.cs
+++ExaminationSystem.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\examinationsystem.cs
+++InsertInsForCrs_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\insertinsforcrs_result.cs
+++InsertInstructor_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\insertinstructor_result.cs
+++InsertNewStd_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\insertnewstd_result.cs
+++InsertNewUser_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\insertnewuser_result.cs
+++InsertQues_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\insertques_result.cs
+++SelectCrsIns_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\selectcrsins_result.cs
+++SelectInstructor_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\selectinstructor_result.cs
+++SelectStdById_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\selectstdbyid_result.cs
+++SelectUserById_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\selectuserbyid_result.cs
+++sp_CorrectStdExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_correctstdexam_result.cs
+++sp_deleteChoice_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deletechoice_result.cs
+++sp_deleteCourse_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deletecourse_result.cs
+++sp_deleteDepartment_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deletedepartment_result.cs
+++sp_deleteExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deleteexam_result.cs
+++sp_DeleteQues_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deleteques_result.cs
+++sp_DeleteStdFromCrs_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deletestdfromcrs_result.cs
+++sp_deleteTopic_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_deletetopic_result.cs
+++sp_GenerateExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_generateexam_result.cs
+++sp_helpdiagramdefinition_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_helpdiagramdefinition_result.cs
+++sp_helpdiagrams_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_helpdiagrams_result.cs
+++sp_InsertChoice_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertchoice_result.cs
+++sp_insertCourse_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertcourse_result.cs
+++sp_insertDepartment_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertdepartment_result.cs
+++sp_insertExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertexam_result.cs
+++sp_InsertStdAnsForExm_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertstdansforexm_result.cs
+++sp_InsertStdForCrs_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_insertstdforcrs_result.cs
+++sp_insertTopic_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_inserttopic_result.cs
+++sp_selectchoice_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectchoice_result.cs
+++sp_selectCourse_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectcourse_result.cs
+++sp_selectDepartment_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectdepartment_result.cs
+++sp_selectExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectexam_result.cs
+++sp_SelectQues_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectques_result.cs
+++sp_SelectStdAnsForExm_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectstdansforexm_result.cs
+++sp_SelectStdOfCrs_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selectstdofcrs_result.cs
+++sp_selectTopic_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_selecttopic_result.cs
+++sp_updateChoice_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatechoice_result.cs
+++sp_updateCourse_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatecourse_result.cs
+++sp_UpdateCrsForIns_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatecrsforins_result.cs
+++sp_UpdateCrsOfStd_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatecrsofstd_result.cs
+++sp_updateDepartment_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatedepartment_result.cs
+++sp_updateExam_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updateexam_result.cs
+++sp_updateTopic_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\sp_updatetopic_result.cs
+++UpdateInstructor_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\updateinstructor_result.cs
+++UpdateQues_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\updateques_result.cs
+++UpdateStdInfo_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\updatestdinfo_result.cs
+++UpdateUser_Result.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\updateuser_result.cs
+++Reports.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\reports.cs
+++Reports.Designer.cs
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\reports.designer.cs
+++Reports.resx
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:d:\iti projects\examination system(project)\examinationsystem\examination system\examination system\forms\reports.resx
+++Microsoft.ReportViewer.Common
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++Microsoft.ReportViewer.DataVisualization
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
+++Microsoft.ReportViewer.ProcessingObjectModel
+i:{a77e654a-3eab-4253-86b8-ab25b617a1e1}:
