@@ -1,0 +1,10 @@
+background :  #EFF9FF
+buttons 1: #52C3FF
+buttons 2: #FCFDFE
+buttons 3: #FF7F2D
+icons 1: #FFFFFF
+icons 2: #7382C0
+panels 1: #FFD07D
+panels 2: #52C3FF
+panels 3: #BDE2C3
+text : #1E1F20
