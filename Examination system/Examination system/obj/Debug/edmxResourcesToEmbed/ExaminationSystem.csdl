@@ -471,6 +471,7 @@
       <Parameter Name="tfq" Mode="In" Type="Int32" />
       <Parameter Name="crs_id" Mode="In" Type="Int32" />
       <Parameter Name="ins_id" Mode="In" Type="Int32" />
+      <Parameter Name="grade" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ExamSystemModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />

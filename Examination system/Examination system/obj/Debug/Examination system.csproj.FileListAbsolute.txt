@@ -31,7 +31,6 @@ C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination 
 C:\Users\DELL\repos\New folder\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.instructorForm.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.AssemblyReference.cache
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Reports.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\AxShockwaveFlashObjects.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -54,7 +53,6 @@ D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\stdole.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.generateExam.resources
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb

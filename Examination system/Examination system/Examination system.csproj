@@ -131,12 +131,6 @@
     <Compile Include="Forms\Exam.Designer.cs">
       <DependentUpon>Exam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\generateExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\generateExam.Designer.cs">
-      <DependentUpon>generateExam.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\instructorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +142,6 @@
     </Compile>
     <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Reports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student.cs">
       <SubType>Form</SubType>
@@ -322,17 +310,11 @@
     <EmbeddedResource Include="Forms\ChooseCrsExamDialog.resx">
       <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\generateExam.resx">
-      <DependentUpon>generateExam.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\instructorForm.resx">
       <DependentUpon>instructorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>

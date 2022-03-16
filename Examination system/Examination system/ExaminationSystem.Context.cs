@@ -392,7 +392,7 @@ namespace Examination_system
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_GenerateExam_Result> sp_GenerateExam(Nullable<int> mcq, Nullable<int> tfq, Nullable<int> crs_id, Nullable<int> ins_id)
+        public virtual ObjectResult<sp_GenerateExam_Result> sp_GenerateExam(Nullable<int> mcq, Nullable<int> tfq, Nullable<int> crs_id, Nullable<int> ins_id, Nullable<int> grade)
         {
             var mcqParameter = mcq.HasValue ?
                 new ObjectParameter("mcq", mcq) :
@@ -410,7 +410,11 @@ namespace Examination_system
                 new ObjectParameter("ins_id", ins_id) :
                 new ObjectParameter("ins_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GenerateExam_Result>("sp_GenerateExam", mcqParameter, tfqParameter, crs_idParameter, ins_idParameter);
+            var gradeParameter = grade.HasValue ?
+                new ObjectParameter("grade", grade) :
+                new ObjectParameter("grade", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GenerateExam_Result>("sp_GenerateExam", mcqParameter, tfqParameter, crs_idParameter, ins_idParameter, gradeParameter);
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)

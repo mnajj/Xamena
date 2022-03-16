@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ExamSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ExamSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Choice">
           <Key>
             <PropertyRef Name="Cho_Id" />
@@ -454,6 +454,7 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
           <Parameter Name="tfq" Type="int" Mode="In" />
           <Parameter Name="crs_id" Type="int" Mode="In" />
           <Parameter Name="ins_id" Type="int" Mode="In" />
+          <Parameter Name="grade" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -688,8 +689,7 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ExamSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1057,13 +1057,13 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <Parameter Name="crs_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteInstructor" ReturnType="Collection(ExamSystemModel.DeleteInstructor_Result)">
-            <Parameter Name="ins_id" Mode="In" Type="Int32" />
+          <Parameter Name="ins_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteStdById" ReturnType="Collection(ExamSystemModel.DeleteStdById_Result)">
-            <Parameter Name="std_id" Mode="In" Type="Int32" />
+          <Parameter Name="std_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteUserByUserName" ReturnType="Collection(ExamSystemModel.DeleteUserByUserName_Result)">
-            <Parameter Name="userName" Mode="In" Type="String" />
+          <Parameter Name="userName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="InsertInsForCrs" ReturnType="Collection(ExamSystemModel.InsertInsForCrs_Result)">
             <Parameter Name="ins_id" Mode="In" Type="Int32" />
@@ -1104,13 +1104,13 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <Parameter Name="crs_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SelectInstructor" ReturnType="Collection(ExamSystemModel.SelectInstructor_Result)">
-            <Parameter Name="ins_id" Mode="In" Type="Int32" />
+          <Parameter Name="ins_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SelectStdById" ReturnType="Collection(ExamSystemModel.SelectStdById_Result)">
-            <Parameter Name="std_id" Mode="In" Type="Int32" />
+          <Parameter Name="std_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SelectUserById" ReturnType="Collection(ExamSystemModel.SelectUserById_Result)">
-            <Parameter Name="us_id" Mode="In" Type="Int32" />
+          <Parameter Name="us_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1133,19 +1133,19 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_deleteChoice" ReturnType="Collection(ExamSystemModel.sp_deleteChoice_Result)">
-            <Parameter Name="cho_id" Mode="In" Type="Int32" />
+          <Parameter Name="cho_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_deleteCourse" ReturnType="Collection(ExamSystemModel.sp_deleteCourse_Result)">
-            <Parameter Name="crs_id" Mode="In" Type="Int32" />
+          <Parameter Name="crs_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_deleteDepartment" ReturnType="Collection(ExamSystemModel.sp_deleteDepartment_Result)">
-            <Parameter Name="deptId" Mode="In" Type="Int32" />
+          <Parameter Name="deptId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_deleteExam" ReturnType="Collection(ExamSystemModel.sp_deleteExam_Result)">
-            <Parameter Name="exam_id" Mode="In" Type="Int32" />
+          <Parameter Name="exam_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteQues" ReturnType="Collection(ExamSystemModel.sp_DeleteQues_Result)">
-            <Parameter Name="ques_id" Mode="In" Type="Int32" />
+          <Parameter Name="ques_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteStdFromCrs" ReturnType="Collection(ExamSystemModel.sp_DeleteStdFromCrs_Result)">
             <Parameter Name="std_id" Mode="In" Type="Int32" />
@@ -1164,6 +1164,7 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <Parameter Name="tfq" Mode="In" Type="Int32" />
             <Parameter Name="crs_id" Mode="In" Type="Int32" />
             <Parameter Name="ins_id" Mode="In" Type="Int32" />
+            <Parameter Name="grade" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ExamSystemModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1216,19 +1217,19 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_selectchoice" ReturnType="Collection(ExamSystemModel.sp_selectchoice_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_selectCourse" ReturnType="Collection(ExamSystemModel.sp_selectCourse_Result)">
-            <Parameter Name="crs_id" Mode="In" Type="Int32" />
+          <Parameter Name="crs_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_selectDepartment" ReturnType="Collection(ExamSystemModel.sp_selectDepartment_Result)">
-            <Parameter Name="dept_id" Mode="In" Type="Int32" />
+          <Parameter Name="dept_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_selectExam" ReturnType="Collection(ExamSystemModel.sp_selectExam_Result)">
-            <Parameter Name="exam_id" Mode="In" Type="Int32" />
+          <Parameter Name="exam_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_SelectQues" ReturnType="Collection(ExamSystemModel.sp_SelectQues_Result)">
-            <Parameter Name="ques_id" Mode="In" Type="Int32" />
+          <Parameter Name="ques_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_SelectStdAnsForExm" ReturnType="Collection(ExamSystemModel.sp_SelectStdAnsForExm_Result)">
             <Parameter Name="std_id" Mode="In" Type="Int32" />

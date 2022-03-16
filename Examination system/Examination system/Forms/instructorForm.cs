@@ -15,26 +15,26 @@ namespace Examination_system.Forms
     {
         string ins_username;
         Form logform;
-        ExamSystemEntities ent;       
+        ExamSystemEntities ent;
         static Instructor insData;
         public static int InstructorDataProp
         {
             get { return insData.Ins_Id; }
         }
-        public instructorForm(string username,Form logform)
+        public instructorForm(string username, Form logform)
         {
             InitializeComponent();
-            ent = new ExamSystemEntities();            
+            ent = new ExamSystemEntities();
             ins_username = username;
             this.logform = logform;
             insData = ent.Instructors.Where(i => i.User.U_UserName == username).ToList().First();
-            lbl_username.Text = insData.Ins_Fname;            
+            lbl_username.Text = insData.Ins_Fname;
 
         }
 
         private void instructorForm_FormClosing(object sender, FormClosingEventArgs e)
-        {            
-            logform.Close();            
+        {
+            logform.Close();
         }
 
         private void btn_generate_Click(object sender, EventArgs e)
@@ -43,41 +43,106 @@ namespace Examination_system.Forms
             {
                 int mcq;
                 int tfq;
-                if (int.TryParse(txt_mcq.Text, out mcq) && int.TryParse(txt_tfq.Text, out tfq))
+                int grade;
+                if (int.TryParse(txt_mcq.Text, out mcq) && int.TryParse(txt_tfq.Text, out tfq) && int.TryParse(txt_examGrade.Text, out grade))
                 {
-                    var course = ent.Courses.Where(c => c.Crs_Name == cmbo_crsname.Text).ToList().First();
-                    int crsId = course.Crs_Id;
+                    if ((mcq + tfq) <= 10)
+                    {
+                        var course = ent.Courses.Where(c => c.Crs_Name == cmbo_crsname.Text).ToList().First();
+                        int crsId = course.Crs_Id;
+                        try
+                        {
+                            ent.sp_GenerateExam(mcq, tfq, crsId, insData.Ins_Id, grade);
 
-                    SqlParameter param1 = new SqlParameter("@mcq", mcq);
-                    SqlParameter param2 = new SqlParameter("@tfq", tfq);
-                    SqlParameter param3 = new SqlParameter("@crs_id", crsId);
-                    SqlParameter param4 = new SqlParameter("@ins_id", insData.Ins_Id);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sum of question number must not exceed 10");
+                    }
 
-                    //I change this line from SqlQuery to ExecuteSqlCommand
-                    var remove = ent.Database.ExecuteSqlCommand(" exec sp_GenerateExam @mcq, @tfq,@crs_id,@ins_id", param1, param2,param3,param4);
-
-                    //ent.sp_GenerateExam(mcq, tfq, crsId, insData.Ins_Id);
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Enter data in invalid format");
                 }
-                
+
             }
-            else {
+            else
+            {
                 MessageBox.Show("Enter the missing field");
             }
-           
+
             ent.SaveChanges();
         }
 
         private void cmbo_crsname_DropDown(object sender, EventArgs e)
         {
             cmbo_crsname.Items.Clear();
-            var result = ent.Courses.Select(c=>c).ToList();
+            var result = ent.Courses.Select(c => c).ToList();
             foreach (var item in result)
             {
-                
+
                 cmbo_crsname.Items.Add(item.Crs_Name);
+            }
+        }
+
+        private void txt_id_TextChanged(object sender, EventArgs e)
+        {
+            int id;
+            if (txt_id.Text != "")
+            {
+                if (int.TryParse(txt_id.Text, out id))
+                {
+                    var result = ent.Exams.Where(ex => ex.Exm_Id == id).ToList();
+                    if (result.Count>0) {
+                        var exam= result[0];
+                        txt_ex_id.Text = exam.Exm_Id.ToString();
+                        txt_course.Text = exam.Course.Crs_Name;
+                        txt_generator.Text = exam.Instructor.Ins_Fname;
+                        txt_grade.Text = exam.Exm_Grade.ToString();
+                    }
+                    else {
+                        txt_ex_id.Text = txt_course.Text = txt_generator.Text = txt_grade.Text=String.Empty;
+                    }
+                   
+                }
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            int id;
+
+            if (txt_id.Text != "" && int.TryParse(txt_id.Text, out id))
+            {
+                var result = ent.Exams.Where(ex => ex.Exm_Id == id).ToList();
+                if (result.Count > 0)
+                {
+                    var exam = result[0];
+                    ent.sp_deleteExam(id);
+                    ent.SaveChanges();
+                }
+            }
+            else {
+                MessageBox.Show("Enter missing field data");
+            }
+        }
+
+        private void btn_display_Click(object sender, EventArgs e)
+        {
+            var result = ent.Exams.Select(ex => ex).ToList();
+            
+            foreach (var item in result)
+            {              
+               ListViewItem lsv = new ListViewItem();
+                lsv.SubItems.Add(item.Exm_Id.ToString());
+                lsv.SubItems.Add(item.Exm_Id.ToString());
+
+
             }
         }
     }

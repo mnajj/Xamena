@@ -449,6 +449,7 @@ error 6004: The table 'ExamSystem.dbo.Std_Ques_Exm' is referenced by a relations
     <Parameter Name="tfq" Type="int" Mode="In" />
     <Parameter Name="crs_id" Type="int" Mode="In" />
     <Parameter Name="ins_id" Type="int" Mode="In" />
+    <Parameter Name="grade" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
