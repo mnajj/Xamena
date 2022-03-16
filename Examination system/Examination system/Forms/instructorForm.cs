@@ -46,7 +46,8 @@ namespace Examination_system.Forms
                 int grade;
                 if (int.TryParse(txt_mcq.Text, out mcq) && int.TryParse(txt_tfq.Text, out tfq) && int.TryParse(txt_examGrade.Text, out grade))
                 {
-                    if ((mcq + tfq) <= 10)
+                    int sum = (mcq + tfq);
+                    if (sum == 10 )
                     {
                         var course = ent.Courses.Where(c => c.Crs_Name == cmbo_crsname.Text).ToList().First();
                         int crsId = course.Crs_Id;
@@ -61,7 +62,7 @@ namespace Examination_system.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Sum of question number must not exceed 10");
+                        MessageBox.Show("Sum of question number must be 10");
                     }
 
                 }
@@ -135,13 +136,15 @@ namespace Examination_system.Forms
         private void btn_display_Click(object sender, EventArgs e)
         {
             var result = ent.Exams.Select(ex => ex).ToList();
-            
+            listView1.Items.Clear();
             foreach (var item in result)
             {              
-               ListViewItem lsv = new ListViewItem();
-                lsv.SubItems.Add(item.Exm_Id.ToString());
-                lsv.SubItems.Add(item.Exm_Id.ToString());
-
+               
+                string[] row = { item.Exm_Id.ToString(),
+                    item.Course.Crs_Name,
+                    item.Instructor.Ins_Fname,item.Exm_Grade.ToString()};
+                ListViewItem Rowitem = new ListViewItem(row);
+                listView1.Items.Add(Rowitem);
 
             }
         }

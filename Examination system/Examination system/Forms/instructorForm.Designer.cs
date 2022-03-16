@@ -34,6 +34,11 @@
             this.tabCtrl_DashBoard = new System.Windows.Forms.TabControl();
             this.tabpage_exams = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.clm_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_crs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_ins = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clm_grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_grade = new System.Windows.Forms.Label();
             this.lbl_generator = new System.Windows.Forms.Label();
@@ -46,6 +51,8 @@
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_examGrade = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbo_crsname = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_tfq = new System.Windows.Forms.TextBox();
@@ -62,13 +69,6 @@
             this.tabPage_Reports = new System.Windows.Forms.TabPage();
             this.tabPage_instructors = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_examGrade = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabCtrl_DashBoard.SuspendLayout();
             this.tabpage_exams.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +139,46 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Display";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clm_id,
+            this.clm_crs,
+            this.clm_ins,
+            this.clm_grade});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 23);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1003, 146);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // clm_id
+            // 
+            this.clm_id.Text = "ID";
+            this.clm_id.Width = 190;
+            // 
+            // clm_crs
+            // 
+            this.clm_crs.Text = "Course";
+            this.clm_crs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clm_crs.Width = 190;
+            // 
+            // clm_ins
+            // 
+            this.clm_ins.Text = "Instructor";
+            this.clm_ins.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clm_ins.Width = 190;
+            // 
+            // clm_grade
+            // 
+            this.clm_grade.Text = "Grade";
+            this.clm_grade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clm_grade.Width = 190;
             // 
             // groupBox2
             // 
@@ -263,6 +303,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generate exam";
             // 
+            // txt_examGrade
+            // 
+            this.txt_examGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_examGrade.Location = new System.Drawing.Point(542, 50);
+            this.txt_examGrade.Name = "txt_examGrade";
+            this.txt_examGrade.Size = new System.Drawing.Size(100, 30);
+            this.txt_examGrade.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(473, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Grade";
+            // 
             // cmbo_crsname
             // 
             this.cmbo_crsname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -327,7 +385,7 @@
             this.btn_display.Name = "btn_display";
             this.btn_display.Size = new System.Drawing.Size(342, 56);
             this.btn_display.TabIndex = 1;
-            this.btn_display.Text = "Display";
+            this.btn_display.Text = "Display exams";
             this.btn_display.UseVisualStyleBackColor = true;
             this.btn_display.Click += new System.EventHandler(this.btn_display_Click);
             // 
@@ -423,55 +481,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 586);
             this.panel1.TabIndex = 4;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(473, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Grade";
-            // 
-            // txt_examGrade
-            // 
-            this.txt_examGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_examGrade.Location = new System.Drawing.Point(542, 50);
-            this.txt_examGrade.Name = "txt_examGrade";
-            this.txt_examGrade.Size = new System.Drawing.Size(100, 30);
-            this.txt_examGrade.TabIndex = 4;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 23);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1003, 146);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Course";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Instructor";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Grade";
-            // 
             // instructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -537,9 +546,9 @@
         private System.Windows.Forms.TextBox txt_examGrade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader clm_id;
+        private System.Windows.Forms.ColumnHeader clm_crs;
+        private System.Windows.Forms.ColumnHeader clm_ins;
+        private System.Windows.Forms.ColumnHeader clm_grade;
     }
 }
