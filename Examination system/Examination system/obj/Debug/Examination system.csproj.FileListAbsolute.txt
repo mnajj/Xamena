@@ -100,3 +100,4 @@ C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.WebForms.dll

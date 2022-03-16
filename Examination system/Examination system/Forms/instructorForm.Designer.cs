@@ -33,39 +33,39 @@
             this.lbl_username = new System.Windows.Forms.Label();
             this.tabCtrl_DashBoard = new System.Windows.Forms.TabControl();
             this.tabpage_exams = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_grade = new System.Windows.Forms.Label();
+            this.lbl_generator = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_grade = new System.Windows.Forms.TextBox();
+            this.txt_generator = new System.Windows.Forms.TextBox();
+            this.txt_course = new System.Windows.Forms.TextBox();
+            this.txt_ex_id = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbo_crsname = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_tfq = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_mcq = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_display = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_generate = new System.Windows.Forms.Button();
             this.tabpage_department = new System.Windows.Forms.TabPage();
             this.tabpage_students = new System.Windows.Forms.TabPage();
             this.tabPage_questions = new System.Windows.Forms.TabPage();
             this.tabPage_users = new System.Windows.Forms.TabPage();
             this.tabPage_Reports = new System.Windows.Forms.TabPage();
             this.tabPage_instructors = new System.Windows.Forms.TabPage();
-            this.btn_generate = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_display = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_mcq = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_tfq = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbo_crsname = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.txt_ex_id = new System.Windows.Forms.TextBox();
-            this.txt_course = new System.Windows.Forms.TextBox();
-            this.txt_generator = new System.Windows.Forms.TextBox();
-            this.txt_grade = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.lbl_generator = new System.Windows.Forms.Label();
-            this.lbl_grade = new System.Windows.Forms.Label();
             this.tabCtrl_DashBoard.SuspendLayout();
             this.tabpage_exams.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,112 +121,15 @@
             this.tabpage_exams.Text = "Exams";
             this.tabpage_exams.UseVisualStyleBackColor = true;
             // 
-            // tabpage_department
+            // groupBox3
             // 
-            this.tabpage_department.Location = new System.Drawing.Point(4, 25);
-            this.tabpage_department.Name = "tabpage_department";
-            this.tabpage_department.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpage_department.Size = new System.Drawing.Size(1088, 527);
-            this.tabpage_department.TabIndex = 1;
-            this.tabpage_department.Text = "Departments";
-            this.tabpage_department.UseVisualStyleBackColor = true;
-            // 
-            // tabpage_students
-            // 
-            this.tabpage_students.Location = new System.Drawing.Point(4, 25);
-            this.tabpage_students.Name = "tabpage_students";
-            this.tabpage_students.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpage_students.Size = new System.Drawing.Size(1088, 527);
-            this.tabpage_students.TabIndex = 2;
-            this.tabpage_students.Text = "Students";
-            this.tabpage_students.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_questions
-            // 
-            this.tabPage_questions.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_questions.Name = "tabPage_questions";
-            this.tabPage_questions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_questions.Size = new System.Drawing.Size(1088, 527);
-            this.tabPage_questions.TabIndex = 3;
-            this.tabPage_questions.Text = "Questions";
-            this.tabPage_questions.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_users
-            // 
-            this.tabPage_users.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_users.Name = "tabPage_users";
-            this.tabPage_users.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_users.Size = new System.Drawing.Size(1088, 527);
-            this.tabPage_users.TabIndex = 4;
-            this.tabPage_users.Text = "Users";
-            this.tabPage_users.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_Reports
-            // 
-            this.tabPage_Reports.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_Reports.Name = "tabPage_Reports";
-            this.tabPage_Reports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Reports.Size = new System.Drawing.Size(1088, 527);
-            this.tabPage_Reports.TabIndex = 5;
-            this.tabPage_Reports.Text = "Reports";
-            this.tabPage_Reports.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_instructors
-            // 
-            this.tabPage_instructors.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_instructors.Name = "tabPage_instructors";
-            this.tabPage_instructors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_instructors.Size = new System.Drawing.Size(1088, 527);
-            this.tabPage_instructors.TabIndex = 6;
-            this.tabPage_instructors.Text = "instructors";
-            this.tabPage_instructors.UseVisualStyleBackColor = true;
-            // 
-            // btn_generate
-            // 
-            this.btn_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_generate.Location = new System.Drawing.Point(39, 29);
-            this.btn_generate.Name = "btn_generate";
-            this.btn_generate.Size = new System.Drawing.Size(342, 56);
-            this.btn_generate.TabIndex = 0;
-            this.btn_generate.Text = "Generate";
-            this.btn_generate.UseVisualStyleBackColor = true;
-            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(381, 29);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(342, 56);
-            this.btn_delete.TabIndex = 1;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_display
-            // 
-            this.btn_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display.Location = new System.Drawing.Point(723, 29);
-            this.btn_display.Name = "btn_display";
-            this.btn_display.Size = new System.Drawing.Size(342, 56);
-            this.btn_display.TabIndex = 1;
-            this.btn_display.Text = "Display";
-            this.btn_display.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbo_crsname);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_tfq);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_mcq);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(56, 115);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1009, 112);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Generate exam";
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(56, 377);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1009, 172);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Display";
             // 
             // groupBox2
             // 
@@ -248,61 +151,116 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
             // 
-            // groupBox3
+            // lbl_grade
             // 
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(56, 377);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1009, 172);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Display";
+            this.lbl_grade.AutoSize = true;
+            this.lbl_grade.Location = new System.Drawing.Point(764, 25);
+            this.lbl_grade.Name = "lbl_grade";
+            this.lbl_grade.Size = new System.Drawing.Size(55, 20);
+            this.lbl_grade.TabIndex = 2;
+            this.lbl_grade.Text = "Grade";
             // 
-            // panel1
+            // lbl_generator
             // 
-            this.panel1.Controls.Add(this.lbl_welcome);
-            this.panel1.Controls.Add(this.lbl_username);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 586);
-            this.panel1.TabIndex = 4;
+            this.lbl_generator.AutoSize = true;
+            this.lbl_generator.Location = new System.Drawing.Point(610, 25);
+            this.lbl_generator.Name = "lbl_generator";
+            this.lbl_generator.Size = new System.Drawing.Size(84, 20);
+            this.lbl_generator.TabIndex = 2;
+            this.lbl_generator.Text = "Generator";
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MCQ No.";
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(456, 25);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(63, 20);
+            this.label.TabIndex = 2;
+            this.label.Text = "Course";
             // 
-            // txt_mcq
+            // label5
             // 
-            this.txt_mcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mcq.Location = new System.Drawing.Point(97, 50);
-            this.txt_mcq.Name = "txt_mcq";
-            this.txt_mcq.Size = new System.Drawing.Size(219, 30);
-            this.txt_mcq.TabIndex = 1;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(302, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "ID";
             // 
-            // label2
+            // txt_grade
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(325, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "TFQ No.";
+            this.txt_grade.Location = new System.Drawing.Point(768, 48);
+            this.txt_grade.Name = "txt_grade";
+            this.txt_grade.ReadOnly = true;
+            this.txt_grade.Size = new System.Drawing.Size(154, 27);
+            this.txt_grade.TabIndex = 1;
             // 
-            // txt_tfq
+            // txt_generator
             // 
-            this.txt_tfq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tfq.Location = new System.Drawing.Point(413, 50);
-            this.txt_tfq.Name = "txt_tfq";
-            this.txt_tfq.Size = new System.Drawing.Size(219, 30);
-            this.txt_tfq.TabIndex = 1;
+            this.txt_generator.Location = new System.Drawing.Point(614, 48);
+            this.txt_generator.Name = "txt_generator";
+            this.txt_generator.ReadOnly = true;
+            this.txt_generator.Size = new System.Drawing.Size(154, 27);
+            this.txt_generator.TabIndex = 1;
+            // 
+            // txt_course
+            // 
+            this.txt_course.Location = new System.Drawing.Point(460, 48);
+            this.txt_course.Name = "txt_course";
+            this.txt_course.ReadOnly = true;
+            this.txt_course.Size = new System.Drawing.Size(154, 27);
+            this.txt_course.TabIndex = 1;
+            // 
+            // txt_ex_id
+            // 
+            this.txt_ex_id.Location = new System.Drawing.Point(306, 48);
+            this.txt_ex_id.Name = "txt_ex_id";
+            this.txt_ex_id.ReadOnly = true;
+            this.txt_ex_id.Size = new System.Drawing.Size(154, 27);
+            this.txt_ex_id.TabIndex = 1;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(97, 48);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(100, 27);
+            this.txt_id.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ID";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbo_crsname);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt_tfq);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_mcq);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(56, 115);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1009, 112);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Generate exam";
+            // 
+            // cmbo_crsname
+            // 
+            this.cmbo_crsname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbo_crsname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbo_crsname.FormattingEnabled = true;
+            this.cmbo_crsname.Location = new System.Drawing.Point(771, 49);
+            this.cmbo_crsname.Name = "cmbo_crsname";
+            this.cmbo_crsname.Size = new System.Drawing.Size(219, 33);
+            this.cmbo_crsname.TabIndex = 2;
+            this.cmbo_crsname.DropDown += new System.EventHandler(this.cmbo_crsname_DropDown);
             // 
             // label3
             // 
@@ -314,98 +272,142 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Course name";
             // 
-            // cmbo_crsname
+            // txt_tfq
             // 
-            this.cmbo_crsname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbo_crsname.FormattingEnabled = true;
-            this.cmbo_crsname.Location = new System.Drawing.Point(771, 49);
-            this.cmbo_crsname.Name = "cmbo_crsname";
-            this.cmbo_crsname.Size = new System.Drawing.Size(219, 33);
-            this.cmbo_crsname.TabIndex = 2;
+            this.txt_tfq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tfq.Location = new System.Drawing.Point(413, 50);
+            this.txt_tfq.Name = "txt_tfq";
+            this.txt_tfq.Size = new System.Drawing.Size(219, 30);
+            this.txt_tfq.TabIndex = 1;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ID";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(325, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "TFQ No.";
             // 
-            // txt_id
+            // txt_mcq
             // 
-            this.txt_id.Location = new System.Drawing.Point(97, 48);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(100, 27);
-            this.txt_id.TabIndex = 1;
+            this.txt_mcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_mcq.Location = new System.Drawing.Point(97, 50);
+            this.txt_mcq.Name = "txt_mcq";
+            this.txt_mcq.Size = new System.Drawing.Size(219, 30);
+            this.txt_mcq.TabIndex = 1;
             // 
-            // txt_ex_id
+            // label1
             // 
-            this.txt_ex_id.Location = new System.Drawing.Point(306, 48);
-            this.txt_ex_id.Name = "txt_ex_id";
-            this.txt_ex_id.ReadOnly = true;
-            this.txt_ex_id.Size = new System.Drawing.Size(154, 27);
-            this.txt_ex_id.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MCQ No.";
             // 
-            // txt_course
+            // btn_display
             // 
-            this.txt_course.Location = new System.Drawing.Point(460, 48);
-            this.txt_course.Name = "txt_course";
-            this.txt_course.ReadOnly = true;
-            this.txt_course.Size = new System.Drawing.Size(154, 27);
-            this.txt_course.TabIndex = 1;
+            this.btn_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display.Location = new System.Drawing.Point(723, 29);
+            this.btn_display.Name = "btn_display";
+            this.btn_display.Size = new System.Drawing.Size(342, 56);
+            this.btn_display.TabIndex = 1;
+            this.btn_display.Text = "Display";
+            this.btn_display.UseVisualStyleBackColor = true;
             // 
-            // txt_generator
+            // btn_delete
             // 
-            this.txt_generator.Location = new System.Drawing.Point(614, 48);
-            this.txt_generator.Name = "txt_generator";
-            this.txt_generator.ReadOnly = true;
-            this.txt_generator.Size = new System.Drawing.Size(154, 27);
-            this.txt_generator.TabIndex = 1;
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(381, 29);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(342, 56);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
             // 
-            // txt_grade
+            // btn_generate
             // 
-            this.txt_grade.Location = new System.Drawing.Point(768, 48);
-            this.txt_grade.Name = "txt_grade";
-            this.txt_grade.ReadOnly = true;
-            this.txt_grade.Size = new System.Drawing.Size(154, 27);
-            this.txt_grade.TabIndex = 1;
+            this.btn_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_generate.Location = new System.Drawing.Point(39, 29);
+            this.btn_generate.Name = "btn_generate";
+            this.btn_generate.Size = new System.Drawing.Size(342, 56);
+            this.btn_generate.TabIndex = 0;
+            this.btn_generate.Text = "Generate";
+            this.btn_generate.UseVisualStyleBackColor = true;
+            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
             // 
-            // label5
+            // tabpage_department
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(302, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "ID";
+            this.tabpage_department.Location = new System.Drawing.Point(4, 25);
+            this.tabpage_department.Name = "tabpage_department";
+            this.tabpage_department.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpage_department.Size = new System.Drawing.Size(1103, 557);
+            this.tabpage_department.TabIndex = 1;
+            this.tabpage_department.Text = "Departments";
+            this.tabpage_department.UseVisualStyleBackColor = true;
             // 
-            // label
+            // tabpage_students
             // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(456, 25);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(63, 20);
-            this.label.TabIndex = 2;
-            this.label.Text = "Course";
+            this.tabpage_students.Location = new System.Drawing.Point(4, 25);
+            this.tabpage_students.Name = "tabpage_students";
+            this.tabpage_students.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpage_students.Size = new System.Drawing.Size(1103, 557);
+            this.tabpage_students.TabIndex = 2;
+            this.tabpage_students.Text = "Students";
+            this.tabpage_students.UseVisualStyleBackColor = true;
             // 
-            // lbl_generator
+            // tabPage_questions
             // 
-            this.lbl_generator.AutoSize = true;
-            this.lbl_generator.Location = new System.Drawing.Point(610, 25);
-            this.lbl_generator.Name = "lbl_generator";
-            this.lbl_generator.Size = new System.Drawing.Size(84, 20);
-            this.lbl_generator.TabIndex = 2;
-            this.lbl_generator.Text = "Generator";
+            this.tabPage_questions.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_questions.Name = "tabPage_questions";
+            this.tabPage_questions.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_questions.Size = new System.Drawing.Size(1103, 557);
+            this.tabPage_questions.TabIndex = 3;
+            this.tabPage_questions.Text = "Questions";
+            this.tabPage_questions.UseVisualStyleBackColor = true;
             // 
-            // lbl_grade
+            // tabPage_users
             // 
-            this.lbl_grade.AutoSize = true;
-            this.lbl_grade.Location = new System.Drawing.Point(764, 25);
-            this.lbl_grade.Name = "lbl_grade";
-            this.lbl_grade.Size = new System.Drawing.Size(55, 20);
-            this.lbl_grade.TabIndex = 2;
-            this.lbl_grade.Text = "Grade";
+            this.tabPage_users.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_users.Name = "tabPage_users";
+            this.tabPage_users.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_users.Size = new System.Drawing.Size(1103, 557);
+            this.tabPage_users.TabIndex = 4;
+            this.tabPage_users.Text = "Users";
+            this.tabPage_users.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_Reports
+            // 
+            this.tabPage_Reports.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_Reports.Name = "tabPage_Reports";
+            this.tabPage_Reports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Reports.Size = new System.Drawing.Size(1103, 557);
+            this.tabPage_Reports.TabIndex = 5;
+            this.tabPage_Reports.Text = "Reports";
+            this.tabPage_Reports.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_instructors
+            // 
+            this.tabPage_instructors.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_instructors.Name = "tabPage_instructors";
+            this.tabPage_instructors.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_instructors.Size = new System.Drawing.Size(1103, 557);
+            this.tabPage_instructors.TabIndex = 6;
+            this.tabPage_instructors.Text = "instructors";
+            this.tabPage_instructors.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_welcome);
+            this.panel1.Controls.Add(this.lbl_username);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 586);
+            this.panel1.TabIndex = 4;
             // 
             // instructorForm
             // 
@@ -424,10 +426,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.instructorForm_FormClosing);
             this.tabCtrl_DashBoard.ResumeLayout(false);
             this.tabpage_exams.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
