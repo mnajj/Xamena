@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Examination_system.Model;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Examination_system.Forms
@@ -7,13 +9,20 @@ namespace Examination_system.Forms
 	{
 		public LogIn PrevForm { get; set; }
 		public string UserName { get; set; }
+		public int StudentId { get; set; }
 		public string ExamCourse { get; set; }
+		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
 		public Student(LogIn prevForm, string userName)
 		{
 			InitializeComponent();
 			this.PrevForm = prevForm;
 			this.UserName = userName;
+			this.StudentId = Ent.Students
+				.Where(s => s.User.U_UserName == UserName)
+				.Select(s => s.Std_Id)
+				.First();
+
 			GreetingUser();
 		}
 

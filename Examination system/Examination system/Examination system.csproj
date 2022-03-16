@@ -77,48 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Choice.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Course.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Crs_Top.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DelCrsIns_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteInstructor_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteStdById_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteUserByUserName_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Department.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Exam.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExaminationSystem.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExaminationSystem.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExaminationSystem.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExaminationSystem.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExaminationSystem.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ChooseCrsExamDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,164 +107,212 @@
     <Compile Include="Forms\Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsertInsForCrs_Result.cs">
+    <Compile Include="Model\Choice.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="InsertInstructor_Result.cs">
+    <Compile Include="Model\Course.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="InsertNewStd_Result.cs">
+    <Compile Include="Model\Crs_Top.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="InsertNewUser_Result.cs">
+    <Compile Include="Model\DelCrsIns_Result.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="InsertQues_Result.cs">
+    <Compile Include="Model\DeleteInstructor_Result.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="Instructor.cs">
+    <Compile Include="Model\DeleteStdById_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DeleteUserByUserName_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Department.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Exam.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ExaminationSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExaminationSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ExaminationSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ExaminationSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExaminationSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Exm_Ques.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InsertInsForCrs_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InsertInstructor_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InsertNewStd_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InsertNewUser_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InsertQues_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Instructor.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Question.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelectCrsIns_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelectInstructor_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelectStdById_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SelectUserById_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_CorrectStdExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_deleteChoice_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_deleteCourse_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_deleteDepartment_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_deleteExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_DeleteQues_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_DeleteStdFromCrs_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_deleteTopic_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_GenerateExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_InsertChoice_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_insertCourse_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_insertDepartment_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_insertExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_InsertStdAnsForExm_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_InsertStdForCrs_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_insertTopic_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_selectchoice_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_selectCourse_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_selectDepartment_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_selectExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_SelectQues_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_SelectStdAnsForExm_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_SelectStdOfCrs_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_selectTopic_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_updateChoice_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_updateCourse_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_UpdateCrsForIns_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_UpdateCrsOfStd_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_updateDepartment_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_updateExam_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_updateTopic_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Std_Crs.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Std_Ques_Exm.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Student.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UpdateInstructor_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UpdateQues_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UpdateStdInfo_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UpdateUser_Result.cs">
+      <DependentUpon>ExaminationSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
       <DependentUpon>ExaminationSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectCrsIns_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectInstructor_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectStdById_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectUserById_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_CorrectStdExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_deleteChoice_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_deleteCourse_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_deleteDepartment_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_deleteExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_DeleteQues_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_DeleteStdFromCrs_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_deleteTopic_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_GenerateExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_InsertChoice_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_insertCourse_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_insertDepartment_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_insertExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_InsertStdAnsForExm_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_InsertStdForCrs_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_insertTopic_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_selectchoice_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_selectCourse_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_selectDepartment_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_selectExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_SelectQues_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_SelectStdAnsForExm_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_SelectStdOfCrs_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_selectTopic_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_updateChoice_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_updateCourse_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_UpdateCrsForIns_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_UpdateCrsOfStd_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_updateDepartment_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_updateExam_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_updateTopic_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Std_Crs.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateInstructor_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateQues_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateStdInfo_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateUser_Result.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>ExaminationSystem.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\ChooseCrsExamDialog.resx">
       <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,11 +335,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="ExaminationSystem.edmx">
+    <EntityDeploy Include="Model\ExaminationSystem.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ExaminationSystem.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ExaminationSystem.edmx.diagram">
+    <None Include="Model\ExaminationSystem.edmx.diagram">
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -352,12 +358,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Capture-removebg-preview.ico" />
-    <Content Include="ExaminationSystem.Context.tt">
+    <Content Include="Model\ExaminationSystem.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
       <LastGenOutput>ExaminationSystem.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ExaminationSystem.tt">
+    <Content Include="Model\ExaminationSystem.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
       <LastGenOutput>ExaminationSystem.cs</LastGenOutput>
