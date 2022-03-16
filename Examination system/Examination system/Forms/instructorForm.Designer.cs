@@ -63,9 +63,19 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_generate = new System.Windows.Forms.Button();
             this.tabpage_department = new System.Windows.Forms.TabPage();
+            this.date_deptHire = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbo_deptManager = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_deptLoc = new System.Windows.Forms.TextBox();
+            this.txt_deptName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_deptId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_deptInsert = new System.Windows.Forms.Button();
             this.btn_deptDelete = new System.Windows.Forms.Button();
+            this.btn_deptDisplayByname = new System.Windows.Forms.Button();
             this.btn_deptDisplay = new System.Windows.Forms.Button();
             this.btn_dept_update = new System.Windows.Forms.Button();
             this.lst_department = new System.Windows.Forms.ListView();
@@ -80,16 +90,6 @@
             this.tabPage_Reports = new System.Windows.Forms.TabPage();
             this.tabPage_instructors = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_deptId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_deptName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmbo_deptManager = new System.Windows.Forms.ComboBox();
-            this.txt_deptLoc = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.date_deptHire = new System.Windows.Forms.DateTimePicker();
-            this.btn_deptDisplayByname = new System.Windows.Forms.Button();
             this.tabCtrl_DashBoard.SuspendLayout();
             this.tabpage_exams.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -462,6 +462,82 @@
             this.tabpage_department.Text = "Departments";
             this.tabpage_department.UseVisualStyleBackColor = true;
             // 
+            // date_deptHire
+            // 
+            this.date_deptHire.Location = new System.Drawing.Point(200, 428);
+            this.date_deptHire.Name = "date_deptHire";
+            this.date_deptHire.Size = new System.Drawing.Size(224, 30);
+            this.date_deptHire.TabIndex = 6;
+            this.date_deptHire.Value = new System.DateTime(2022, 3, 17, 1, 9, 56, 0);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 464);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 25);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Manager";
+            // 
+            // cmbo_deptManager
+            // 
+            this.cmbo_deptManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbo_deptManager.FormattingEnabled = true;
+            this.cmbo_deptManager.Location = new System.Drawing.Point(200, 461);
+            this.cmbo_deptManager.Name = "cmbo_deptManager";
+            this.cmbo_deptManager.Size = new System.Drawing.Size(224, 33);
+            this.cmbo_deptManager.TabIndex = 4;
+            this.cmbo_deptManager.DropDown += new System.EventHandler(this.cmbo_deptManager_DropDown);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 425);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(173, 25);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Manager Hire date";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 389);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 25);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Location";
+            // 
+            // txt_deptLoc
+            // 
+            this.txt_deptLoc.Location = new System.Drawing.Point(200, 392);
+            this.txt_deptLoc.Name = "txt_deptLoc";
+            this.txt_deptLoc.Size = new System.Drawing.Size(224, 30);
+            this.txt_deptLoc.TabIndex = 3;
+            // 
+            // txt_deptName
+            // 
+            this.txt_deptName.Location = new System.Drawing.Point(200, 353);
+            this.txt_deptName.Name = "txt_deptName";
+            this.txt_deptName.Size = new System.Drawing.Size(224, 30);
+            this.txt_deptName.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 353);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Name";
+            // 
+            // txt_deptId
+            // 
+            this.txt_deptId.Location = new System.Drawing.Point(200, 317);
+            this.txt_deptId.Name = "txt_deptId";
+            this.txt_deptId.ReadOnly = true;
+            this.txt_deptId.Size = new System.Drawing.Size(224, 30);
+            this.txt_deptId.TabIndex = 3;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -489,6 +565,17 @@
             this.btn_deptDelete.TabIndex = 1;
             this.btn_deptDelete.Text = "Delete";
             this.btn_deptDelete.UseVisualStyleBackColor = true;
+            this.btn_deptDelete.Click += new System.EventHandler(this.btn_deptDelete_Click);
+            // 
+            // btn_deptDisplayByname
+            // 
+            this.btn_deptDisplayByname.Location = new System.Drawing.Point(706, 474);
+            this.btn_deptDisplayByname.Name = "btn_deptDisplayByname";
+            this.btn_deptDisplayByname.Size = new System.Drawing.Size(243, 56);
+            this.btn_deptDisplayByname.TabIndex = 1;
+            this.btn_deptDisplayByname.Text = "Display by Dept name";
+            this.btn_deptDisplayByname.UseVisualStyleBackColor = true;
+            this.btn_deptDisplayByname.Click += new System.EventHandler(this.btn_deptDisplayByname_Click);
             // 
             // btn_deptDisplay
             // 
@@ -614,93 +701,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 586);
             this.panel1.TabIndex = 4;
-            // 
-            // txt_deptId
-            // 
-            this.txt_deptId.Location = new System.Drawing.Point(200, 317);
-            this.txt_deptId.Name = "txt_deptId";
-            this.txt_deptId.ReadOnly = true;
-            this.txt_deptId.Size = new System.Drawing.Size(224, 30);
-            this.txt_deptId.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 353);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Name";
-            // 
-            // txt_deptName
-            // 
-            this.txt_deptName.Location = new System.Drawing.Point(200, 353);
-            this.txt_deptName.Name = "txt_deptName";
-            this.txt_deptName.Size = new System.Drawing.Size(224, 30);
-            this.txt_deptName.TabIndex = 3;
-            this.txt_deptName.TextChanged += new System.EventHandler(this.txt_deptName_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 389);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 25);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Location";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 425);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 25);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Manager Hire date";
-            // 
-            // cmbo_deptManager
-            // 
-            this.cmbo_deptManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbo_deptManager.FormattingEnabled = true;
-            this.cmbo_deptManager.Location = new System.Drawing.Point(200, 461);
-            this.cmbo_deptManager.Name = "cmbo_deptManager";
-            this.cmbo_deptManager.Size = new System.Drawing.Size(224, 33);
-            this.cmbo_deptManager.TabIndex = 4;
-            this.cmbo_deptManager.DropDown += new System.EventHandler(this.cmbo_deptManager_DropDown);
-            // 
-            // txt_deptLoc
-            // 
-            this.txt_deptLoc.Location = new System.Drawing.Point(200, 392);
-            this.txt_deptLoc.Name = "txt_deptLoc";
-            this.txt_deptLoc.Size = new System.Drawing.Size(224, 30);
-            this.txt_deptLoc.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 464);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 25);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Manager";
-            // 
-            // date_deptHire
-            // 
-            this.date_deptHire.Location = new System.Drawing.Point(200, 428);
-            this.date_deptHire.Name = "date_deptHire";
-            this.date_deptHire.Size = new System.Drawing.Size(224, 30);
-            this.date_deptHire.TabIndex = 6;
-            this.date_deptHire.Value = new System.DateTime(2022, 3, 17, 1, 9, 56, 0);
-            // 
-            // btn_deptDisplayByname
-            // 
-            this.btn_deptDisplayByname.Location = new System.Drawing.Point(706, 474);
-            this.btn_deptDisplayByname.Name = "btn_deptDisplayByname";
-            this.btn_deptDisplayByname.Size = new System.Drawing.Size(243, 56);
-            this.btn_deptDisplayByname.TabIndex = 1;
-            this.btn_deptDisplayByname.Text = "Display by Dept name";
-            this.btn_deptDisplayByname.UseVisualStyleBackColor = true;
-            this.btn_deptDisplayByname.Click += new System.EventHandler(this.btn_deptDisplayByname_Click);
             // 
             // instructorForm
             // 

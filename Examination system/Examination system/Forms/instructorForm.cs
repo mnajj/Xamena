@@ -36,7 +36,7 @@ namespace Examination_system.Forms
         {
             logform.Close();
         }
-
+        #region exam
         private void btn_generate_Click(object sender, EventArgs e)
         {
             if (txt_mcq.Text != "" && txt_tfq.Text != "" && cmbo_crsname.Text != "")
@@ -151,7 +151,8 @@ namespace Examination_system.Forms
 
             }
         }
-
+        #endregion
+        #region departmennt
         private void btn_deptDisplay_Click(object sender, EventArgs e)
         {
             displayDepartments();
@@ -180,6 +181,7 @@ namespace Examination_system.Forms
 
         private void btn_deptDisplayByname_Click(object sender, EventArgs e)
         {
+            lst_department.Items.Clear();
             if (txt_deptName.Text != "")
             {
                 var dept = ent.Departments.Where(dep => dep.Dept_Name == txt_deptName.Text).ToList();
@@ -194,6 +196,11 @@ namespace Examination_system.Forms
                         lst_department.Items.Add(Rowitem);
                     }
                 }
+                else {
+                    
+                    MessageBox.Show("Not found");
+                }
+                txt_deptId.Text = txt_deptLoc.Text = string.Empty;
 
 
             }
@@ -202,12 +209,7 @@ namespace Examination_system.Forms
                 MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
             }
         }
-
-        private void txt_deptName_TextChanged(object sender, EventArgs e)
-        {
-            txt_deptId.Text = txt_deptLoc.Text = string.Empty;
-
-        }
+        
 
         private void btn_deptInsert_Click(object sender, EventArgs e)
         {
@@ -252,7 +254,51 @@ namespace Examination_system.Forms
 
         private void btn_dept_update_Click(object sender, EventArgs e)
         {
+            if (txt_deptName.Text != "" && txt_deptLoc.Text != "" && txt_deptId.Text != "" && cmbo_deptManager.Text != "")
+            {
+                string name = txt_deptName.Text;
+                string location = txt_deptLoc.Text;
+                DateTime dt = date_deptHire.Value;
+                string managername = cmbo_deptManager.Text;
+                var manager = ent.Instructors.Where(ins => ins.Ins_Fname == managername).ToList().First();
+                int managerid = manager.Ins_Id;
+                int deptid = int.Parse(txt_deptId.Text);
+                try
+                {
+                    ent.sp_updateDepartment(deptid, name, location, dt, managerid);
+                }
+                catch (Exception)
+                {
 
+                }
+                ent.SaveChanges();
+            }
+            else {
+                MessageBox.Show("Enter full data to update");
+            }
         }
+
+        private void btn_deptDelete_Click(object sender, EventArgs e)
+        {
+            if (txt_deptId.Text != "")
+            {
+                int id =  int.Parse(txt_deptId.Text);
+                try
+                {
+                    ent.sp_deleteDepartment(id);
+                }
+                catch (Exception)
+                {
+                    
+                }
+                ent.SaveChanges();
+                displayDepartments();
+
+            }
+            else {
+                MessageBox.Show("Select department to delete");
+            }
+        }
+        #endregion
     }
 }
