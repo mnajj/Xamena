@@ -98,3 +98,5 @@ C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources

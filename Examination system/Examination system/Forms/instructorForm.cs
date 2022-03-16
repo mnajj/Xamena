@@ -27,7 +27,7 @@ namespace Examination_system.Forms
             ins_username = username;
             this.logform = logform;
             var result = ent.Instructors.Where(i => i.User.U_UserName == username).ToList();
-            lbl_username.Text = result[0].Ins_Fname +" "+ result[0].Ins_Lname;
+            lbl_username.Text = result[0].Ins_Fname;
             instructorData.Add("id", result[0].Ins_Id);
 
 
@@ -38,16 +38,9 @@ namespace Examination_system.Forms
             logform.Close();            
         }
 
-        private void btn_report_Click(object sender, EventArgs e)
+        private void btn_generate_Click(object sender, EventArgs e)
         {
-            Reports repofrm =new Reports();
-            repofrm.Show();
-        }
-
-        private void btn_generateexam_Click(object sender, EventArgs e)
-        {
-            generateExam genexm = new generateExam();
-            genexm.Show();
+           //ent.sp_GenerateExam();
         }
     }
 }

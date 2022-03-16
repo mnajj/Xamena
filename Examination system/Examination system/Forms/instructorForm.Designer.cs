@@ -29,69 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(instructorForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_adduser = new System.Windows.Forms.Button();
-            this.btn_generateexam = new System.Windows.Forms.Button();
-            this.btn_report = new System.Windows.Forms.Button();
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.lbl_username = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabCtrl_DashBoard = new System.Windows.Forms.TabControl();
+            this.tabpage_exams = new System.Windows.Forms.TabPage();
+            this.tabpage_department = new System.Windows.Forms.TabPage();
+            this.tabpage_students = new System.Windows.Forms.TabPage();
+            this.tabPage_questions = new System.Windows.Forms.TabPage();
+            this.tabPage_users = new System.Windows.Forms.TabPage();
+            this.tabPage_Reports = new System.Windows.Forms.TabPage();
+            this.tabPage_instructors = new System.Windows.Forms.TabPage();
+            this.btn_generate = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_display = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_mcq = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_tfq = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbo_crsname = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_ex_id = new System.Windows.Forms.TextBox();
+            this.txt_course = new System.Windows.Forms.TextBox();
+            this.txt_generator = new System.Windows.Forms.TextBox();
+            this.txt_grade = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.lbl_generator = new System.Windows.Forms.Label();
+            this.lbl_grade = new System.Windows.Forms.Label();
+            this.tabCtrl_DashBoard.SuspendLayout();
+            this.tabpage_exams.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btn_adduser);
-            this.groupBox1.Controls.Add(this.btn_generateexam);
-            this.groupBox1.Controls.Add(this.btn_report);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(756, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 450);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Controls";
-            // 
-            // btn_adduser
-            // 
-            this.btn_adduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adduser.Location = new System.Drawing.Point(109, 295);
-            this.btn_adduser.Name = "btn_adduser";
-            this.btn_adduser.Size = new System.Drawing.Size(172, 133);
-            this.btn_adduser.TabIndex = 2;
-            this.btn_adduser.Text = "Add user";
-            this.btn_adduser.UseVisualStyleBackColor = true;
-            // 
-            // btn_generateexam
-            // 
-            this.btn_generateexam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_generateexam.Location = new System.Drawing.Point(109, 162);
-            this.btn_generateexam.Name = "btn_generateexam";
-            this.btn_generateexam.Size = new System.Drawing.Size(172, 133);
-            this.btn_generateexam.TabIndex = 1;
-            this.btn_generateexam.Text = "Generate exam";
-            this.btn_generateexam.UseVisualStyleBackColor = true;
-            this.btn_generateexam.Click += new System.EventHandler(this.btn_generateexam_Click);
-            // 
-            // btn_report
-            // 
-            this.btn_report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_report.Location = new System.Drawing.Point(109, 29);
-            this.btn_report.Name = "btn_report";
-            this.btn_report.Size = new System.Drawing.Size(172, 133);
-            this.btn_report.TabIndex = 0;
-            this.btn_report.Text = "Reports";
-            this.btn_report.UseVisualStyleBackColor = true;
-            this.btn_report.Click += new System.EventHandler(this.btn_report_Click);
             // 
             // lbl_welcome
             // 
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_welcome.Location = new System.Drawing.Point(37, 64);
+            this.lbl_welcome.Location = new System.Drawing.Point(3, 16);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(132, 32);
             this.lbl_welcome.TabIndex = 1;
@@ -101,73 +83,390 @@
             // 
             this.lbl_username.AutoSize = true;
             this.lbl_username.Font = new System.Drawing.Font("Noto Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_username.Location = new System.Drawing.Point(57, 115);
+            this.lbl_username.Location = new System.Drawing.Point(23, 67);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(104, 38);
             this.lbl_username.TabIndex = 2;
             this.lbl_username.Text = "label1";
             // 
-            // tabControl1
+            // tabCtrl_DashBoard
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(179, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(670, 450);
-            this.tabControl1.TabIndex = 3;
+            this.tabCtrl_DashBoard.Controls.Add(this.tabpage_exams);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabpage_department);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabpage_students);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabPage_questions);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabPage_users);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabPage_Reports);
+            this.tabCtrl_DashBoard.Controls.Add(this.tabPage_instructors);
+            this.tabCtrl_DashBoard.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tabCtrl_DashBoard.Location = new System.Drawing.Point(206, 0);
+            this.tabCtrl_DashBoard.Name = "tabCtrl_DashBoard";
+            this.tabCtrl_DashBoard.SelectedIndex = 0;
+            this.tabCtrl_DashBoard.Size = new System.Drawing.Size(1111, 586);
+            this.tabCtrl_DashBoard.TabIndex = 3;
             // 
-            // tabPage1
+            // tabpage_exams
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(563, 421);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabpage_exams.Controls.Add(this.groupBox3);
+            this.tabpage_exams.Controls.Add(this.groupBox2);
+            this.tabpage_exams.Controls.Add(this.groupBox1);
+            this.tabpage_exams.Controls.Add(this.btn_display);
+            this.tabpage_exams.Controls.Add(this.btn_delete);
+            this.tabpage_exams.Controls.Add(this.btn_generate);
+            this.tabpage_exams.Location = new System.Drawing.Point(4, 25);
+            this.tabpage_exams.Name = "tabpage_exams";
+            this.tabpage_exams.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpage_exams.Size = new System.Drawing.Size(1103, 557);
+            this.tabpage_exams.TabIndex = 0;
+            this.tabpage_exams.Text = "Exams";
+            this.tabpage_exams.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabpage_department
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(662, 421);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabpage_department.Location = new System.Drawing.Point(4, 25);
+            this.tabpage_department.Name = "tabpage_department";
+            this.tabpage_department.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpage_department.Size = new System.Drawing.Size(1088, 527);
+            this.tabpage_department.TabIndex = 1;
+            this.tabpage_department.Text = "Departments";
+            this.tabpage_department.UseVisualStyleBackColor = true;
+            // 
+            // tabpage_students
+            // 
+            this.tabpage_students.Location = new System.Drawing.Point(4, 25);
+            this.tabpage_students.Name = "tabpage_students";
+            this.tabpage_students.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpage_students.Size = new System.Drawing.Size(1088, 527);
+            this.tabpage_students.TabIndex = 2;
+            this.tabpage_students.Text = "Students";
+            this.tabpage_students.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_questions
+            // 
+            this.tabPage_questions.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_questions.Name = "tabPage_questions";
+            this.tabPage_questions.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_questions.Size = new System.Drawing.Size(1088, 527);
+            this.tabPage_questions.TabIndex = 3;
+            this.tabPage_questions.Text = "Questions";
+            this.tabPage_questions.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_users
+            // 
+            this.tabPage_users.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_users.Name = "tabPage_users";
+            this.tabPage_users.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_users.Size = new System.Drawing.Size(1088, 527);
+            this.tabPage_users.TabIndex = 4;
+            this.tabPage_users.Text = "Users";
+            this.tabPage_users.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_Reports
+            // 
+            this.tabPage_Reports.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_Reports.Name = "tabPage_Reports";
+            this.tabPage_Reports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Reports.Size = new System.Drawing.Size(1088, 527);
+            this.tabPage_Reports.TabIndex = 5;
+            this.tabPage_Reports.Text = "Reports";
+            this.tabPage_Reports.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_instructors
+            // 
+            this.tabPage_instructors.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_instructors.Name = "tabPage_instructors";
+            this.tabPage_instructors.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_instructors.Size = new System.Drawing.Size(1088, 527);
+            this.tabPage_instructors.TabIndex = 6;
+            this.tabPage_instructors.Text = "instructors";
+            this.tabPage_instructors.UseVisualStyleBackColor = true;
+            // 
+            // btn_generate
+            // 
+            this.btn_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_generate.Location = new System.Drawing.Point(39, 29);
+            this.btn_generate.Name = "btn_generate";
+            this.btn_generate.Size = new System.Drawing.Size(342, 56);
+            this.btn_generate.TabIndex = 0;
+            this.btn_generate.Text = "Generate";
+            this.btn_generate.UseVisualStyleBackColor = true;
+            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(381, 29);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(342, 56);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_display
+            // 
+            this.btn_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display.Location = new System.Drawing.Point(723, 29);
+            this.btn_display.Name = "btn_display";
+            this.btn_display.Size = new System.Drawing.Size(342, 56);
+            this.btn_display.TabIndex = 1;
+            this.btn_display.Text = "Display";
+            this.btn_display.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbo_crsname);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt_tfq);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_mcq);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(56, 115);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1009, 112);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Generate exam";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_grade);
+            this.groupBox2.Controls.Add(this.lbl_generator);
+            this.groupBox2.Controls.Add(this.label);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txt_grade);
+            this.groupBox2.Controls.Add(this.txt_generator);
+            this.groupBox2.Controls.Add(this.txt_course);
+            this.groupBox2.Controls.Add(this.txt_ex_id);
+            this.groupBox2.Controls.Add(this.txt_id);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(56, 246);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1009, 112);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Delete";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(56, 377);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1009, 172);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Display";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_welcome);
+            this.panel1.Controls.Add(this.lbl_username);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 586);
+            this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MCQ No.";
+            // 
+            // txt_mcq
+            // 
+            this.txt_mcq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_mcq.Location = new System.Drawing.Point(97, 50);
+            this.txt_mcq.Name = "txt_mcq";
+            this.txt_mcq.Size = new System.Drawing.Size(219, 30);
+            this.txt_mcq.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(325, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "TFQ No.";
+            // 
+            // txt_tfq
+            // 
+            this.txt_tfq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tfq.Location = new System.Drawing.Point(413, 50);
+            this.txt_tfq.Name = "txt_tfq";
+            this.txt_tfq.Size = new System.Drawing.Size(219, 30);
+            this.txt_tfq.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(641, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Course name";
+            // 
+            // cmbo_crsname
+            // 
+            this.cmbo_crsname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbo_crsname.FormattingEnabled = true;
+            this.cmbo_crsname.Location = new System.Drawing.Point(771, 49);
+            this.cmbo_crsname.Name = "cmbo_crsname";
+            this.cmbo_crsname.Size = new System.Drawing.Size(219, 33);
+            this.cmbo_crsname.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ID";
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(97, 48);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(100, 27);
+            this.txt_id.TabIndex = 1;
+            // 
+            // txt_ex_id
+            // 
+            this.txt_ex_id.Location = new System.Drawing.Point(306, 48);
+            this.txt_ex_id.Name = "txt_ex_id";
+            this.txt_ex_id.ReadOnly = true;
+            this.txt_ex_id.Size = new System.Drawing.Size(154, 27);
+            this.txt_ex_id.TabIndex = 1;
+            // 
+            // txt_course
+            // 
+            this.txt_course.Location = new System.Drawing.Point(460, 48);
+            this.txt_course.Name = "txt_course";
+            this.txt_course.ReadOnly = true;
+            this.txt_course.Size = new System.Drawing.Size(154, 27);
+            this.txt_course.TabIndex = 1;
+            // 
+            // txt_generator
+            // 
+            this.txt_generator.Location = new System.Drawing.Point(614, 48);
+            this.txt_generator.Name = "txt_generator";
+            this.txt_generator.ReadOnly = true;
+            this.txt_generator.Size = new System.Drawing.Size(154, 27);
+            this.txt_generator.TabIndex = 1;
+            // 
+            // txt_grade
+            // 
+            this.txt_grade.Location = new System.Drawing.Point(768, 48);
+            this.txt_grade.Name = "txt_grade";
+            this.txt_grade.ReadOnly = true;
+            this.txt_grade.Size = new System.Drawing.Size(154, 27);
+            this.txt_grade.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(302, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "ID";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(456, 25);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(63, 20);
+            this.label.TabIndex = 2;
+            this.label.Text = "Course";
+            // 
+            // lbl_generator
+            // 
+            this.lbl_generator.AutoSize = true;
+            this.lbl_generator.Location = new System.Drawing.Point(610, 25);
+            this.lbl_generator.Name = "lbl_generator";
+            this.lbl_generator.Size = new System.Drawing.Size(84, 20);
+            this.lbl_generator.TabIndex = 2;
+            this.lbl_generator.Text = "Generator";
+            // 
+            // lbl_grade
+            // 
+            this.lbl_grade.AutoSize = true;
+            this.lbl_grade.Location = new System.Drawing.Point(764, 25);
+            this.lbl_grade.Name = "lbl_grade";
+            this.lbl_grade.Size = new System.Drawing.Size(55, 20);
+            this.lbl_grade.TabIndex = 2;
+            this.lbl_grade.Text = "Grade";
             // 
             // instructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 450);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.lbl_username);
-            this.Controls.Add(this.lbl_welcome);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1317, 586);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabCtrl_DashBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1335, 633);
+            this.MinimumSize = new System.Drawing.Size(1335, 633);
             this.Name = "instructorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "instructor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.instructorForm_FormClosing);
+            this.tabCtrl_DashBoard.ResumeLayout(false);
+            this.tabpage_exams.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_report;
-        private System.Windows.Forms.Button btn_generateexam;
-        private System.Windows.Forms.Button btn_adduser;
         private System.Windows.Forms.Label lbl_welcome;
         private System.Windows.Forms.Label lbl_username;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabCtrl_DashBoard;
+        private System.Windows.Forms.TabPage tabpage_exams;
+        private System.Windows.Forms.TabPage tabpage_department;
+        private System.Windows.Forms.TabPage tabpage_students;
+        private System.Windows.Forms.TabPage tabPage_questions;
+        private System.Windows.Forms.TabPage tabPage_users;
+        private System.Windows.Forms.TabPage tabPage_Reports;
+        private System.Windows.Forms.TabPage tabPage_instructors;
+        private System.Windows.Forms.Button btn_generate;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_display;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_tfq;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_mcq;
+        private System.Windows.Forms.ComboBox cmbo_crsname;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_ex_id;
+        private System.Windows.Forms.TextBox txt_generator;
+        private System.Windows.Forms.TextBox txt_course;
+        private System.Windows.Forms.TextBox txt_grade;
+        private System.Windows.Forms.Label lbl_grade;
+        private System.Windows.Forms.Label lbl_generator;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label5;
     }
 }
