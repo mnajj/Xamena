@@ -35,24 +35,21 @@ namespace Examination_system
                 {
                     if (result[0].U_IsStd)
                     {
-                      Forms.Student studentForm = new Forms.Student(this, username);
-                      studentForm.Show();
-                      this.Hide();
+												Forms.Student studentForm = new Forms.Student(this, username);
+												studentForm.Show();
+												this.Hide();
                     }
                     if (result[0].U_IsStd!=true)
                     {
                         instructorForm insForm = new instructorForm(username,this);
-                         this.Hide();
+                        this.Hide();
                         insForm.Show();
-                        
                     }
                 }
                 else
                 {
                     MessageBox.Show("Incorrect user name or password");
                 }
-
-
             }
             else
             {
