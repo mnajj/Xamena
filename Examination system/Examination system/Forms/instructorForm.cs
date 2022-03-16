@@ -47,7 +47,7 @@ namespace Examination_system.Forms
                 if (int.TryParse(txt_mcq.Text, out mcq) && int.TryParse(txt_tfq.Text, out tfq) && int.TryParse(txt_examGrade.Text, out grade))
                 {
                     int sum = (mcq + tfq);
-                    if (sum == 10 )
+                    if (sum == 10)
                     {
                         var course = ent.Courses.Where(c => c.Crs_Name == cmbo_crsname.Text).ToList().First();
                         int crsId = course.Crs_Id;
@@ -99,17 +99,19 @@ namespace Examination_system.Forms
                 if (int.TryParse(txt_id.Text, out id))
                 {
                     var result = ent.Exams.Where(ex => ex.Exm_Id == id).ToList();
-                    if (result.Count>0) {
-                        var exam= result[0];
+                    if (result.Count > 0)
+                    {
+                        var exam = result[0];
                         txt_ex_id.Text = exam.Exm_Id.ToString();
                         txt_course.Text = exam.Course.Crs_Name;
                         txt_generator.Text = exam.Instructor.Ins_Fname;
                         txt_grade.Text = exam.Exm_Grade.ToString();
                     }
-                    else {
-                        txt_ex_id.Text = txt_course.Text = txt_generator.Text = txt_grade.Text=String.Empty;
+                    else
+                    {
+                        txt_ex_id.Text = txt_course.Text = txt_generator.Text = txt_grade.Text = String.Empty;
                     }
-                   
+
                 }
             }
         }
@@ -128,7 +130,8 @@ namespace Examination_system.Forms
                     ent.SaveChanges();
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Enter missing field data");
             }
         }
@@ -138,8 +141,8 @@ namespace Examination_system.Forms
             var result = ent.Exams.Select(ex => ex).ToList();
             listView1.Items.Clear();
             foreach (var item in result)
-            {              
-               
+            {
+
                 string[] row = { item.Exm_Id.ToString(),
                     item.Course.Crs_Name,
                     item.Instructor.Ins_Fname,item.Exm_Grade.ToString()};
@@ -147,6 +150,109 @@ namespace Examination_system.Forms
                 listView1.Items.Add(Rowitem);
 
             }
+        }
+
+        private void btn_deptDisplay_Click(object sender, EventArgs e)
+        {
+            displayDepartments();
+        }
+
+        private void lst_department_Click(object sender, EventArgs e)
+        {
+            if (lst_department.SelectedItems.Count > 0)
+            {
+               
+                txt_deptName.Text = lst_department.SelectedItems[0].SubItems[1].Text;
+                txt_deptLoc.Text = lst_department.SelectedItems[0].SubItems[2].Text;
+                txt_deptId.Text = lst_department.SelectedItems[0].SubItems[0].Text;
+            }
+        }
+
+        private void cmbo_deptManager_DropDown(object sender, EventArgs e)
+        {
+            cmbo_deptManager.Items.Clear();
+            var result = ent.Instructors.Select(ins => ins).ToList();
+            foreach (var item in result)
+            {
+                cmbo_deptManager.Items.Add(item.Ins_Fname);
+            }
+        }
+
+        private void btn_deptDisplayByname_Click(object sender, EventArgs e)
+        {
+            if (txt_deptName.Text != "")
+            {
+                var dept = ent.Departments.Where(dep => dep.Dept_Name == txt_deptName.Text).ToList();
+                if (dept.Count > 0)
+                {
+                    foreach (var item in dept)
+                    {
+                        string[] row = { dept[0].Dept_Id.ToString(),
+                    dept[0].Dept_Name,
+                    dept[0].Dept_Loc,dept[0].Dept_ManagerHireDate.ToString(),dept[0].Instructor.Ins_Fname};
+                        ListViewItem Rowitem = new ListViewItem(row);
+                        lst_department.Items.Add(Rowitem);
+                    }
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+            }
+        }
+
+        private void txt_deptName_TextChanged(object sender, EventArgs e)
+        {
+            txt_deptId.Text = txt_deptLoc.Text = string.Empty;
+
+        }
+
+        private void btn_deptInsert_Click(object sender, EventArgs e)
+        {
+            if (txt_deptName.Text != "" && txt_deptLoc.Text != "" && cmbo_deptManager.Text != "")
+            {
+                string name = txt_deptName.Text;
+                string location = txt_deptLoc.Text;
+                DateTime dt = date_deptHire.Value;
+                string managername = cmbo_deptManager.Text;
+                var manager = ent.Instructors.Where(ins => ins.Ins_Fname == managername).ToList().First();
+                int managerid = manager.Ins_Id;
+                try
+                {
+                    ent.sp_insertDepartment(name, location, dt, managerid);
+                }
+                catch (Exception)
+                {
+                    
+                }
+              
+                ent.SaveChanges();
+            }
+            else {
+                MessageBox.Show("Enter missing filed data");
+            }
+        }
+        private void displayDepartments() {
+            lst_department.Items.Clear();
+            var result = ent.Departments.Select(dep => dep).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    string[] row = { item.Dept_Id.ToString(),
+                    item.Dept_Name,
+                    item.Dept_Loc,item.Dept_ManagerHireDate.ToString(),item.Instructor.Ins_Fname};
+                    ListViewItem Rowitem = new ListViewItem(row);
+                    lst_department.Items.Add(Rowitem);
+                }
+            }
+        }
+
+        private void btn_dept_update_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
