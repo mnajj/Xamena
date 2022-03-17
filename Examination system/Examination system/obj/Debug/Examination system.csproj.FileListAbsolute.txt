@@ -183,3 +183,4 @@ C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system
 C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
 C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Exam.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Exam.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Exam.resources

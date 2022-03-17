@@ -157,6 +157,7 @@ namespace Examination_system.Forms
         private void btn_deptDisplay_Click(object sender, EventArgs e)
         {
             displayDepartments();
+            
         }
 
         private void lst_department_Click(object sender, EventArgs e)
@@ -165,7 +166,7 @@ namespace Examination_system.Forms
             {
                 txt_deptName.Text = lst_department.SelectedItems[0].SubItems[1].Text;
                 txt_deptLoc.Text = lst_department.SelectedItems[0].SubItems[2].Text;
-                txt_deptId.Text = lst_department.SelectedItems[0].SubItems[0].Text;
+                txt_deptId.Text = lst_department.SelectedItems[0].SubItems[0].Text;                 
             }
         }
 
@@ -194,6 +195,7 @@ namespace Examination_system.Forms
                     dept[0].Dept_Loc,dept[0].Dept_ManagerHireDate.ToString(),dept[0].Instructor.Ins_Fname};
                         ListViewItem Rowitem = new ListViewItem(row);
                         lst_department.Items.Add(Rowitem);
+                       
                     }
                 }
                 else {
@@ -216,6 +218,7 @@ namespace Examination_system.Forms
                 string location = txt_deptLoc.Text;
                 DateTime dt = date_deptHire.Value;
                 string managername = cmbo_deptManager.Text;
+
                 var manager = ent.Instructors.Where(ins => ins.Ins_Fname == managername).ToList().First();
                 int managerid = manager.Ins_Id;
                 try
@@ -228,6 +231,7 @@ namespace Examination_system.Forms
                 }
 
                 ent.SaveChanges();
+                displayDepartments();
             }
             else {
                 MessageBox.Show("Enter missing filed data");
@@ -236,7 +240,7 @@ namespace Examination_system.Forms
 
         private void displayDepartments() {
             lst_department.Items.Clear();
-            var result = ent.Departments.Select(dep => dep).ToList();
+            var result =  ent.Departments.Select(dep => dep).ToList();
             if (result.Count > 0)
             {
                 foreach (var item in result)
@@ -247,6 +251,8 @@ namespace Examination_system.Forms
                     ListViewItem Rowitem = new ListViewItem(row);
                     lst_department.Items.Add(Rowitem);
                 }
+                btn_deptDelete.Enabled = true;
+                btn_dept_update.Enabled = true;
             }
         }
 
@@ -270,6 +276,7 @@ namespace Examination_system.Forms
 
                 }
                 ent.SaveChanges();
+                displayDepartments();
             }
             else {
                 MessageBox.Show("Enter full data to update");
@@ -301,28 +308,31 @@ namespace Examination_system.Forms
 		#region Student
 		private void DisplayStd_Click(object sender, EventArgs e)
 		{
-			StdList.Items.Clear();
-			var result = ent.Students.Select(s => s).ToList();
-			if (result.Count > 0)
-			{
-				foreach (var item in result)
-				{
-					string[] row =
-					{
-						item.Std_Id.ToString(),
-						item.User.U_UserName,
-						item.Department.Dept_Name,
-						item.Std_Fname,
-						item.Std_Lname,
-						item.Std_BOD.ToString(),
-						item.Std_Address
-					};
-					ListViewItem Rowitem = new ListViewItem(row);
-					StdList.Items.Add(Rowitem);
-				}
-			}
-		}
+            displayStudentsData();
 
+        }
+        private void displayStudentsData() {
+            StdList.Items.Clear();
+            var result = ent.Students.Select(s => s).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    string[] row =
+                    {
+                        item.Std_Id.ToString(),
+                        item.User.U_UserName,
+                        item.Department.Dept_Name,
+                        item.Std_Fname,
+                        item.Std_Lname,
+                        item.Std_BOD.ToString(),
+                        item.Std_Address
+                    };
+                    ListViewItem Rowitem = new ListViewItem(row);
+                    StdList.Items.Add(Rowitem);
+                }
+            }
+        }
 		private void InsertStd_Click(object sender, EventArgs e)
 		{
 			if (StdUserNameField.Text != String.Empty
@@ -356,7 +366,8 @@ namespace Examination_system.Forms
 
 				}
 				ent.SaveChanges();
-			}
+                displayStudentsData();
+            }
 			else
 			{
 				MessageBox.Show("Enter missing filed data");
@@ -397,7 +408,8 @@ namespace Examination_system.Forms
 
 				}
 				ent.SaveChanges();
-			}
+                displayStudentsData();
+            }
 			else
 			{
 				MessageBox.Show("Enter full data to update");
@@ -419,8 +431,8 @@ namespace Examination_system.Forms
 
 				}
 				ent.SaveChanges();
-				displayDepartments();
-			}
+                displayStudentsData();
+            }
 			else
 			{
 				MessageBox.Show("Select department to delete");
@@ -493,7 +505,86 @@ namespace Examination_system.Forms
 			}
 		}
 
-		#endregion
+        #endregion
 
-	}
+        #region questions
+        #endregion
+
+        private void btn_quesDisplay_Click(object sender, EventArgs e)
+        {
+            displayQuestions();
+        }
+        private void displayQuestions() {
+            lst_questions.Items.Clear();
+            var result = ent.Questions.Select(ques=>ques).ToList();
+            if (result.Count > 0) {
+
+                foreach (var ques in result)
+                {
+                    string[] row = { ques.Ques_Id.ToString(),
+                        ques.Crs_Id.ToString(),
+                        ques.Ques_Content,ques.Ques_Type,
+                        ques.Choice.Cho_Content};
+                    ListViewItem Rowitem = new ListViewItem(row);
+                    lst_questions.Items.Add(Rowitem);
+
+                }
+            }
+        }
+       
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            if (lst_questions.Items.Count > 0)
+            {
+                ListViewItem foundItem = null;
+                foreach (ListViewItem item in lst_questions.Items)
+                {
+
+                    if (item.SubItems[2].Text.ToLower().Contains(txt_searchText.Text.ToLower()))
+                    {
+                        foundItem = item;
+                        break;
+                    }
+                }
+
+                if (foundItem != null)
+                {                    
+                    lst_questions.TopItem = foundItem;                    
+                }
+                else {
+                    displayQuestions();
+                }
+            }
+        }
+
+        private void lst_questions_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lst_questions.SelectedItems.Count > 0) { 
+            txt_quesId.Text = lst_questions.SelectedItems[0].SubItems[0].Text;
+            txt_quesContent.Text = lst_questions.SelectedItems[0].SubItems[2].Text;
+            }
+        }
+
+       
+
+        private void cmbo_QuesCourse_DropDown(object sender, EventArgs e)
+        {
+            cmbo_QuesCourse.Items.Clear();
+            var result = ent.Courses.Select(crs => crs.Crs_Name).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    cmbo_QuesCourse.Items.Add(item);
+                }
+            }
+           
+        }
+
+        private void btn_quesInsert_Click(object sender, EventArgs e)
+        {
+           // if(cmbo_QuesCourse.Text!=""&&)
+        }
+    }
 }
