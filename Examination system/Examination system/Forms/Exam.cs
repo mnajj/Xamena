@@ -1,6 +1,8 @@
 ﻿using Examination_system.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,6 +14,7 @@ namespace Examination_system.Forms
 		public List<Question> Questions { get; set; }
 		public Model.Exam RandExam { get; set; }
 		public int Iterator { get; set; } = 0;
+		public Dictionary<int,char> Answers { get; set; } = new Dictionary<int,char>();
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
 		public Exam(Student prevForm)
@@ -64,6 +67,16 @@ namespace Examination_system.Forms
 			}
 		}
 
+		private void AssignStudentAnswer()
+		{
+			char ans = '\0';
+			if (radioButton1.Checked) ans = 'A';
+			else if (radioButton2.Checked) ans = 'B';
+			else if (radioButton3.Checked) ans = 'C';
+			else if (radioButton4.Checked) ans = 'D';
+			Answers.Add(Iterator + 1, ans);
+		}
+
 		private void FillQuestion(int id, bool isMCQ)
 		{
 			if (isMCQ)
@@ -103,12 +116,60 @@ namespace Examination_system.Forms
 				{
 					FillQuestion(Questions[Iterator].Ques_Id, false);
 				}
+				AssignStudentAnswer();
+				UnCheckedRadioButtons();
 				if (Iterator == 9)
 				{
+					SaveAnswersToDb();
 					this.PrevForm.Show();
 					this.Close();
 				}
 			}
+		}
+
+		private void SaveAnswersToDb()
+		{
+			DataTable dt = ConvertDictToDataTable();
+			using (SqlConnection conn = new SqlConnection("data source=.;initial catalog=ExamSystem;integrated security=True;"))
+			{
+				conn.Open();
+				using (SqlCommand comm = new SqlCommand("sp_AssignAnsToStd", conn))
+				{
+					comm.CommandType = CommandType.StoredProcedure;
+					var param1 = comm.Parameters.AddWithValue("std_id", PrevForm.StudentId);
+					var param2 = comm.Parameters.AddWithValue("exm_id", RandExam.Exm_Id);
+					var param3 = comm.Parameters.AddWithValue("ans_dict", dt);
+					param1.SqlDbType = SqlDbType.Int;
+					param2.SqlDbType = SqlDbType.Int;
+					param3.SqlDbType = SqlDbType.Structured;
+					var reader = comm.ExecuteReader();
+				}
+			}
+			Ent.SaveChanges();
+		}
+
+		private DataTable ConvertDictToDataTable()
+		{
+			DataTable dt = new DataTable();
+			dt.Columns.Add("Id", typeof(int));
+			dt.Columns.Add("Ans", typeof(char));
+
+			foreach (var item in Answers)
+			{
+				DataRow dr = dt.NewRow();
+				dr["Id"] = item.Key;
+				dr["Ans"] = item.Value;
+				dt.Rows.Add(dr);
+			}
+			return dt;
+		}
+
+		public void UnCheckedRadioButtons()
+		{
+			radioButton1.Checked =
+				radioButton2.Checked =
+				radioButton3.Checked =
+				radioButton4.Checked = false;
 		}
 	}
 }
