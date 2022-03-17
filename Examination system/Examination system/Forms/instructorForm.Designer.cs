@@ -116,7 +116,17 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.txt_searchText = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grp_choices = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_choice3Content = new System.Windows.Forms.TextBox();
+            this.txt_choice4Content = new System.Windows.Forms.TextBox();
+            this.txt_choice2Content = new System.Windows.Forms.TextBox();
+            this.txt_choice1Content = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btn_choiceAdd = new System.Windows.Forms.Button();
             this.cmbo_quesType = new System.Windows.Forms.ComboBox();
             this.cmbo_QuesCourse = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -138,13 +148,22 @@
             this.tabPage_Reports = new System.Windows.Forms.TabPage();
             this.tabPage_instructors = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_choiceContent = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btn_choiceAdd = new System.Windows.Forms.Button();
-            this.cmbo_choiceChar = new System.Windows.Forms.ComboBox();
+            this.lbl_lastQuesID = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txt_lastQuesContent = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cho1radio = new System.Windows.Forms.RadioButton();
+            this.cho2radio = new System.Windows.Forms.RadioButton();
+            this.cho3radio = new System.Windows.Forms.RadioButton();
+            this.cho4radio = new System.Windows.Forms.RadioButton();
+            this.grp_TFQ = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.cmbo_quesChoiceS = new System.Windows.Forms.ComboBox();
+            this.cmbo_TfqModel = new System.Windows.Forms.ComboBox();
+            this.btn_TfqAdd = new System.Windows.Forms.Button();
+            this.txt_lastquesContentTFQ = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lbl_lastquesIdTFQ = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.tabCtrl_DashBoard.SuspendLayout();
             this.tabpage_exams.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -154,8 +173,9 @@
             this.tabpage_students.SuspendLayout();
             this.tabPage_questions.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.grp_choices.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.grp_TFQ.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_welcome
@@ -193,7 +213,7 @@
             this.tabCtrl_DashBoard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabCtrl_DashBoard.Name = "tabCtrl_DashBoard";
             this.tabCtrl_DashBoard.SelectedIndex = 0;
-            this.tabCtrl_DashBoard.Size = new System.Drawing.Size(1111, 585);
+            this.tabCtrl_DashBoard.Size = new System.Drawing.Size(1111, 753);
             this.tabCtrl_DashBoard.TabIndex = 3;
             // 
             // tabpage_exams
@@ -208,7 +228,7 @@
             this.tabpage_exams.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabpage_exams.Name = "tabpage_exams";
             this.tabpage_exams.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabpage_exams.Size = new System.Drawing.Size(1103, 547);
+            this.tabpage_exams.Size = new System.Drawing.Size(1103, 715);
             this.tabpage_exams.TabIndex = 0;
             this.tabpage_exams.Text = "Exams";
             this.tabpage_exams.UseVisualStyleBackColor = true;
@@ -538,7 +558,7 @@
             this.tabpage_department.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabpage_department.Name = "tabpage_department";
             this.tabpage_department.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabpage_department.Size = new System.Drawing.Size(1103, 547);
+            this.tabpage_department.Size = new System.Drawing.Size(1103, 715);
             this.tabpage_department.TabIndex = 1;
             this.tabpage_department.Text = "Departments";
             this.tabpage_department.UseVisualStyleBackColor = true;
@@ -762,7 +782,7 @@
             this.tabpage_students.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabpage_students.Name = "tabpage_students";
             this.tabpage_students.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabpage_students.Size = new System.Drawing.Size(1103, 547);
+            this.tabpage_students.Size = new System.Drawing.Size(1103, 715);
             this.tabpage_students.TabIndex = 2;
             this.tabpage_students.Text = "Students";
             this.tabpage_students.UseVisualStyleBackColor = true;
@@ -1003,8 +1023,10 @@
             // 
             // tabPage_questions
             // 
+            this.tabPage_questions.Controls.Add(this.grp_TFQ);
             this.tabPage_questions.Controls.Add(this.groupBox5);
-            this.tabPage_questions.Controls.Add(this.groupBox4);
+            this.tabPage_questions.Controls.Add(this.grp_choices);
+            this.tabPage_questions.Controls.Add(this.btn_choiceAdd);
             this.tabPage_questions.Controls.Add(this.cmbo_quesType);
             this.tabPage_questions.Controls.Add(this.cmbo_QuesCourse);
             this.tabPage_questions.Controls.Add(this.label21);
@@ -1021,7 +1043,7 @@
             this.tabPage_questions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_questions.Name = "tabPage_questions";
             this.tabPage_questions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_questions.Size = new System.Drawing.Size(1103, 547);
+            this.tabPage_questions.Size = new System.Drawing.Size(1103, 715);
             this.tabPage_questions.TabIndex = 3;
             this.tabPage_questions.Text = "Questions";
             this.tabPage_questions.UseVisualStyleBackColor = true;
@@ -1054,21 +1076,114 @@
             this.txt_searchText.Size = new System.Drawing.Size(298, 30);
             this.txt_searchText.TabIndex = 40;
             // 
-            // groupBox4
+            // grp_choices
             // 
-            this.groupBox4.Controls.Add(this.cmbo_quesChoiceS);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Controls.Add(this.cmbo_choiceChar);
-            this.groupBox4.Controls.Add(this.btn_choiceAdd);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.txt_choiceContent);
-            this.groupBox4.Location = new System.Drawing.Point(540, 378);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(530, 164);
-            this.groupBox4.TabIndex = 41;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Choices";
+            this.grp_choices.Controls.Add(this.cho4radio);
+            this.grp_choices.Controls.Add(this.cho3radio);
+            this.grp_choices.Controls.Add(this.cho2radio);
+            this.grp_choices.Controls.Add(this.cho1radio);
+            this.grp_choices.Controls.Add(this.button1);
+            this.grp_choices.Controls.Add(this.txt_lastQuesContent);
+            this.grp_choices.Controls.Add(this.label32);
+            this.grp_choices.Controls.Add(this.lbl_lastQuesID);
+            this.grp_choices.Controls.Add(this.label31);
+            this.grp_choices.Controls.Add(this.txt_choice3Content);
+            this.grp_choices.Controls.Add(this.txt_choice4Content);
+            this.grp_choices.Controls.Add(this.txt_choice2Content);
+            this.grp_choices.Controls.Add(this.txt_choice1Content);
+            this.grp_choices.Controls.Add(this.label27);
+            this.grp_choices.Controls.Add(this.label22);
+            this.grp_choices.Controls.Add(this.label20);
+            this.grp_choices.Controls.Add(this.label19);
+            this.grp_choices.Enabled = false;
+            this.grp_choices.Location = new System.Drawing.Point(540, 355);
+            this.grp_choices.Name = "grp_choices";
+            this.grp_choices.Size = new System.Drawing.Size(530, 355);
+            this.grp_choices.TabIndex = 41;
+            this.grp_choices.TabStop = false;
+            this.grp_choices.Text = "MCQ choices";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(21, 26);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(121, 25);
+            this.label31.TabIndex = 4;
+            this.label31.Text = "Question ID:";
+            // 
+            // txt_choice3Content
+            // 
+            this.txt_choice3Content.Location = new System.Drawing.Point(174, 221);
+            this.txt_choice3Content.Name = "txt_choice3Content";
+            this.txt_choice3Content.Size = new System.Drawing.Size(213, 30);
+            this.txt_choice3Content.TabIndex = 0;
+            // 
+            // txt_choice4Content
+            // 
+            this.txt_choice4Content.Location = new System.Drawing.Point(174, 275);
+            this.txt_choice4Content.Name = "txt_choice4Content";
+            this.txt_choice4Content.Size = new System.Drawing.Size(213, 30);
+            this.txt_choice4Content.TabIndex = 0;
+            // 
+            // txt_choice2Content
+            // 
+            this.txt_choice2Content.Location = new System.Drawing.Point(174, 167);
+            this.txt_choice2Content.Name = "txt_choice2Content";
+            this.txt_choice2Content.Size = new System.Drawing.Size(213, 30);
+            this.txt_choice2Content.TabIndex = 0;
+            // 
+            // txt_choice1Content
+            // 
+            this.txt_choice1Content.Location = new System.Drawing.Point(174, 113);
+            this.txt_choice1Content.Name = "txt_choice1Content";
+            this.txt_choice1Content.Size = new System.Drawing.Size(213, 30);
+            this.txt_choice1Content.TabIndex = 0;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(21, 224);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(143, 25);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Choice content";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(21, 278);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(143, 25);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Choice content";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(21, 170);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(143, 25);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Choice content";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(21, 116);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(143, 25);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Choice content";
+            // 
+            // btn_choiceAdd
+            // 
+            this.btn_choiceAdd.Location = new System.Drawing.Point(559, 563);
+            this.btn_choiceAdd.Name = "btn_choiceAdd";
+            this.btn_choiceAdd.Size = new System.Drawing.Size(75, 32);
+            this.btn_choiceAdd.TabIndex = 2;
+            this.btn_choiceAdd.Text = "Add";
+            this.btn_choiceAdd.UseVisualStyleBackColor = true;
             // 
             // cmbo_quesType
             // 
@@ -1081,6 +1196,7 @@
             this.cmbo_quesType.Name = "cmbo_quesType";
             this.cmbo_quesType.Size = new System.Drawing.Size(224, 33);
             this.cmbo_quesType.TabIndex = 39;
+            this.cmbo_quesType.SelectedValueChanged += new System.EventHandler(this.cmbo_quesType_SelectedValueChanged);
             // 
             // cmbo_QuesCourse
             // 
@@ -1165,6 +1281,7 @@
             this.btn_quesDelete.TabIndex = 24;
             this.btn_quesDelete.Text = "Delete";
             this.btn_quesDelete.UseVisualStyleBackColor = true;
+            this.btn_quesDelete.Click += new System.EventHandler(this.btn_quesDelete_Click);
             // 
             // btn_quesDisplay
             // 
@@ -1226,7 +1343,7 @@
             this.tabPage_users.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_users.Name = "tabPage_users";
             this.tabPage_users.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_users.Size = new System.Drawing.Size(1103, 547);
+            this.tabPage_users.Size = new System.Drawing.Size(1103, 715);
             this.tabPage_users.TabIndex = 4;
             this.tabPage_users.Text = "Users";
             this.tabPage_users.UseVisualStyleBackColor = true;
@@ -1237,7 +1354,7 @@
             this.tabPage_Reports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_Reports.Name = "tabPage_Reports";
             this.tabPage_Reports.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_Reports.Size = new System.Drawing.Size(1103, 547);
+            this.tabPage_Reports.Size = new System.Drawing.Size(1103, 715);
             this.tabPage_Reports.TabIndex = 5;
             this.tabPage_Reports.Text = "Reports";
             this.tabPage_Reports.UseVisualStyleBackColor = true;
@@ -1248,7 +1365,7 @@
             this.tabPage_instructors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_instructors.Name = "tabPage_instructors";
             this.tabPage_instructors.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_instructors.Size = new System.Drawing.Size(1103, 547);
+            this.tabPage_instructors.Size = new System.Drawing.Size(1103, 715);
             this.tabPage_instructors.TabIndex = 6;
             this.tabPage_instructors.Text = "instructors";
             this.tabPage_instructors.UseVisualStyleBackColor = true;
@@ -1261,86 +1378,188 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 585);
+            this.panel1.Size = new System.Drawing.Size(200, 753);
             this.panel1.TabIndex = 4;
             // 
-            // txt_choiceContent
+            // lbl_lastQuesID
             // 
-            this.txt_choiceContent.Location = new System.Drawing.Point(174, 54);
-            this.txt_choiceContent.Name = "txt_choiceContent";
-            this.txt_choiceContent.Size = new System.Drawing.Size(350, 30);
-            this.txt_choiceContent.TabIndex = 0;
+            this.lbl_lastQuesID.AutoSize = true;
+            this.lbl_lastQuesID.ForeColor = System.Drawing.Color.Red;
+            this.lbl_lastQuesID.Location = new System.Drawing.Point(142, 26);
+            this.lbl_lastQuesID.Name = "lbl_lastQuesID";
+            this.lbl_lastQuesID.Size = new System.Drawing.Size(115, 25);
+            this.lbl_lastQuesID.TabIndex = 5;
+            this.lbl_lastQuesID.Text = "Question ID";
             // 
-            // label19
+            // label32
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(25, 59);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(143, 25);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Choice content";
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(21, 56);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(171, 25);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Question Content:";
             // 
-            // label22
+            // txt_lastQuesContent
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(25, 99);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 25);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Char";
+            this.txt_lastQuesContent.Location = new System.Drawing.Point(28, 81);
+            this.txt_lastQuesContent.Name = "txt_lastQuesContent";
+            this.txt_lastQuesContent.ReadOnly = true;
+            this.txt_lastQuesContent.Size = new System.Drawing.Size(496, 30);
+            this.txt_lastQuesContent.TabIndex = 6;
             // 
-            // btn_choiceAdd
+            // button1
             // 
-            this.btn_choiceAdd.Location = new System.Drawing.Point(439, 97);
-            this.btn_choiceAdd.Name = "btn_choiceAdd";
-            this.btn_choiceAdd.Size = new System.Drawing.Size(75, 32);
-            this.btn_choiceAdd.TabIndex = 2;
-            this.btn_choiceAdd.Text = "Add";
-            this.btn_choiceAdd.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(408, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 38);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cmbo_choiceChar
+            // cho1radio
             // 
-            this.cmbo_choiceChar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbo_choiceChar.FormattingEnabled = true;
-            this.cmbo_choiceChar.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
-            this.cmbo_choiceChar.Location = new System.Drawing.Point(174, 96);
-            this.cmbo_choiceChar.Name = "cmbo_choiceChar";
-            this.cmbo_choiceChar.Size = new System.Drawing.Size(243, 33);
-            this.cmbo_choiceChar.TabIndex = 3;
+            this.cho1radio.AutoSize = true;
+            this.cho1radio.Checked = true;
+            this.cho1radio.ForeColor = System.Drawing.Color.Red;
+            this.cho1radio.Location = new System.Drawing.Point(408, 114);
+            this.cho1radio.Name = "cho1radio";
+            this.cho1radio.Size = new System.Drawing.Size(106, 29);
+            this.cho1radio.TabIndex = 8;
+            this.cho1radio.TabStop = true;
+            this.cho1radio.Text = "Is model";
+            this.cho1radio.UseVisualStyleBackColor = true;
+            // 
+            // cho2radio
+            // 
+            this.cho2radio.AutoSize = true;
+            this.cho2radio.ForeColor = System.Drawing.Color.Red;
+            this.cho2radio.Location = new System.Drawing.Point(408, 168);
+            this.cho2radio.Name = "cho2radio";
+            this.cho2radio.Size = new System.Drawing.Size(106, 29);
+            this.cho2radio.TabIndex = 9;
+            this.cho2radio.Text = "Is model";
+            this.cho2radio.UseVisualStyleBackColor = true;
+            // 
+            // cho3radio
+            // 
+            this.cho3radio.AutoSize = true;
+            this.cho3radio.ForeColor = System.Drawing.Color.Red;
+            this.cho3radio.Location = new System.Drawing.Point(408, 222);
+            this.cho3radio.Name = "cho3radio";
+            this.cho3radio.Size = new System.Drawing.Size(106, 29);
+            this.cho3radio.TabIndex = 10;
+            this.cho3radio.Text = "Is model";
+            this.cho3radio.UseVisualStyleBackColor = true;
+            // 
+            // cho4radio
+            // 
+            this.cho4radio.AutoSize = true;
+            this.cho4radio.ForeColor = System.Drawing.Color.Red;
+            this.cho4radio.Location = new System.Drawing.Point(408, 276);
+            this.cho4radio.Name = "cho4radio";
+            this.cho4radio.Size = new System.Drawing.Size(106, 29);
+            this.cho4radio.TabIndex = 11;
+            this.cho4radio.Text = "Is model";
+            this.cho4radio.UseVisualStyleBackColor = true;
+            // 
+            // grp_TFQ
+            // 
+            this.grp_TFQ.Controls.Add(this.txt_lastquesContentTFQ);
+            this.grp_TFQ.Controls.Add(this.btn_TfqAdd);
+            this.grp_TFQ.Controls.Add(this.label28);
+            this.grp_TFQ.Controls.Add(this.cmbo_TfqModel);
+            this.grp_TFQ.Controls.Add(this.label26);
+            this.grp_TFQ.Controls.Add(this.lbl_lastquesIdTFQ);
+            this.grp_TFQ.Controls.Add(this.label30);
+            this.grp_TFQ.Enabled = false;
+            this.grp_TFQ.Location = new System.Drawing.Point(25, 506);
+            this.grp_TFQ.Name = "grp_TFQ";
+            this.grp_TFQ.Size = new System.Drawing.Size(496, 201);
+            this.grp_TFQ.TabIndex = 43;
+            this.grp_TFQ.TabStop = false;
+            this.grp_TFQ.Text = "TFQ";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(25, 26);
+            this.label26.Location = new System.Drawing.Point(19, 152);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(84, 25);
-            this.label26.TabIndex = 4;
-            this.label26.Text = "Choices";
+            this.label26.Size = new System.Drawing.Size(134, 25);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Model answer";
             // 
-            // cmbo_quesChoiceS
+            // cmbo_TfqModel
             // 
-            this.cmbo_quesChoiceS.FormattingEnabled = true;
-            this.cmbo_quesChoiceS.Location = new System.Drawing.Point(174, 15);
-            this.cmbo_quesChoiceS.Name = "cmbo_quesChoiceS";
-            this.cmbo_quesChoiceS.Size = new System.Drawing.Size(350, 33);
-            this.cmbo_quesChoiceS.TabIndex = 5;
+            this.cmbo_TfqModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbo_TfqModel.FormattingEnabled = true;
+            this.cmbo_TfqModel.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cmbo_TfqModel.Location = new System.Drawing.Point(160, 148);
+            this.cmbo_TfqModel.Name = "cmbo_TfqModel";
+            this.cmbo_TfqModel.Size = new System.Drawing.Size(121, 33);
+            this.cmbo_TfqModel.TabIndex = 2;
+            // 
+            // btn_TfqAdd
+            // 
+            this.btn_TfqAdd.Location = new System.Drawing.Point(340, 145);
+            this.btn_TfqAdd.Name = "btn_TfqAdd";
+            this.btn_TfqAdd.Size = new System.Drawing.Size(97, 38);
+            this.btn_TfqAdd.TabIndex = 12;
+            this.btn_TfqAdd.Text = "Add";
+            this.btn_TfqAdd.UseVisualStyleBackColor = true;
+            this.btn_TfqAdd.Click += new System.EventHandler(this.btn_TfqAdd_Click);
+            // 
+            // txt_lastquesContentTFQ
+            // 
+            this.txt_lastquesContentTFQ.Location = new System.Drawing.Point(7, 96);
+            this.txt_lastquesContentTFQ.Name = "txt_lastquesContentTFQ";
+            this.txt_lastquesContentTFQ.ReadOnly = true;
+            this.txt_lastquesContentTFQ.Size = new System.Drawing.Size(482, 30);
+            this.txt_lastquesContentTFQ.TabIndex = 15;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(19, 67);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(171, 25);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Question Content:";
+            // 
+            // lbl_lastquesIdTFQ
+            // 
+            this.lbl_lastquesIdTFQ.AutoSize = true;
+            this.lbl_lastquesIdTFQ.ForeColor = System.Drawing.Color.Red;
+            this.lbl_lastquesIdTFQ.Location = new System.Drawing.Point(140, 37);
+            this.lbl_lastquesIdTFQ.Name = "lbl_lastquesIdTFQ";
+            this.lbl_lastquesIdTFQ.Size = new System.Drawing.Size(115, 25);
+            this.lbl_lastquesIdTFQ.TabIndex = 14;
+            this.lbl_lastquesIdTFQ.Text = "Question ID";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(19, 37);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 25);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Question ID:";
             // 
             // instructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 585);
+            this.ClientSize = new System.Drawing.Size(1316, 753);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabCtrl_DashBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1334, 632);
-            this.MinimumSize = new System.Drawing.Size(1334, 632);
+            this.MaximumSize = new System.Drawing.Size(1334, 800);
+            this.MinimumSize = new System.Drawing.Size(1334, 800);
             this.Name = "instructorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "instructor";
@@ -1360,10 +1579,12 @@
             this.tabPage_questions.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.grp_choices.ResumeLayout(false);
+            this.grp_choices.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.grp_TFQ.ResumeLayout(false);
+            this.grp_TFQ.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1475,15 +1696,34 @@
         private System.Windows.Forms.ComboBox cmbo_quesType;
         private System.Windows.Forms.ComboBox cmbo_QuesCourse;
         private System.Windows.Forms.TextBox txt_searchText;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grp_choices;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.TextBox txt_choiceContent;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txt_choice1Content;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btn_choiceAdd;
-        private System.Windows.Forms.ComboBox cmbo_choiceChar;
-        private System.Windows.Forms.ComboBox cmbo_quesChoiceS;
+        private System.Windows.Forms.TextBox txt_choice3Content;
+        private System.Windows.Forms.TextBox txt_choice2Content;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txt_choice4Content;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbl_lastQuesID;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txt_lastQuesContent;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton cho4radio;
+        private System.Windows.Forms.RadioButton cho3radio;
+        private System.Windows.Forms.RadioButton cho2radio;
+        private System.Windows.Forms.RadioButton cho1radio;
+        private System.Windows.Forms.GroupBox grp_TFQ;
+        private System.Windows.Forms.ComboBox cmbo_TfqModel;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btn_TfqAdd;
+        private System.Windows.Forms.TextBox txt_lastquesContentTFQ;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lbl_lastquesIdTFQ;
+        private System.Windows.Forms.Label label30;
     }
 }
