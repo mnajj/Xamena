@@ -131,10 +131,8 @@ C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\bin\
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csprojAssemblyReference.cache
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
-C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.generateExam.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.instructorForm.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.LogIn.resources
-C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Reports.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Properties.Resources.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.csproj.GenerateResource.cache
@@ -184,3 +182,4 @@ C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system
 C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.exe
 C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination system.pdb
 C:\Users\DELL\repos\Last\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Exam.resources
+C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Exam.resources

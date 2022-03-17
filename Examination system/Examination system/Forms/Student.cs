@@ -12,6 +12,7 @@ namespace Examination_system.Forms
 		public int StudentId { get; set; }
 		public string CourseName { get; set; }
 		public int CourseId { get; set; }
+		public Model.Exam RandExam { get; set; }
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
 		public Student(LogIn prevForm, string userName)
@@ -23,7 +24,6 @@ namespace Examination_system.Forms
 				.Where(s => s.User.U_UserName == UserName)
 				.Select(s => s.Std_Id)
 				.First();
-
 			GreetingUser();
 		}
 
@@ -36,13 +36,40 @@ namespace Examination_system.Forms
 		{
 			ChooseCrsExamDialog chooseCrsExamDialog = new ChooseCrsExamDialog(this);
 			chooseCrsExamDialog.ShowDialog();
-			CourseId = Ent.Courses
-				.Where(c => c.Crs_Name == CourseName)
-				.Select(c => c.Crs_Id)
-				.FirstOrDefault();
-			Exam examForm = new Exam(this);
-			examForm.Show();
-			this.Hide();
+			if (String.IsNullOrEmpty(CourseName) == false)
+			{
+				CourseId = Ent.Courses
+					.Where(c => c.Crs_Name == CourseName)
+					.Select(c => c.Crs_Id)
+					.FirstOrDefault();
+				PickRandomExam();
+			}
+		}
+
+		private void PickRandomExam()
+		{
+			try
+			{
+				RandExam = Ent.Exams
+					.Where(e => e.Course.Crs_Name == CourseName)
+					.OrderBy(x => Guid.NewGuid())
+					.Take(1)
+					.FirstOrDefault();
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"{e.Message}");
+			}
+			if (RandExam != null)
+			{
+				Exam examForm = new Exam(this);
+				examForm.Show();
+				this.Hide();
+			}
+			else
+			{
+				MessageBox.Show("No Exams Avaliable for this Course");
+			}
 		}
 	}
 }

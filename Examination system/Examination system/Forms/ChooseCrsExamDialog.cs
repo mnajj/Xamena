@@ -26,10 +26,20 @@ namespace Examination_system.Forms
 		private void ShowAvaliableCourses()
 		{
 			var stdCrs = Ent.Std_Crs
-				.Where(x => x.Std_Id == PrevForm.StudentId);
-			foreach (var item in stdCrs)
+				.Where(x => (x.Std_Id == PrevForm.StudentId)
+				&& (x.Grade == null));
+			if (stdCrs.Count() > 0)
 			{
-				comboBox1.Items.Add(item.Course.Crs_Name);
+				foreach (var item in stdCrs)
+				{
+					comboBox1.Items.Add(item.Course.Crs_Name);
+				}
+			}
+			else
+			{
+				label1.Text = "No Avaliabe Course";
+				label1.ForeColor = Color.Red;
+				Start.Enabled = false;
 			}
 		}
 

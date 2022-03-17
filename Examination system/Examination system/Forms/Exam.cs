@@ -12,8 +12,7 @@ namespace Examination_system.Forms
 	{
 		public Student PrevForm { get; set; }
 		public List<Question> Questions { get; set; }
-		public Model.Exam RandExam { get; set; }
-		public int Iterator { get; set; } = 0;
+		public int Iterator { get; set; }
 		public Dictionary<int,char> Answers { get; set; } = new Dictionary<int,char>();
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
@@ -21,34 +20,14 @@ namespace Examination_system.Forms
 		{
 			InitializeComponent();
 			this.PrevForm = prevForm;
-			PickRandomExam();
+			GetExamQuestions();
 			ShowExamFirstQuestion();
-		}
-
-		private void PickRandomExam()
-		{
-			try
-			{
-				RandExam = Ent.Exams
-					.OrderBy(x => Guid.NewGuid())
-					.Take(1)
-					.FirstOrDefault();
-			}
-			catch (Exception e)
-			{
-				MessageBox.Show($"{e}");
-			}
-			if (RandExam != null)
-			{
-				GetExamQuestions();
-				ShowExamFirstQuestion();
-			}
 		}
 
 		private void GetExamQuestions()
 		{
 			Questions = Ent.Exm_Ques
-				.Where(x => (x.Exam.Exm_Id == RandExam.Exm_Id)
+				.Where(x => (x.Exam.Exm_Id == PrevForm.RandExam.Exm_Id)
 				&& (x.Question.Crs_Id == PrevForm.CourseId))
 				.Select(x => x.Question)
 				.ToList();
@@ -56,6 +35,7 @@ namespace Examination_system.Forms
 
 		private void ShowExamFirstQuestion()
 		{
+			Iterator = 0;
 			label1.Text = Questions[Iterator].Ques_Content;
 			if (Questions[Iterator].Ques_Type == "MCQ")
 			{
@@ -121,9 +101,22 @@ namespace Examination_system.Forms
 				if (Iterator == 9)
 				{
 					SaveAnswersToDb();
+					CorrectExam();
 					this.PrevForm.Show();
 					this.Close();
 				}
+			}
+		}
+
+		private void CorrectExam()
+		{
+			try
+			{
+				Ent.sp_CorrectStdExam(PrevForm.StudentId, PrevForm.RandExam.Exm_Id);
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"{e.Message}");
 			}
 		}
 
@@ -137,7 +130,7 @@ namespace Examination_system.Forms
 				{
 					comm.CommandType = CommandType.StoredProcedure;
 					var param1 = comm.Parameters.AddWithValue("std_id", PrevForm.StudentId);
-					var param2 = comm.Parameters.AddWithValue("exm_id", RandExam.Exm_Id);
+					var param2 = comm.Parameters.AddWithValue("exm_id", PrevForm.RandExam.Exm_Id);
 					var param3 = comm.Parameters.AddWithValue("ans_dict", dt);
 					param1.SqlDbType = SqlDbType.Int;
 					param2.SqlDbType = SqlDbType.Int;
