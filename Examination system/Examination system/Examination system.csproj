@@ -316,6 +316,9 @@
     <EmbeddedResource Include="Forms\ChooseCrsExamDialog.resx">
       <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Exam.resx">
+      <DependentUpon>Exam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\instructorForm.resx">
       <DependentUpon>instructorForm.cs</DependentUpon>
     </EmbeddedResource>

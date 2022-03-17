@@ -10,7 +10,8 @@ namespace Examination_system.Forms
 		public LogIn PrevForm { get; set; }
 		public string UserName { get; set; }
 		public int StudentId { get; set; }
-		public string ExamCourse { get; set; }
+		public string CourseName { get; set; }
+		public int CourseId { get; set; }
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
 		public Student(LogIn prevForm, string userName)
@@ -35,6 +36,13 @@ namespace Examination_system.Forms
 		{
 			ChooseCrsExamDialog chooseCrsExamDialog = new ChooseCrsExamDialog(this);
 			chooseCrsExamDialog.ShowDialog();
+			CourseId = Ent.Courses
+				.Where(c => c.Crs_Name == CourseName)
+				.Select(c => c.Crs_Id)
+				.FirstOrDefault();
+			Exam examForm = new Exam(this);
+			examForm.Show();
+			this.Hide();
 		}
 	}
 }

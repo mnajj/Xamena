@@ -35,7 +35,7 @@ namespace Examination_system.Forms
 
 		private void Start_Click(object sender, EventArgs e)
 		{
-			PrevForm.ExamCourse = comboBox1.Text;
+			PrevForm.CourseName = comboBox1.Text;
 			this.Close();
 		}
 	}
