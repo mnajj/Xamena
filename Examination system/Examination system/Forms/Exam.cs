@@ -12,7 +12,7 @@ namespace Examination_system.Forms
 	{
 		public Student PrevForm { get; set; }
 		public List<Question> Questions { get; set; }
-		public int Iterator { get; set; }
+		public int Iterator { get; set; } = 0;
 		public Dictionary<int,char> Answers { get; set; } = new Dictionary<int,char>();
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
@@ -35,7 +35,6 @@ namespace Examination_system.Forms
 
 		private void ShowExamFirstQuestion()
 		{
-			Iterator = 0;
 			label1.Text = Questions[Iterator].Ques_Content;
 			if (Questions[Iterator].Ques_Type == "MCQ")
 			{
@@ -49,7 +48,7 @@ namespace Examination_system.Forms
 
 		private void AssignStudentAnswer()
 		{
-			char ans = '\0';
+			char ans = 'Z';
 			if (radioButton1.Checked) ans = 'A';
 			else if (radioButton2.Checked) ans = 'B';
 			else if (radioButton3.Checked) ans = 'C';
@@ -80,9 +79,13 @@ namespace Examination_system.Forms
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
+			if (Iterator == 0)
+			{
+				AssignStudentAnswer();
+			}
+			Iterator++;
 			if (Iterator < 9)
 			{
-				this.Iterator++;
 				if (Iterator == 8)
 				{
 					button1.Text = "Finish";
@@ -98,13 +101,14 @@ namespace Examination_system.Forms
 				}
 				AssignStudentAnswer();
 				UnCheckedRadioButtons();
-				if (Iterator == 9)
-				{
-					SaveAnswersToDb();
-					CorrectExam();
-					this.PrevForm.Show();
-					this.Close();
-				}
+			}
+			else
+			{
+				AssignStudentAnswer();
+				SaveAnswersToDb();
+				CorrectExam();
+				this.PrevForm.Show();
+				this.Close();
 			}
 		}
 

@@ -29,7 +29,7 @@ namespace Examination_system.Forms
 
 		private void GreetingUser()
 		{
-			GreetingLabel.Text = $"Welcome, {UserName}";
+			label1.Text = $"{UserName}";
 		}
 
 		private void StartExam_Click(object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace Examination_system.Forms
 			{
 				MessageBox.Show("No Exams Avaliable for this Course");
 			}
+		}
+
+		private void Enrool_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

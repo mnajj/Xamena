@@ -371,6 +371,7 @@
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
       <LastGenOutput>ExaminationSystem.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\cb8cbed14b117eff9288d794d898d39e.jpg" />
     <None Include="images\Capture2-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
