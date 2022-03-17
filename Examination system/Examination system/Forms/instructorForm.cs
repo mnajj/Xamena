@@ -163,7 +163,6 @@ namespace Examination_system.Forms
         {
             if (lst_department.SelectedItems.Count > 0)
             {
-               
                 txt_deptName.Text = lst_department.SelectedItems[0].SubItems[1].Text;
                 txt_deptLoc.Text = lst_department.SelectedItems[0].SubItems[2].Text;
                 txt_deptId.Text = lst_department.SelectedItems[0].SubItems[0].Text;
@@ -198,19 +197,16 @@ namespace Examination_system.Forms
                     }
                 }
                 else {
-                    
                     MessageBox.Show("Not found");
                 }
                 txt_deptId.Text = txt_deptLoc.Text = string.Empty;
-
-
             }
             else
             {
                 MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
             }
         }
-        
+
 
         private void btn_deptInsert_Click(object sender, EventArgs e)
         {
@@ -228,15 +224,16 @@ namespace Examination_system.Forms
                 }
                 catch (Exception)
                 {
-                    
+
                 }
-              
+
                 ent.SaveChanges();
             }
             else {
                 MessageBox.Show("Enter missing filed data");
             }
         }
+
         private void displayDepartments() {
             lst_department.Items.Clear();
             var result = ent.Departments.Select(dep => dep).ToList();
@@ -290,16 +287,213 @@ namespace Examination_system.Forms
                 }
                 catch (Exception)
                 {
-                    
+
                 }
                 ent.SaveChanges();
                 displayDepartments();
-
             }
             else {
                 MessageBox.Show("Select department to delete");
             }
         }
-        #endregion
-    }
+		#endregion
+
+		#region Student
+		private void DisplayStd_Click(object sender, EventArgs e)
+		{
+			StdList.Items.Clear();
+			var result = ent.Students.Select(s => s).ToList();
+			if (result.Count > 0)
+			{
+				foreach (var item in result)
+				{
+					string[] row =
+					{
+						item.Std_Id.ToString(),
+						item.User.U_UserName,
+						item.Department.Dept_Name,
+						item.Std_Fname,
+						item.Std_Lname,
+						item.Std_BOD.ToString(),
+						item.Std_Address
+					};
+					ListViewItem Rowitem = new ListViewItem(row);
+					StdList.Items.Add(Rowitem);
+				}
+			}
+		}
+
+		private void InsertStd_Click(object sender, EventArgs e)
+		{
+			if (StdUserNameField.Text != String.Empty
+				&& StdDepartmentFiled.Text != String.Empty
+				&& StdFnameField.Text != String.Empty
+				&& StdLNameFld.Text != String.Empty
+				&& StdBirthFld.Text != String.Empty
+				&& StdAddressFld.Text != String.Empty
+				)
+			{
+				int userName = ent.Users
+					.Where(u => u.U_UserName == StdUserNameField.Text)
+					.Select(u => u.U_Id)
+					.FirstOrDefault();
+				int deptId = ent.Departments
+					.Where(d => d.Dept_Name == StdDepartmentFiled.Text)
+					.Select(d => d.Dept_Id)
+					.FirstOrDefault();
+				string fName = StdFnameField.Text;
+				string lName = StdLNameFld.Text;
+				DateTime bod = StdBirthFld.Value;
+				string address = StdAddressFld.Text;
+
+				try
+				{
+					ent.InsertNewStd(userName, deptId, fName, lName, bod, address);
+					MessageBox.Show("Student Inserted Successfully");
+				}
+				catch (Exception)
+				{
+
+				}
+				ent.SaveChanges();
+			}
+			else
+			{
+				MessageBox.Show("Enter missing filed data");
+			}
+		}
+
+		private void UpdateStd_Click(object sender, EventArgs e)
+		{
+			if (StdIdField.Text != String.Empty
+				&& StdUserNameField.Text != String.Empty
+				&& StdDepartmentFiled.Text != String.Empty
+				&& StdFnameField.Text != String.Empty
+				&& StdLNameFld.Text != String.Empty
+				&& StdBirthFld.Text != String.Empty
+				&& StdAddressFld.Text != String.Empty
+				)
+			{
+				int id = int.Parse(StdIdField.Text);
+				int userNameId = ent.Users
+					.Where(u => u.U_UserName == StdUserNameField.Text)
+					.Select(u => u.U_Id)
+					.FirstOrDefault();
+				int deptId = ent.Departments
+					.Where(d => d.Dept_Name == StdDepartmentFiled.Text)
+					.Select(d => d.Dept_Id)
+					.FirstOrDefault();
+				string fName = StdFnameField.Text;
+				string lName = StdLNameFld.Text;
+				DateTime bod = StdBirthFld.Value;
+				string address = StdAddressFld.Text;
+				try
+				{
+					ent.UpdateStdInfo(id, userNameId, deptId, fName, lName, bod, address);
+					MessageBox.Show("Student Info Updated Successfully");
+				}
+				catch (Exception)
+				{
+
+				}
+				ent.SaveChanges();
+			}
+			else
+			{
+				MessageBox.Show("Enter full data to update");
+			}
+		}
+
+		private void DeleteStd_Click(object sender, EventArgs e)
+		{
+			if (StdIdField.Text != String.Empty)
+			{
+				int id = int.Parse(StdIdField.Text);
+				try
+				{
+					ent.DeleteStdById(id);
+					MessageBox.Show("Student Deleted Successfully");
+				}
+				catch (Exception)
+				{
+
+				}
+				ent.SaveChanges();
+				displayDepartments();
+			}
+			else
+			{
+				MessageBox.Show("Select department to delete");
+			}
+		}
+
+		private void DisplayStdByName_Click(object sender, EventArgs e)
+		{
+			StdList.Items.Clear();
+			if (StdFnameField.Text != String.Empty && StdLNameFld.Text != String.Empty)
+			{
+				var stds = ent.Students
+					.Where(s => s.Std_Fname == StdFnameField.Text)
+					.Where(s => s.Std_Lname == StdLNameFld.Text)
+					.ToList();
+				if (stds.Count > 0)
+				{
+					foreach (var item in stds)
+					{
+						string[] row =
+						{
+							item.Std_Id.ToString(),
+							item.User.U_UserName,
+							item.Department.Dept_Name,
+							item.Std_Fname,
+							item.Std_Lname,
+							item.Std_BOD.ToString(),
+							item.Std_Address
+						};
+						ListViewItem Rowitem = new ListViewItem(row);
+						StdList.Items.Add(Rowitem);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Not found");
+				}
+				StdIdField.Text =
+				StdUserNameField.Text =
+					StdDepartmentFiled.Text =
+					StdFnameField.Text =
+					StdLNameFld.Text =
+					StdBirthFld.Text =
+					StdAddressFld.Text = string.Empty;
+			}
+			else
+			{
+				MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+			}
+		}
+
+		private void StdList_Click(object sender, EventArgs e)
+		{
+			if (StdList.SelectedItems.Count > 0)
+			{
+				StdIdField.Text = StdList.SelectedItems[0].SubItems[0].Text;
+				StdUserNameField.Text = StdList.SelectedItems[0].SubItems[1].Text;
+				StdDepartmentFiled.Text = StdList.SelectedItems[0].SubItems[2].Text;
+				StdFnameField.Text = StdList.SelectedItems[0].SubItems[3].Text;
+				StdLNameFld.Text = StdList.SelectedItems[0].SubItems[4].Text;
+				try
+				{
+					StdBirthFld.Value = DateTime.Parse(StdList.SelectedItems[0].SubItems[5].Text);
+				}
+				catch (Exception ex)
+				{
+
+				}
+				StdAddressFld.Text = StdList.SelectedItems[0].SubItems[6].Text;
+			}
+		}
+
+		#endregion
+
+	}
 }
