@@ -807,5 +807,401 @@ namespace Examination_system.Forms
             }
 
         }
-    }
+
+		#region User
+
+		private void Button4_Click(object sender, EventArgs e)
+		{
+			DisplayUsersData();
+		}
+
+		private void DisplayUsersData()
+		{
+			UsersList.Items.Clear();
+			var result = ent.Users.Select(u => u).ToList();
+			if (result.Count > 0)
+			{
+				foreach (var item in result)
+				{
+					string[] row =
+					{
+						item.U_Id.ToString(),
+						item.U_UserName,
+						item.U_Email,
+						item.U_Password,
+						item.U_Sex
+					};
+					ListViewItem Rowitem = new ListViewItem(row);
+					UsersList.Items.Add(Rowitem);
+				}
+			}
+		}
+
+		private void UpdateUser_Click(object sender, EventArgs e)
+		{
+			if (
+				UserIdFld.Text != String.Empty
+				&& UserUserNameFld.Text != String.Empty
+				&& UserPassFld.Text != String.Empty
+				&& UserMailFld.Text != String.Empty
+				&& UserSexFld.Text != String.Empty
+				&& (radioButton1.Checked == true || radioButton2.Checked == true)
+				)
+			{
+				if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
+				{
+					MessageBox.Show("Another User has the same user name. Please, enter a new one");
+					return;
+				}
+				else
+				{
+					bool isStd = false;
+					if (radioButton1.Checked == true)
+					{
+						isStd = true;
+					}
+					else
+					{
+						isStd = false;
+					}
+					try
+					{
+						ent.UpdateUser(int.Parse(UserIdFld.Text), UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+						MessageBox.Show("User Info Updated Successfully");
+					}
+					catch (Exception ex)
+					{
+
+					}
+					ent.SaveChanges();
+					DisplayUsersData();
+				}
+			}
+			else
+			{
+				MessageBox.Show("Enter full data to update");
+			}
+
+		}
+
+		private void InsertUserBtn_Click(object sender, EventArgs e)
+		{
+			if (UserUserNameFld.Text != String.Empty
+				&& UserPassFld.Text != String.Empty
+				&& UserMailFld.Text != String.Empty
+				&& UserSexFld.Text != String.Empty
+				&& (radioButton1.Checked == true || radioButton2.Checked == true)
+				)
+			{
+				if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
+				{
+					MessageBox.Show("Another User has the same user name. Please, enter a new one");
+					return;
+				}
+				else
+				{
+					bool isStd = false;
+					if (radioButton1.Checked == true)
+					{
+						isStd = true;
+					}
+					else
+					{
+						isStd = false;
+					}
+					try
+					{
+						ent.InsertNewUser(UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+						MessageBox.Show("Student Inserted Successfully");
+					}
+					catch (Exception ex)
+					{
+
+					}
+				}
+				ent.SaveChanges();
+				DisplayUsersData();
+			}
+			else
+			{
+				MessageBox.Show("Enter missing filed data");
+			}
+
+		}
+
+
+		private void DeleteUser_Click(object sender, EventArgs e)
+		{
+			if (UserUserNameFld.Text != String.Empty)
+			{
+				try
+				{
+					ent.DeleteUserByUserName(UserUserNameFld.Text);
+					MessageBox.Show("User Deleted Successfully");
+				}
+				catch (Exception ex)
+				{
+
+				}
+				ent.SaveChanges();
+				displayStudentsData();
+			}
+			else
+			{
+				MessageBox.Show("Select User to delete");
+			}
+		}
+
+		private void DisplayUserByUserName_Click(object sender, EventArgs e)
+		{
+			UsersList.Items.Clear();
+			if (UserUserNameFld.Text != String.Empty)
+			{
+				var users = ent.Users
+					.Where(u => u.U_UserName == UserUserNameFld.Text)
+					.ToList();
+				if (users.Count > 0)
+				{
+					foreach (var item in users)
+					{
+						string[] row =
+						{
+							item.U_Id.ToString(),
+							item.U_UserName,
+							item.U_Email,
+							item.U_Password,
+							item.U_Sex
+						};
+						ListViewItem Rowitem = new ListViewItem(row);
+						StdList.Items.Add(Rowitem);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Not found");
+				}
+				UserUserNameFld.Text =
+				 UserPassFld.Text =
+				 UserMailFld.Text =
+				 UserSexFld.Text = String.Empty;
+				radioButton1.Checked = radioButton2.Checked = false;
+			}
+			else
+			{
+				MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+			}
+		}
+
+		private void UsersList_Click(object sender, EventArgs e)
+		{
+			if (UsersList.SelectedItems.Count > 0)
+			{
+				UserIdFld.Text = UsersList.SelectedItems[0].SubItems[0].Text;
+				UserUserNameFld.Text = UsersList.SelectedItems[0].SubItems[1].Text;
+				UserMailFld.Text = UsersList.SelectedItems[0].SubItems[2].Text;
+				UserPassFld.Text = UsersList.SelectedItems[0].SubItems[3].Text;
+				UserSexFld.Text = UsersList.SelectedItems[0].SubItems[4].Text;
+			}
+		}
+		#endregion
+
+		#region Instructor
+		private void DisplayIns_Click(object sender, EventArgs e)
+		{
+			DisplayInsData();
+		}
+		private void DisplayInsData()
+		{
+			InsList.Items.Clear();
+			var result = ent.Instructors.Select(i => i).ToList();
+			if (result.Count > 0)
+			{
+				foreach (var item in result)
+				{
+					string[] row =
+					{
+						item.Ins_Id.ToString(),
+						item.User.U_UserName,
+						item.Department.Dept_Name,
+						item.Ins_Fname,
+						item.Ins_Lname,
+						item.Ins_Degree,
+						item.Ins_Salary.ToString()
+					};
+					ListViewItem Rowitem = new ListViewItem(row);
+					InsList.Items.Add(Rowitem);
+				}
+			}
+		}
+
+
+		private void InsertIns_Click(object sender, EventArgs e)
+		{
+			if (InsUserNameFld.Text != String.Empty
+				&& InsDeptFld.Text != String.Empty
+				&& InsFnameFld.Text != String.Empty
+				&& InsLnameFld.Text != String.Empty
+				&& InsDegFld.Text != String.Empty
+				&& InsSalaryFld.Text != String.Empty
+				)
+			{
+				int userName = ent.Users
+					.Where(u => u.U_UserName == InsUserNameFld.Text)
+					.Select(u => u.U_Id)
+					.FirstOrDefault();
+				int deptId = ent.Departments
+					.Where(d => d.Dept_Name == InsDeptFld.Text)
+					.Select(d => d.Dept_Id)
+					.FirstOrDefault();
+				string fName = InsFnameFld.Text;
+				string lName = InsLnameFld.Text;
+				string deg = InsDegFld.Text;
+				int salary = int.Parse(InsSalaryFld.Text);
+
+				try
+				{
+					ent.InsertInstructor(userName, deptId, fName, lName, deg, salary);
+					MessageBox.Show("Instructor Inserted Successfully");
+				}
+				catch (Exception ex) { }
+				ent.SaveChanges();
+				DisplayInsData();
+			}
+			else
+			{
+				MessageBox.Show("Enter missing filed data");
+			}
+
+		}
+
+		private void UpdateIns_Click(object sender, EventArgs e)
+		{
+			if (
+				InsIdFld.Text != String.Empty
+				&& InsUserNameFld.Text != String.Empty
+				&& InsDeptFld.Text != String.Empty
+				&& InsFnameFld.Text != String.Empty
+				&& InsLnameFld.Text != String.Empty
+				&& InsDegFld.Text != String.Empty
+				&& InsSalaryFld.Text != String.Empty
+				)
+			{
+				int id = int.Parse(InsIdFld.Text);
+				int userNameId = ent.Users
+					.Where(u => u.U_UserName == InsUserNameFld.Text)
+					.Select(u => u.U_Id)
+					.FirstOrDefault();
+				int deptId = ent.Departments
+					.Where(d => d.Dept_Name == InsDeptFld.Text)
+					.Select(d => d.Dept_Id)
+					.FirstOrDefault();
+				string fName = InsFnameFld.Text;
+				string lName = InsLnameFld.Text;
+				string deg = InsDegFld.Text;
+				int salary = int.Parse(InsSalaryFld.Text);
+				try
+				{
+					ent.UpdateInstructor(id, userNameId, deptId, fName, lName, deg, salary);
+					MessageBox.Show("Instructor Info Updated Successfully");
+				}
+				catch (Exception)
+				{
+
+				}
+				ent.SaveChanges();
+				DisplayInsData();
+			}
+			else
+			{
+				MessageBox.Show("Enter full data to update");
+			}
+		}
+
+		private void DeleteIns_Click(object sender, EventArgs e)
+		{
+			if (InsIdFld.Text != String.Empty)
+			{
+				int id = int.Parse(InsIdFld.Text);
+				try
+				{
+					ent.DeleteInstructor(id);
+					MessageBox.Show("Instructor Deleted Successfully");
+				}
+				catch (Exception ex)
+				{
+
+				}
+				ent.SaveChanges();
+				DisplayInsData();
+			}
+			else
+			{
+				MessageBox.Show("Select Instructor to delete");
+			}
+		}
+
+		private void DisplayInsByName_Click(object sender, EventArgs e)
+		{
+			InsList.Items.Clear();
+			if (InsFnameFld.Text != String.Empty && InsLnameFld.Text != String.Empty)
+			{
+				var inss = ent.Instructors
+					.Where(s => s.Ins_Fname == InsFnameFld.Text)
+					.Where(s => s.Ins_Lname == InsLnameFld.Text)
+					.ToList();
+				if (inss.Count > 0)
+				{
+					foreach (var item in inss)
+					{
+						string[] row =
+						{
+						item.Ins_Id.ToString(),
+						item.User.U_UserName,
+						item.Department.Dept_Name,
+						item.Ins_Fname,
+						item.Ins_Lname,
+						item.Ins_Degree,
+						item.Ins_Salary.ToString()
+						};
+						ListViewItem Rowitem = new ListViewItem(row);
+						InsList.Items.Add(Rowitem);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Not found");
+				}
+				InsIdFld.Text =
+				InsUserNameFld.Text =
+					InsDeptFld.Text =
+					InsFnameFld.Text =
+					InsLnameFld.Text =
+					InsDegFld.Text =
+					InsSalaryFld.Text = string.Empty;
+			}
+			else
+			{
+				MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+			}
+
+		}
+
+
+		private void InsList_Click(object sender, EventArgs e)
+		{
+			if (InsList.SelectedItems.Count > 0)
+			{
+				InsIdFld.Text = InsList.SelectedItems[0].SubItems[0].Text;
+				InsUserNameFld.Text = InsList.SelectedItems[0].SubItems[1].Text;
+				InsDeptFld.Text = InsList.SelectedItems[0].SubItems[2].Text;
+				InsFnameFld.Text = InsList.SelectedItems[0].SubItems[3].Text;
+				InsLnameFld.Text = InsList.SelectedItems[0].SubItems[4].Text;
+				InsDegFld.Text = InsList.SelectedItems[0].SubItems[5].Text;
+				InsSalaryFld.Text = InsList.SelectedItems[0].SubItems[6].Text;
+			}
+		}
+
+		#endregion
+
+	}
 }

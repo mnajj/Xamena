@@ -78,11 +78,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ChooseCrsExamDialog.cs">
+    <Compile Include="Forms\Dialogs\ChooseCrsExamDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChooseCrsExamDialog.Designer.cs">
+    <Compile Include="Forms\Dialogs\ChooseCrsExamDialog.Designer.cs">
       <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\CourseEnrollDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\CourseEnrollDialog.Designer.cs">
+      <DependentUpon>CourseEnrollDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Exam.cs">
       <SubType>Form</SubType>
@@ -314,8 +320,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ChooseCrsExamDialog.resx">
+    <EmbeddedResource Include="Forms\Dialogs\ChooseCrsExamDialog.resx">
       <DependentUpon>ChooseCrsExamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\CourseEnrollDialog.resx">
+      <DependentUpon>CourseEnrollDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Exam.resx">
       <DependentUpon>Exam.cs</DependentUpon>
@@ -372,6 +381,10 @@
       <DependentUpon>ExaminationSystem.edmx</DependentUpon>
       <LastGenOutput>ExaminationSystem.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\image_processing20200415-30469-4yiukf.png" />
+    <None Include="Resources\image_processing20210504-13513-dw5uip.jpg" />
+    <None Include="Resources\image_processing2055210427-14665-20ui4t.png" />
+    <None Include="Resources\image_processing20210504-13513-xqr1s1.jpg" />
     <None Include="Resources\cb8cbed14b117eff9288d794d898d39e.jpg" />
     <None Include="images\Capture2-removebg-preview.png" />
   </ItemGroup>

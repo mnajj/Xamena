@@ -79,5 +79,45 @@ namespace Examination_system.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20200415_30469_4yiukf {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20200415-30469-4yiukf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20210504_13513_dw5uip {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20210504-13513-dw5uip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20210504_13513_xqr1s1 {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20210504-13513-xqr1s1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing2055210427_14665_20ui4t {
+            get {
+                object obj = ResourceManager.GetObject("image_processing2055210427-14665-20ui4t", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

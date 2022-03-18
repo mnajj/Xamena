@@ -13,7 +13,7 @@ namespace Examination_system.Forms
 		public Student PrevForm { get; set; }
 		public List<Question> Questions { get; set; }
 		public int Iterator { get; set; } = 0;
-		public Dictionary<int,char> Answers { get; set; } = new Dictionary<int,char>();
+		public Dictionary<int, char> Answers { get; set; } = new Dictionary<int, char>();
 		public ExamSystemEntities Ent { get; set; } = new ExamSystemEntities();
 
 		public Exam(Student prevForm)

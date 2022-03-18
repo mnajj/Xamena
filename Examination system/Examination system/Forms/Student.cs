@@ -1,4 +1,5 @@
-﻿using Examination_system.Model;
+﻿using Examination_system.Forms.Dialogs;
+using Examination_system.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -74,7 +75,8 @@ namespace Examination_system.Forms
 
 		private void Enrool_Click(object sender, EventArgs e)
 		{
-
+			CourseEnrollDialog enrollDlg = new CourseEnrollDialog(this);
+			enrollDlg.ShowDialog();
 		}
 	}
 }
