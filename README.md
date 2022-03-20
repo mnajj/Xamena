@@ -13,5 +13,5 @@ A project submitted in partial fulfillment of the requirement to complete Advanc
 - [Mohab Alnajjar](https://github.com/mo662008)
 
 ## Tools
-![Pic](https://imgur.com/EggEtJk.png)
+![Pic](https://imgur.com/80Gm5H7.png)
 ![Pic](https://imgur.com/UN2OvHU.png)
