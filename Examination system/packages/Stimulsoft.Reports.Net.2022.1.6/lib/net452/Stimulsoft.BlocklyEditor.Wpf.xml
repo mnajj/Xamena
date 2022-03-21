@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.BlocklyEditor.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Stimulsoft.BlocklyEditor.Wpf.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.BlocklyEditor.Wpf.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.BlocklyEditor.Wpf.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyQuickStartWindow">
+            <summary>
+            StiBlocklyQuickStartWindow
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyQuickStartWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyEditorControl">
+            <summary>
+            StiBlocklyEditorControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyEditorControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyEditorWindow">
+            <summary>
+            StiBlocklyEditorWindow
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.BlocklyEditor.Wpf.StiBlocklyEditorWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.BlocklyEditor.Wpf.StiInstallWebView2MessageWindow">
+            <summary>
+            StiInstallWebView2MessageWindow
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.BlocklyEditor.Wpf.StiInstallWebView2MessageWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

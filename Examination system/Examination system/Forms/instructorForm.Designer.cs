@@ -214,8 +214,16 @@
 			this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabPage_Reports = new System.Windows.Forms.TabPage();
+			this.StiReportViewerControl = new Stimulsoft.Report.Viewer.StiViewerControl();
+			this.ReportsComboBox = new System.Windows.Forms.ComboBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.StudentperDepartmentReport = new Stimulsoft.Report.StiReport();
+			this.StudentGradePerCourse = new Stimulsoft.Report.StiReport();
+			this.InsCrsReport = new Stimulsoft.Report.StiReport();
+			this.CourseTopicReport = new Stimulsoft.Report.StiReport();
+			this.ExamQAndAReport = new Stimulsoft.Report.StiReport();
+			this.StdExamAnswersReport = new Stimulsoft.Report.StiReport();
 			this.tabCtrl_DashBoard.SuspendLayout();
 			this.tabpage_exams.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -229,6 +237,7 @@
 			this.grp_choices.SuspendLayout();
 			this.tabPage_users.SuspendLayout();
 			this.tabPage_instructors.SuspendLayout();
+			this.tabPage_Reports.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -284,7 +293,7 @@
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(825, 576);
 			this.tabPage1.TabIndex = 7;
-			this.tabPage1.Text = "Home";
+			this.tabPage1.Text = "Home 🏠";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// tabpage_exams
@@ -301,7 +310,7 @@
 			this.tabpage_exams.Padding = new System.Windows.Forms.Padding(2);
 			this.tabpage_exams.Size = new System.Drawing.Size(825, 576);
 			this.tabpage_exams.TabIndex = 0;
-			this.tabpage_exams.Text = "Exams";
+			this.tabpage_exams.Text = "Exams 📝";
 			this.tabpage_exams.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
@@ -640,7 +649,7 @@
 			this.tabpage_department.Padding = new System.Windows.Forms.Padding(2);
 			this.tabpage_department.Size = new System.Drawing.Size(825, 576);
 			this.tabpage_department.TabIndex = 1;
-			this.tabpage_department.Text = "Departments";
+			this.tabpage_department.Text = "Departments 🏢";
 			this.tabpage_department.UseVisualStyleBackColor = true;
 			// 
 			// date_deptHire
@@ -869,7 +878,7 @@
 			this.tabpage_students.Padding = new System.Windows.Forms.Padding(2);
 			this.tabpage_students.Size = new System.Drawing.Size(825, 576);
 			this.tabpage_students.TabIndex = 2;
-			this.tabpage_students.Text = "Students";
+			this.tabpage_students.Text = "Students 🙍";
 			this.tabpage_students.UseVisualStyleBackColor = true;
 			// 
 			// StdLNameFld
@@ -1137,7 +1146,7 @@
 			this.tabPage_questions.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage_questions.Size = new System.Drawing.Size(825, 576);
 			this.tabPage_questions.TabIndex = 3;
-			this.tabPage_questions.Text = "Questions";
+			this.tabPage_questions.Text = "Questions ❓";
 			this.tabPage_questions.UseVisualStyleBackColor = true;
 			// 
 			// grp_TFQ
@@ -1662,7 +1671,7 @@
 			this.tabPage_users.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage_users.Size = new System.Drawing.Size(825, 576);
 			this.tabPage_users.TabIndex = 4;
-			this.tabPage_users.Text = "Users";
+			this.tabPage_users.Text = "Users 📇";
 			this.tabPage_users.UseVisualStyleBackColor = true;
 			// 
 			// radioButton2
@@ -1907,7 +1916,7 @@
 			this.tabPage_instructors.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage_instructors.Size = new System.Drawing.Size(825, 576);
 			this.tabPage_instructors.TabIndex = 6;
-			this.tabPage_instructors.Text = "Instructors";
+			this.tabPage_instructors.Text = "Instructors 🧑‍🏫";
 			this.tabPage_instructors.UseVisualStyleBackColor = true;
 			// 
 			// InsDegFld
@@ -2152,14 +2161,44 @@
 			// 
 			// tabPage_Reports
 			// 
+			this.tabPage_Reports.Controls.Add(this.StiReportViewerControl);
+			this.tabPage_Reports.Controls.Add(this.ReportsComboBox);
 			this.tabPage_Reports.Location = new System.Drawing.Point(4, 29);
 			this.tabPage_Reports.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage_Reports.Name = "tabPage_Reports";
 			this.tabPage_Reports.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage_Reports.Size = new System.Drawing.Size(825, 576);
 			this.tabPage_Reports.TabIndex = 5;
-			this.tabPage_Reports.Text = "Reports";
+			this.tabPage_Reports.Text = "Reports 🧾";
 			this.tabPage_Reports.UseVisualStyleBackColor = true;
+			// 
+			// StiReportViewerControl
+			// 
+			this.StiReportViewerControl.AllowDrop = true;
+			this.StiReportViewerControl.Location = new System.Drawing.Point(6, 41);
+			this.StiReportViewerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.StiReportViewerControl.Name = "StiReportViewerControl";
+			this.StiReportViewerControl.Report = null;
+			this.StiReportViewerControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.StiReportViewerControl.ShowZoom = true;
+			this.StiReportViewerControl.Size = new System.Drawing.Size(811, 528);
+			this.StiReportViewerControl.TabIndex = 1;
+			// 
+			// ReportsComboBox
+			// 
+			this.ReportsComboBox.FormattingEnabled = true;
+			this.ReportsComboBox.Items.AddRange(new object[] {
+            "Student per Department",
+            "Student Grades per Course",
+            "Courses Names with Student Count by Instructor Id",
+            "Course Topics",
+            "Exam Questions and Answers",
+            "Student Answers at Exam"});
+			this.ReportsComboBox.Location = new System.Drawing.Point(5, 5);
+			this.ReportsComboBox.Name = "ReportsComboBox";
+			this.ReportsComboBox.Size = new System.Drawing.Size(812, 28);
+			this.ReportsComboBox.TabIndex = 0;
+			this.ReportsComboBox.SelectedIndexChanged += new System.EventHandler(this.ReportsComboBox_SelectedIndexChanged);
 			// 
 			// panel1
 			// 
@@ -2183,6 +2222,144 @@
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
+			// 
+			// StudentperDepartmentReport
+			// 
+			this.StudentperDepartmentReport.CookieContainer = null;
+			this.StudentperDepartmentReport.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.StudentperDepartmentReport.HttpHeadersContainer = null;
+			this.StudentperDepartmentReport.Key = "1add83ccc9c94802af56c81a19b1faf5";
+			this.StudentperDepartmentReport.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.StudentperDepartmentReport.ReportAlias = "Report";
+			this.StudentperDepartmentReport.ReportGuid = "06551d8e82454b3b9ef91749c967bf8a";
+			this.StudentperDepartmentReport.ReportName = "Report";
+			this.StudentperDepartmentReport.ReportSource = resources.GetString("StudentperDepartmentReport.ReportSource");
+			this.StudentperDepartmentReport.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.StudentperDepartmentReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.StudentperDepartmentReport.UseProgressInThread = false;
+			// 
+			// StudentGradePerCourse
+			// 
+			this.StudentGradePerCourse.CookieContainer = null;
+			this.StudentGradePerCourse.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.StudentGradePerCourse.HttpHeadersContainer = null;
+			this.StudentGradePerCourse.Key = "d31bc86e86874849aaf234262945fa28";
+			this.StudentGradePerCourse.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.StudentGradePerCourse.ReportAlias = "Report";
+			this.StudentGradePerCourse.ReportGuid = "b7ae149d6ef84e65b5da14dcad438f48";
+			this.StudentGradePerCourse.ReportName = "Report";
+			this.StudentGradePerCourse.ReportSource = resources.GetString("StudentGradePerCourse.ReportSource");
+			this.StudentGradePerCourse.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.StudentGradePerCourse.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.StudentGradePerCourse.UseProgressInThread = false;
+			// 
+			// InsCrsReport
+			// 
+			this.InsCrsReport.CookieContainer = null;
+			this.InsCrsReport.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.InsCrsReport.HttpHeadersContainer = null;
+			this.InsCrsReport.Key = "c135a41c3b344af0bcb84891e7ed25fa";
+			this.InsCrsReport.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.InsCrsReport.ReportAlias = "Report";
+			this.InsCrsReport.ReportGuid = "af5926e6c32a4c51915bcb431686c3c5";
+			this.InsCrsReport.ReportName = "Report";
+			this.InsCrsReport.ReportSource = resources.GetString("InsCrsReport.ReportSource");
+			this.InsCrsReport.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.InsCrsReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.InsCrsReport.UseProgressInThread = false;
+			// 
+			// CourseTopicReport
+			// 
+			this.CourseTopicReport.CookieContainer = null;
+			this.CourseTopicReport.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.CourseTopicReport.HttpHeadersContainer = null;
+			this.CourseTopicReport.Key = "dcc2b470c6dc4a61a6b9caea5a969738";
+			this.CourseTopicReport.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.CourseTopicReport.ReportAlias = "Report";
+			this.CourseTopicReport.ReportGuid = "13d508b9a6ee4d9fa0dc28b0f435d9ec";
+			this.CourseTopicReport.ReportName = "Report";
+			this.CourseTopicReport.ReportSource = resources.GetString("CourseTopicReport.ReportSource");
+			this.CourseTopicReport.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.CourseTopicReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.CourseTopicReport.UseProgressInThread = false;
+			// 
+			// ExamQAndAReport
+			// 
+			this.ExamQAndAReport.CookieContainer = null;
+			this.ExamQAndAReport.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.ExamQAndAReport.HttpHeadersContainer = null;
+			this.ExamQAndAReport.Key = "12ed353649d64caca6ae8081507657d2";
+			this.ExamQAndAReport.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.ExamQAndAReport.ReportAlias = "Report";
+			this.ExamQAndAReport.ReportGuid = "b089d2f3de014ff69c2be00b82eb80a7";
+			this.ExamQAndAReport.ReportName = "Report";
+			this.ExamQAndAReport.ReportSource = resources.GetString("ExamQAndAReport.ReportSource");
+			this.ExamQAndAReport.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.ExamQAndAReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.ExamQAndAReport.UseProgressInThread = false;
+			// 
+			// StdExamAnswersReport
+			// 
+			this.StdExamAnswersReport.CookieContainer = null;
+			this.StdExamAnswersReport.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.StdExamAnswersReport.HttpHeadersContainer = null;
+			this.StdExamAnswersReport.Key = "8310ebd213024564b6f9b3e319d5ae47";
+			this.StdExamAnswersReport.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.StdExamAnswersReport.ReportAlias = "Report";
+			this.StdExamAnswersReport.ReportGuid = "792742c2526c4e549a9cd0f44c444f2b";
+			this.StdExamAnswersReport.ReportName = "Report";
+			this.StdExamAnswersReport.ReportSource = resources.GetString("StdExamAnswersReport.ReportSource");
+			this.StdExamAnswersReport.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+			this.StdExamAnswersReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.StdExamAnswersReport.UseProgressInThread = false;
 			// 
 			// instructorForm
 			// 
@@ -2223,6 +2400,7 @@
 			this.tabPage_users.PerformLayout();
 			this.tabPage_instructors.ResumeLayout(false);
 			this.tabPage_instructors.PerformLayout();
+			this.tabPage_Reports.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2418,5 +2596,13 @@
 		private System.Windows.Forms.ColumnHeader columnHeader27;
 		private System.Windows.Forms.ColumnHeader columnHeader28;
 		private System.Windows.Forms.ColumnHeader columnHeader29;
+		private Stimulsoft.Report.Viewer.StiViewerControl StiReportViewerControl;
+		private System.Windows.Forms.ComboBox ReportsComboBox;
+		private Stimulsoft.Report.StiReport StudentperDepartmentReport;
+		private Stimulsoft.Report.StiReport StudentGradePerCourse;
+		private Stimulsoft.Report.StiReport InsCrsReport;
+		private Stimulsoft.Report.StiReport CourseTopicReport;
+		private Stimulsoft.Report.StiReport ExamQAndAReport;
+		private Stimulsoft.Report.StiReport StdExamAnswersReport;
 	}
 }

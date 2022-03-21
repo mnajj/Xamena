@@ -1,0 +1,1420 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.MathFX</name>
+    </assembly>
+    <members>
+        <member name="T:LatexMath2MathML.AccentConverter">
+            <summary>
+            The base converter class for accents.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.AccentConverter.AccentAttribute">
+            <summary>
+            The attribute to set the accent parameters.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.AccentAttribute.Name">
+            <summary>
+            Gets the Latex name of the accent.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.AccentAttribute.Value">
+            <summary>
+            Gets the corresponding Unicode entity.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.AccentAttribute.Stretchy">
+            <summary>
+            Gets or sets the value indicating whether the accent can be applied to several expressions as well.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.AccentAttribute.MathMode">
+            <summary>
+            Gets or sets the value indicating whether the accent is applied in math mode.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.AccentConverter.AccentAttribute.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the TextSizeAttribute class.
+            </summary>
+            <param name="name">The Latex name of the accent. <see cref="T:System.String"/> </param>
+            <param name="value">The corresponding Unicode entity. <see cref="T:System.String"/> </param>
+            <param name="stretchy">The value indicating whether the accent can be applied to several expressions as well.</param>
+            <param name="mathMode">The value indicating whether the accent is applied in math mode.</param>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.AccentConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.AccentConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.OverlineAccentConverter">
+            <summary>
+            The converter class for \overline.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.HatAccentConverter">
+            <summary>
+            The converter class for \hat.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.WidehatAccentConverter">
+            <summary>
+            The converter class for \widehat.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.CheckAccentConverter">
+            <summary>
+            The converter class for \check.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.TildeAccentConverter">
+            <summary>
+            The converter class for \tilde.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.WidetildeAccentConverter">
+            <summary>
+            The converter class for \widetilde.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.AcuteAccentConverter">
+            <summary>
+            The converter class for \acute.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.GraveAccentConverter">
+            <summary>
+            The converter class for \grave.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.DotAccentConverter">
+            <summary>
+            The converter class for \dot.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.DdotAccentConverter">
+            <summary>
+            The converter class for \ddot.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.BreveAccentConverter">
+            <summary>
+            The converter class for \breve.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.BarAccentConverter">
+            <summary>
+            The converter class for \bar.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.VecAccentConverter">
+            <summary>
+            The converter class for \vec.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.HatTextAccentConverter">
+            <summary>
+            The converter class for \^.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.CheckTextAccentConverter">
+            <summary>
+            The converter class for \v.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.TildeTextAccentConverter">
+            <summary>
+            The converter class for \~.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.AcuteTextAccentConverter">
+            <summary>
+            The converter class for \'.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.GraveTextAccentConverter">
+            <summary>
+            The converter class for \`.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.DotTextAccentConverter">
+            <summary>
+            The converter class for \..
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.DdotTextAccentConverter">
+            <summary>
+            The converter class for \".
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.BreveTextAccentConverter">
+            <summary>
+            The converter class for \u.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.BarTextAccentConverter">
+            <summary>
+            The converter class for \=.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.AlgorithmicConverter">
+            <summary>
+            The converter class for algorithmic blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.AlgorithmicConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.StateCommandConverter">
+            <summary>
+            The converter class for \State.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StateCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StateCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.StateCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.StatexCommandConverter">
+            <summary>
+            The converter class for \Statex.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StatexCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StatexCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.StatexCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.ProcedureCommandConverter">
+            <summary>
+            The converter class for \Procedure.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ProcedureCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ProcedureCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.ProcedureCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.EndProcedureCommandConverter">
+            <summary>
+            The converter class for \EndProcedure.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.EndProcedureCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.EndProcedureCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.EndProcedureCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.AlignmentConverter">
+            <summary>
+            The base converter class for alignment blocks.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.AlignmentConverter._alignment">
+            <summary>
+            The alignment name.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.AlignmentConverter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AlignmentConverter class.
+            </summary>
+            <param name="alignment">The alignment name.</param>
+        </member>
+        <member name="M:LatexMath2MathML.AlignmentConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.ArrayConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.ArrayConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure (comments the expression).
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.BaseConverter">
+            <summary>
+            The base class for all converters. Provides generic functions and tools.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.BaseConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.BaseConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.BaseConverter.LatexStringToXmlString(System.String)">
+            <summary>
+            Filters special characters that can not be used in XML directly.
+            </summary>
+            <param name="str">The string to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.BaselessConverter">
+            <summary>
+            The block converter for baseless scripts. It transforms ^A to &lt;sup&gt;A&lt;/sup&gt;.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.BaselessConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.BlockConverter">
+            <summary>
+            The converter class for block expressions.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.BlockConverter.BlockConverters">
+            <summary>
+            The list of available block converters hashed by a block name.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.BlockConverter.ImpliesMathMode">
+            <summary>
+            Returns true if the block defines a math environment; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LatexMath2MathML.BlockConverter.Label">
+            <summary>
+            Gets or sets the label assosiated with this block.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.BlockConverter.Name">
+            <summary>
+            Gets an empty string. This property must be overriden in all the inheritors.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.BlockConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression (ExpressionType.Block).
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.BlockConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.CommandConverter">
+            <summary>
+            The proxy class between a command and the corresponding converter.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.CommandConverter.CommandConverters">
+            <summary>
+            The hash table of command converters.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.CommandConverter.Name">
+            <summary>
+            Gets an empty string. This property must be overriden by all the inheritors.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.CancelsMathMode">
+            <summary>
+            Returns true if the block cancels a math environment; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LatexMath2MathML.CommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.CommandConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression (that is, ExpressionType.Command).
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.CommandConverter.FirstValue">
+            <summary>
+            Gets the Expressions[0][0] string or an empty string if no child expressions exist.
+            This property can be overriden by an inheritor.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.GetHashCode">
+            <summary>
+            Gets the hash code of this instance.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.ToString">
+            <summary>
+            Converts the value of this instance to a System.String.
+            </summary>
+            <returns>The System.String instance.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.Equals(System.Object)">
+            <summary>
+            Determines whether the specified System.Object is equal to this instance.
+            </summary>
+            <param name="obj">The object to check.</param>
+            <returns>True if the specified System.Object is equal to this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.SearchInTables(System.Collections.Generic.IDictionary{System.String,System.String},LatexMath2MathML.LatexExpression)">
+            <summary>
+            Searches in a predefined conversion table and returns the converted result or null.
+            </summary>
+            <param name="table">The conversion table to search in.</param>
+            <param name="expr">The expression to convert.</param>
+            <returns>The converted result or null.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.CommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="F:LatexMath2MathML.DoubleScriptConverter._tag">
+            <summary>
+            The script tag name. Can be either msubsup or msupsub.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.DoubleScriptConverter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the DoubleScriptConverter class.
+            </summary>
+            <param name="type">The tag name of the script.</param>
+        </member>
+        <member name="M:LatexMath2MathML.DoubleScriptConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.EqnArrayConverter">
+            <summary>
+            The converter for eqnarray blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.EqnArrayConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure (comments the expression).
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.EqnArrayConverter.ImpliesMathMode">
+            <summary>
+            Returns true if the block defines a math environment; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LatexMath2MathML.EquationConverter">
+            <summary>
+            The converter class for equations.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.EquationConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.EquationConverter.ImpliesMathMode">
+            <summary>
+            Returns true if the block defines a math environment; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LatexMath2MathML.ExpressionOptions">
+            <summary>
+            The class to handle LaTeX command options.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ExpressionOptions.AsKeyValue">
+            <summary>
+            Get or sets the options as Dictionary&lt;string, string&gt;.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ExpressionOptions.AsExpressions">
+            <summary>
+            Gets or sets the options as List&lt;LatexExpression&gt;.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.ExpressionOptions.#ctor">
+            <summary>
+            Initializes a new instance of the ExpressionOptions class.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.ExpressionOptions.#ctor(LatexMath2MathML.ExpressionOptions)">
+            <summary>
+            Initializes a new instance of the ExpressionOptions class.
+            </summary>
+            <param name="options">The options to copy from.</param>
+        </member>
+        <member name="T:LatexMath2MathML.FracCommandConverter">
+            <summary>
+            The converter class for fractions.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.FracCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.FracCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.FracCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.DfracCommandConverter">
+            <summary>
+            The converter class for dfrac.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.DfracCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.TfracCommandConverter">
+            <summary>
+            The converter class for tfrac.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.TfracCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.LatexExpression">
+            <summary>
+            Serves as a node in a document object tree. Parses the tree from a TextReader instance.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Name">
+            <summary>
+            Gets or sets the name or data of the expression
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Options">
+            <summary>
+            Gets the options of the expression.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Expressions">
+            <summary>
+            Gets the child subtrees of the expression.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Parent">
+            <summary>
+            Gets or sets the parent of this expression.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Tag">
+            <summary>
+            Gets or sets some object associated with this LatexExpression instance.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.ParentChildNumber">
+            <summary>
+            Gets or sets the child subtree number in the parent.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.IndexInParentChild">
+            <summary>
+            Gets or sets the index in the child subtree in the parent.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.ExprType">
+            <summary>
+            Gets or sets the expression type.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.MathMode">
+            <summary>
+            Gets or sets the value indicating whether this expression is in the math mode.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexExpression.Customization">
+            <summary>
+            Gets or sets the LatexMathToMathMLConverter class instance to customize the conversion result.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.#ctor(LatexMath2MathML.LatexExpression,System.Int32,System.Int32@,System.Boolean@,LatexMath2MathML.ExpressionType,System.Boolean,LatexMath2MathML.LatexMathToMathMLConverter,System.String,System.String,System.String[])">
+            <summary>
+            Initializes a new instance of the LatexExpression class.
+            </summary>
+            <param name="parent">The parent of the builded expression.</param>
+            <param name="parentChildNumber">Index of the parent child outline.</param>
+            <param name="indexInParentChild">Index in the parent child outline.</param>
+            <param name="verbatimMode">True if verbatim mode is on; otherwise, false.</param>
+            <param name="type">The expression type.</param>
+            <param name="mathMode">The math mode switch.</param>
+            <param name="name">The expression name.</param>
+            <param name="options">The options of the expression.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+            <param name="values">The child outlines of the expression.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.#ctor(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Initializes a new instance of the LatexExpression class and copies the specified expression data to it.
+            </summary>
+            <param name="expression">The expression to clone.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.#ctor(System.String,LatexMath2MathML.LatexExpression,System.Int32,System.Int32,LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Initializes a new instance of the LatexExpression class of type ExpressionType.Block.
+            </summary>
+            <param name="name">The name of the block.</param>
+            <param name="parent">The parent of the builded expression.</param>
+            <param name="parentChildNumber">Index of the parent child outline.</param>
+            <param name="indexInParentChild">Index in the parent child outline.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ParseExpressions(System.String[])">
+            <summary>
+            Recursively continues to build the document object tree.
+            </summary>
+            <param name="values">The child outlines to parse.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ParseOptions(System.String)">
+            <summary>
+            Preforms the post-parse procedure of the options.
+            </summary>
+            <param name="options">The raw options string to parse.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.CheckMathMode(LatexMath2MathML.LatexExpression,System.Boolean@)">
+            <summary>
+            Checks for the beginning or the ending of a future block that must be parsed in math mode.
+            </summary>
+            <param name="expr">The suspected expression.</param>
+            <param name="mathMode">The math mode flag.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.EraseFromParent">
+            <summary>
+            Removes this expression from the parent's outline.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.CreateRoot(System.IO.TextReader,LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Parses the document and builds the document object tree.
+            </summary>
+            <param name="rdr">The reader to read the document from.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+            <returns>The root of the document object tree.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ReadFromTextReader(LatexMath2MathML.LatexExpression,System.Int32,System.Int32@,System.Boolean@,System.Boolean,LatexMath2MathML.LatexMathToMathMLConverter,System.String,System.IO.TextReader,System.String@,System.Boolean@)">
+            <summary>
+            Builds a new LatexExpression instance (front).
+            </summary>
+            <param name="parent">The parent of the builded expression.</param>
+            <param name="parentChildNumber">Index of the parent child outline.</param>
+            <param name="indexInParentChild">Index in the parent child outline.</param>
+            <param name="verbatimMode">True if verbatim mode is on; otherwise, false.</param>
+            <param name="beginning">The beginning string.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="end">The stub of the unparsed part.</param>
+            <param name="mathMode">The math mode switch.</param>
+            <param name="whitespaceBefore">Indicates whether there was at least one whitespace char before the returned result.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ReadFromTextReaderInner(LatexMath2MathML.LatexExpression,System.Int32,System.Int32@,System.Boolean@,System.Boolean,LatexMath2MathML.LatexMathToMathMLConverter,System.String,System.IO.TextReader,System.String@,System.Boolean@)">
+            <summary>
+            Builds a new LatexExpression instance (main).
+            </summary>
+            <param name="parent">The parent of the builded expression.</param>
+            <param name="parentChildNumber">Index of the parent child outline.</param>
+            <param name="indexInParentChild">Index in the parent child outline.</param>
+            <param name="verbatimMode">True if verbatim mode is on; otherwise, false.</param>
+            <param name="beginning">The beginning string.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="mathMode">The math mode switch.</param>
+            <param name="end">The stub of the unparsed part.</param>
+            <param name="whitespaceBefore">Indicates whether there was at least one whitespace char before the returned result.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+            <returns>The parsed LatexExpression instance.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.SmartTextTrim(System.String)">
+            <summary>
+            Preserves the last whitespace character while removes all others in the end of the string.
+            </summary>
+            <param name="text">The string to trim.</param>
+            <returns>The trimmed text.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.GetStopPos(System.String,System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Scans for any occurences of stop chars and returns the lowest position.
+            </summary>
+            <param name="str">The string to scan.</param>
+            <param name="stopChars">The array of stop chars.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ReadToVerbatimEnd(System.String,System.IO.TextReader,System.String@)">
+            <summary>
+            Reads to the first occurence of "\end{verbatim}".
+            </summary>
+            <param name="beginning">The beginning string.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="end">The stub of the unparsed part.</param>
+            <returns>The extracted verbatim data.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ReadToNotEmptyString(System.String,System.IO.TextReader,System.Boolean@)">
+            <summary>
+            Reads to the first non-whitespace character.
+            </summary>
+            <param name="str">The beginning string.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="whitespaceBefore">Indicates whether there was at least one whitespace char before the returned result.</param>
+            <returns>The string which starts with a non-whitespace character.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ParseCommandOptionsAndValues(System.String,System.IO.TextReader,System.String@,System.String@,System.String[]@,System.Boolean@)">
+            <summary>
+            Parses the options and values of a command.
+            </summary>
+            <param name="beginning">The beginning string.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="end">The stub of the unparsed part.</param>
+            <param name="options">The extracted options.</param>
+            <param name="whitespaceBefore">Indicates whether there was at least one whitespace char before the returned result.</param>
+            <param name="values">The extracted values.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ParseBraces(System.String@,System.IO.TextReader,System.String,System.String,System.Boolean@)">
+            <summary>
+            Parses the value enclosed in braces.
+            </summary>
+            <param name="str">The beginning string to parse.</param>
+            <param name="rdr">The reader to read ahead.</param>
+            <param name="openingBrace">The opening brace form.</param>
+            <param name="closingBrace">The closing brace form.</param>
+            <param name="whitespaceBefore">Indicates whether there was at least one whitespace char before the returned result.</param>
+            <returns>The extracted value.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.RecursiveReplace(System.String,System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively replaces all occurences of src in all subtrees with the specified sequence of expressions.
+            </summary>
+            <param name="src">The string to search and replace.</param>
+            <param name="repl">The replacesment sequence of expressions.</param>
+        </member>
+        <member name="T:LatexMath2MathML.LatexExpression.ExpressionVisitDelegate">
+            <summary>
+            The children enumeration delegate.
+            </summary>
+            <param name="expr">The expression to operate on.</param>
+            <returns>True if enumeration should be stopped; otherwise, false.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.EnumerateChildren(LatexMath2MathML.LatexExpression.ExpressionVisitDelegate)">
+            <summary>
+            Recursively enumerate all the children, executing the specified delegate on each child.
+            </summary>
+            <param name="visitor">The delegate to execute.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.FindDocument">
+            <summary>
+            Find the document block in children (valid only for the root expression).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.GetHashCode">
+            <summary>
+            Gets the hash code of this instance.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.ToString">
+            <summary>
+            Converts the value of this instance to a System.String.
+            </summary>
+            <returns>The System.String instance.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LatexMath2MathML.LatexExpression.Equals(System.Object)" -->
+        <member name="M:LatexMath2MathML.LatexExpression.GetCommandConverterHashCode">
+            <summary>
+            Computes the hash code of the corresponding converter to XHTML + MathML.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="F:LatexMath2MathML.LatexExpression.Converters">
+            <summary>
+            The table of convertors to XHML + MathML arranged by ExpressionType value.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexExpression.Convert">
+            <summary>
+            Converts the expression and all of its children to XHTML + MathML.
+            </summary>
+            <returns>The converted XML string.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.ExpressionType">
+            <summary>
+            Indicates the type of the expression.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.Root">
+            <summary>
+            Indicates the root of a document object tree.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.PlainText">
+            <summary>
+            Indicates a plain text block.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.Command">
+            <summary>
+            Indicates a command.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.InlineMath">
+            <summary>
+            Indicates an inline math.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.BlockMath">
+            <summary>
+            Indicates a block math.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.Block">
+            <summary>
+            Indicates a block.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.Comment">
+            <summary>
+            Indicates a comment.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.ExpressionType.Verbatim">
+            <summary>
+            Indicates a verbatim block.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.LatexMathToMathMLConverter">
+            <summary>
+            The converter from Latex to XHTML + MathML.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexMathToMathMLConverter.CommonInitialize">
+             <summary>
+            The dictionary to get the corresponding CSS style from a text size definition. 
+             </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexMathToMathMLConverter.#ctor">
+            <summary>
+            Initializes a new instance of the LatexToMathConverter class.
+            </summary>
+            <param name="sourcePath">The path to the source LaTeX document to convert.</param>
+            <param name="sourceEncoding">The character encoding of the specified LaTeX document.</param>
+            <param name="outputPath">The path to the conversion result.</param>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.Counters">
+            <summary>
+            Gets the counters for various needs.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.CurrentTextSize">
+            <summary>
+            Gets or sets the current text size.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.CurrentTextStyle">
+             <summary>
+            Gets or sets the current text style. 
+             </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.Localization">
+            <summary>
+            Gets or sets Gets the ISO 639-1 two-letter code for the desired language.
+            Default: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.ValidateResult">
+            <summary>
+            Gets or sets the value specifying whether to perform the DTD validation
+            of the conversion result. If the validation is successful, W3C validity
+            logos are inserted.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexMathToMathMLConverter.WaitForConversionFinish">
+            <summary>
+            Gets or sets the value indicating whether to wait for the worker thread to terminate
+            instead of using OnConversionFinish event.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.AfterDocumentWasParsed">
+            <summary>
+            Occurs when the LaTeX document was parsed and the object tree was built.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.BeforeXmlFormat">
+            <summary>
+            Occurs when the converter has finished the main work and is about to properly indent
+            the result XML.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.BeforeValidate">
+            <summary>
+            Occurs when the converter is about to perform DTD validation.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.OnConversionFinish">
+            <summary>
+            Occurs when the conversion has been finished.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.ValidationSuccess">
+            <summary>
+            Occurs when the converted document has been validated.
+            </summary>
+        </member>
+        <member name="E:LatexMath2MathML.LatexMathToMathMLConverter.ExceptionEvent">
+            <summary>
+            Occurs when an exception is thrown during parse
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexMathToMathMLConverter.Convert(System.String)">
+            <summary>
+            Starts the conversion process.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexMathToMathMLConverter.CallEventHandler(System.EventHandler)">
+            <summary>
+            Invokes an event handler if it is not null in a diagnostic environment.
+            </summary>
+            <param name="handler">The EventHandler instance to invoke.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexMathToMathMLConverter.CallEventHandler(System.EventHandler,System.EventArgs)">
+            <summary>
+            Invokes an event handler if it is not null in a diagnostic environment.
+            </summary>
+            <param name="handler">The EventHandler instance to invoke.</param>
+            <param name="args">The event arguments to send.</param>
+        </member>
+        <member name="T:LatexMath2MathML.LatexParser">
+            <summary>
+            The parser of the LaTeX document object tree.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.LatexParser._source">
+            <summary>
+            The source string to parse.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.LatexParser._customization">
+            <summary>
+            The LatexMathToMathMLConverter class instance to customize the conversion result.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.LatexParser._root">
+            <summary>
+            The root of the document object tree.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.LatexParser._customCommands">
+            <summary>
+            The hash list of custom commands.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.LatexParser.Root">
+            <summary>
+            Gets the root of the object tree.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.#ctor(System.String,LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Initializes a new instance of the LatexParser class.
+            </summary>
+            <param name="source">The source string to build the tree from.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.LogInfo(System.Object)">
+            <summary>
+            Loggs a message if not in DEBUG.
+            </summary>
+            <param name="message">The message to debug.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.Parse(LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Builds the document object tree.
+            </summary>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+            <remarks>The parsing procedure consists of stand-alone passes, so that it resembles a compiler pipeline.</remarks>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.PreprocessAlgorithms(System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively wrap algorithmic block expressions into blocks
+            </summary>
+            <param name="outline">The outline of the root LatexExpression instance.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.NumerateBlocks(System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively numerate blocks by adding a new expression to the end.
+            </summary>
+            <param name="outline">The outline of the root LatexExpression instance.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.PreprocessLabels(System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively walk the tree and handle labels.
+            </summary>
+            <param name="outline">The outline of the root LatexExpression instance.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.SimplifyBaselessScripts(System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively split math blocks that begin with baseless scripts.
+            </summary>
+            <param name="outline">The outline of the root LatexExpression instance.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.BuildScripts(System.Collections.Generic.List{LatexMath2MathML.LatexExpression},LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Recursively build scripts (for msup, munder, etc.)
+            </summary>
+            <param name="list">The outline of a LatexExpression instance.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.RecursiveFindCommandHandler(System.Collections.Generic.IList{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively finds the last command for the RecursiveParseCustomCommands.
+            </summary>
+            <param name="list">The list of expressions to search.</param>
+            <returns>The last command or null.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.IncapsulateCommands(System.Collections.Generic.List{LatexMath2MathML.LatexExpression})">
+            <summary>
+            Recursively incapsulates tree fragments between \begin and \end.
+            </summary>
+            <param name="outline">The outline of a LatexExpression instance.</param>
+        </member>
+        <member name="M:LatexMath2MathML.LatexParser.PostParseArrays(System.Collections.Generic.IList{LatexMath2MathML.LatexExpression},LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Post-parses arrays.
+            </summary>
+            <param name="outline">The outline of a LatexExpression instance.</param>
+            <param name="customization">The LatexMathToMathMLConverter class instance to customize the conversion result.</param>
+        </member>
+        <member name="F:LatexMath2MathML.LatexParser.PreformatRules">
+            <summary>
+            Important substitution rules which guarantee the failsafe work of the parser.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.ProgressEventArgs">
+            <summary>
+            The event arguments class to report the progress of the parse process.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ProgressEventArgs.Index">
+            <summary>
+            Gets the index of the current pass.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.ProgressEventArgs.Count">
+            <summary>
+            Gets the count of the passes.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.ProgressEventArgs.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the ProgressEventArgs class.
+            </summary>
+            <param name="index">The index of the current pass.</param>
+            <param name="count">The count of the passes.</param>
+        </member>
+        <member name="T:LatexMath2MathML.UrlCommandConverter">
+            <summary>
+            The converter class for urls.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.UrlCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.UrlCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.UrlCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.HrefCommandConverter">
+            <summary>
+            The converter class for hrefs.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.HrefCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.HrefCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.HrefCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.MathcalCommandConverter">
+            <summary>
+            The converter class for roots.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.MathcalCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.MathcalCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.MathcalCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.MathConverter">
+            <summary>
+            The universal converter for math blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.MathConverter.CommonConvert(System.Collections.Generic.IList{LatexMath2MathML.LatexExpression},System.String,System.Boolean,LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Performs the conversion procedure of math blocks.
+            </summary>
+            <param name="outline">The sequence of expressions to convert.</param>
+            <param name="altText">The alternative text.</param>
+            <param name="inline">Indicates whether the math block is inline.</param>
+            <returns>The converted XML string.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.MathConverter.AppendMathProlog(System.Text.StringBuilder,System.String,System.Boolean,LatexMath2MathML.LatexMathToMathMLConverter)">
+            <summary>
+            Appends the opening MathML &lt;math&gt; tag to the specified StringBuilder instance.
+            </summary>
+            <param name="bld">The StringBuilder instance.</param>
+            <param name="altText">The alternative text.</param>
+            <param name="inline">Indicates whether the math block is inline.</param>
+        </member>
+        <member name="M:LatexMath2MathML.MathConverter.AppendMathEpilog(System.Text.StringBuilder)">
+            <summary>
+            Appends the closing MathML &lt;math&gt; tag to the specified StringBuilder instance.
+            </summary>
+            <param name="bld">The StringBuilder instance.</param>
+        </member>
+        <member name="P:LatexMath2MathML.MathConverter.ExprType">
+            <summary>
+            Is not used.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.MathConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.NamedConverter">
+            <summary>
+            The intermediate converter class which defines the "Name" property.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.NamedConverter.Name">
+            <summary>
+            Gets the name of the corresponding expression.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.PlainTextConverter">
+            <summary>
+            The converter class to convert LaTeX plain text.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.PlainTextConverter.MathConstants">
+            <summary>
+            The list of certain text substitutions.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.PlainTextConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression (ExpressionType.PlainText).
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.PlainTextConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.RootConverter">
+            <summary>
+            The converter class for the document object tree root.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.RootConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression (ExpressionType.Root).
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.RootConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.SequenceConverter">
+            <summary>
+            The block converter for simple sequences of expressions.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.SequenceConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.SingleScriptConverter">
+            <summary>
+            The converter class for single super- and subscripts.
+            </summary>
+        </member>
+        <member name="F:LatexMath2MathML.SingleScriptConverter._tag">
+            <summary>
+            The script tag name. Can be either sub or sup.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.SingleScriptConverter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SingleScriptConverter class.
+            </summary>
+            <param name="type">The tag name of the script.</param>
+        </member>
+        <member name="M:LatexMath2MathML.SingleScriptConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.SqrtCommandConverter">
+            <summary>
+            The converter class for roots.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.SqrtCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.SqrtCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.SqrtCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.StiBBMatrixConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.StiBMatrixConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.StiMathbbCommandConverter">
+            <summary>
+            The converter class for roots.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StiMathbbCommandConverter.Name">
+            <summary>
+            Gets the command name.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.StiMathbbCommandConverter.ExpectedBranchesCount">
+            <summary>
+            Gets the expected count of child subtrees.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.StiMathbbCommandConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="M:LatexMath2MathML.StiMatrixConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure (comments the expression).
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.StiPMatrixConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.StiUnderlineAccentConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.StiVMatrixConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="T:LatexMath2MathML.StiVVMatrixConverter">
+            <summary>
+            The converter for array blocks.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.StiVVMatrixConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure (comments the expression).
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.UnknownBlockConverter">
+            <summary>
+            The converter for blocks of an unknown meaning.
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.UnknownBlockConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+        <member name="T:LatexMath2MathML.VerbatimConverter">
+            <summary>
+            The converter class to convert LaTeX verbatim blocks.
+            </summary>
+        </member>
+        <member name="P:LatexMath2MathML.VerbatimConverter.ExprType">
+            <summary>
+            Gets the type of the corresponding expression (ExpressionType.Verbatim).
+            </summary>
+        </member>
+        <member name="M:LatexMath2MathML.VerbatimConverter.Convert(LatexMath2MathML.LatexExpression)">
+            <summary>
+            Performs the conversion procedure.
+            </summary>
+            <param name="expr">The expression to convert.</param>
+            <returns>The conversion result.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,4 +1,5 @@
-﻿using Examination_system.Model;
+﻿using Examination_system.Forms.Dialogs;
+using Examination_system.Model;
 using System;
 using System.Data;
 using System.Linq;
@@ -1201,7 +1202,118 @@ namespace Examination_system.Forms
 			}
 		}
 
-		#endregion
+    #endregion
 
-	}
+    #region Reports
+
+    private void ReportsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+			switch (ReportsComboBox.Text)
+			{
+        case "Student per Department":
+          GenerateStudentPerDepartment();
+          break;
+        case "Student Grades per Course":
+          GenerateStudentGradesPerCourse();
+          break;
+        case "Courses Names with Student Count by Instructor Id":
+          GenerateCoursesNamesByInstructorId();
+          break;
+        case "Course Topics":
+          GenerateCourseTopics();
+          break;
+        case "Exam Questions and Answers":
+          GenerateExamQuestionsAndAnswers();
+          break;
+        case "Student Answers at Exam":
+          GenerateStudentAnswersAtExam();
+          break;
+      }
+    }
+
+		private void GenerateStudentAnswersAtExam()
+		{
+			StdExamAnsPrompet stdExamAnsPrompet = new StdExamAnsPrompet();
+      DialogResult dlgRes = stdExamAnsPrompet.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        StdExamAnswersReport.Compile();
+        StdExamAnswersReport["@exm_id"] = stdExamAnsPrompet.ExamId.ToString();
+        StdExamAnswersReport["@std_id"] = stdExamAnsPrompet.StdId.ToString();
+        StdExamAnswersReport.Show();
+        StiReportViewerControl.Report = StdExamAnswersReport;
+      }
+    }
+
+		private void GenerateExamQuestionsAndAnswers()
+		{
+			ExamQuesPrompet examQuesPrompet = new ExamQuesPrompet();
+      DialogResult dlgRes = examQuesPrompet.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        ExamQAndAReport.Compile();
+        ExamQAndAReport["@exm_id"] = examQuesPrompet.ExamId.ToString();
+        ExamQAndAReport.Show();
+        StiReportViewerControl.Report = ExamQAndAReport;
+      }
+    }
+
+		private void GenerateCourseTopics()
+		{
+      CourseTopicPrompet courseTopicPrompet = new CourseTopicPrompet();
+      DialogResult dlgRes = courseTopicPrompet.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        CourseTopicReport.Compile();
+        CourseTopicReport["@crs_id"] = courseTopicPrompet.CrsId.ToString();
+        CourseTopicReport.Show();
+        StiReportViewerControl.Report = CourseTopicReport;
+      }
+    }
+
+		private void GenerateCoursesNamesByInstructorId()
+		{
+			InstructorCoursesPrompet instructorCoursesPrompet = new InstructorCoursesPrompet();
+      DialogResult dlgRes = instructorCoursesPrompet.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        InsCrsReport.Compile();
+        InsCrsReport["@ins_id"] = instructorCoursesPrompet.InsId.ToString();
+        MessageBox.Show(InsCrsReport["@ins_id"].ToString());
+        InsCrsReport.Show();
+        StiReportViewerControl.Report = InsCrsReport;
+      }
+    }
+
+		private void GenerateStudentGradesPerCourse()
+		{
+			StudentCourseGradePrompet studentCourseGradePrompet = new StudentCourseGradePrompet();
+      DialogResult dlgRes = studentCourseGradePrompet.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        StudentGradePerCourse.Compile();
+        StudentGradePerCourse["@std_id"] = studentCourseGradePrompet.StdId.ToString();
+        StudentGradePerCourse.Show();
+        StiReportViewerControl.Report = StudentGradePerCourse;
+      }
+
+    }
+
+		private void GenerateStudentPerDepartment()
+		{
+      DepartmentPrompetDialog departmentPrompetDlg = new DepartmentPrompetDialog();
+      DialogResult dlgRes = departmentPrompetDlg.ShowDialog();
+      if (dlgRes == DialogResult.OK)
+			{
+        StudentperDepartmentReport.Compile();
+        StudentperDepartmentReport["@dept_id"] = departmentPrompetDlg.DeptId.ToString();
+        StudentperDepartmentReport.Show();
+        StiReportViewerControl.Report = StudentperDepartmentReport;
+      }
+    }
+
+    #endregion
+
+
+  }
 }
