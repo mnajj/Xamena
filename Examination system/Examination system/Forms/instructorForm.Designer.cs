@@ -95,7 +95,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.StdDepartmentFiled = new System.Windows.Forms.TextBox();
             this.StdUserNameField = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.StdIdField = new System.Windows.Forms.TextBox();
@@ -214,6 +213,7 @@
             this.CourseTopicReport = new Stimulsoft.Report.StiReport();
             this.ExamQAndAReport = new Stimulsoft.Report.StiReport();
             this.StdExamAnswersReport = new Stimulsoft.Report.StiReport();
+            this.combo_StdDepartment = new System.Windows.Forms.ComboBox();
             this.tabCtrl_DashBoard.SuspendLayout();
             this.tabpage_exams.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -816,6 +816,7 @@
             // 
             // tabpage_students
             // 
+            this.tabpage_students.Controls.Add(this.combo_StdDepartment);
             this.tabpage_students.Controls.Add(this.btn_displayAllStudents);
             this.tabpage_students.Controls.Add(this.StdLNameFld);
             this.tabpage_students.Controls.Add(this.label18);
@@ -826,7 +827,6 @@
             this.tabpage_students.Controls.Add(this.label12);
             this.tabpage_students.Controls.Add(this.label13);
             this.tabpage_students.Controls.Add(this.label14);
-            this.tabpage_students.Controls.Add(this.StdDepartmentFiled);
             this.tabpage_students.Controls.Add(this.StdUserNameField);
             this.tabpage_students.Controls.Add(this.label15);
             this.tabpage_students.Controls.Add(this.StdIdField);
@@ -934,19 +934,12 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "Deaprtment";
             // 
-            // StdDepartmentFiled
-            // 
-            this.StdDepartmentFiled.Location = new System.Drawing.Point(192, 374);
-            this.StdDepartmentFiled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.StdDepartmentFiled.Name = "StdDepartmentFiled";
-            this.StdDepartmentFiled.Size = new System.Drawing.Size(224, 30);
-            this.StdDepartmentFiled.TabIndex = 12;
-            // 
             // StdUserNameField
             // 
             this.StdUserNameField.Location = new System.Drawing.Point(192, 336);
             this.StdUserNameField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StdUserNameField.Name = "StdUserNameField";
+            this.StdUserNameField.ReadOnly = true;
             this.StdUserNameField.Size = new System.Drawing.Size(224, 30);
             this.StdUserNameField.TabIndex = 13;
             // 
@@ -2208,6 +2201,16 @@
             this.StdExamAnswersReport.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
             this.StdExamAnswersReport.UseProgressInThread = false;
             // 
+            // combo_StdDepartment
+            // 
+            this.combo_StdDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_StdDepartment.FormattingEnabled = true;
+            this.combo_StdDepartment.Location = new System.Drawing.Point(192, 372);
+            this.combo_StdDepartment.Name = "combo_StdDepartment";
+            this.combo_StdDepartment.Size = new System.Drawing.Size(224, 33);
+            this.combo_StdDepartment.TabIndex = 24;
+            this.combo_StdDepartment.DropDown += new System.EventHandler(this.combo_StdDepartment_DropDown);
+            // 
             // instructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2331,7 +2334,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TextBox StdDepartmentFiled;
 		private System.Windows.Forms.TextBox StdUserNameField;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.TextBox StdIdField;
@@ -2441,5 +2443,6 @@
         private System.Windows.Forms.Button btn_displayAllStudents;
         private System.Windows.Forms.ComboBox combo_UserSexFld;
         private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ComboBox combo_StdDepartment;
     }
 }

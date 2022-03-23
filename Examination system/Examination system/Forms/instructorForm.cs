@@ -327,6 +327,16 @@ namespace Examination_system.Forms
         }
         #endregion
         #region Student
+
+        private void combo_StdDepartment_DropDown(object sender, EventArgs e)
+        {
+            combo_StdDepartment.Items.Clear();
+            var dept = ent.Departments.Select(d=>d.Dept_Name);
+            foreach (var departmentName in dept)
+            {
+                combo_StdDepartment.Items.Add(departmentName);
+            }
+        }
         private void btn_displayAllStudents_Click(object sender, EventArgs e)
         {
             displayStudentsData();
@@ -361,7 +371,7 @@ namespace Examination_system.Forms
         private void InsertStd_Click(object sender, EventArgs e)
         {
             if (StdUserNameField.Text != String.Empty
-                && StdDepartmentFiled.Text != String.Empty
+                && combo_StdDepartment.Text != String.Empty
                 && StdFnameField.Text != String.Empty
                 && StdLNameFld.Text != String.Empty
                 && StdBirthFld.Text != String.Empty
@@ -373,7 +383,7 @@ namespace Examination_system.Forms
                     .Select(u => u.U_Id)
                     .FirstOrDefault();
                 int deptId = ent.Departments
-                    .Where(d => d.Dept_Name == StdDepartmentFiled.Text)
+                    .Where(d => d.Dept_Name == combo_StdDepartment.Text)
                     .Select(d => d.Dept_Id)
                     .FirstOrDefault();
                 string fName = StdFnameField.Text;
@@ -402,7 +412,7 @@ namespace Examination_system.Forms
         {
             if (StdIdField.Text != String.Empty
                 && StdUserNameField.Text != String.Empty
-                && StdDepartmentFiled.Text != String.Empty
+                && combo_StdDepartment.Text != String.Empty
                 && StdFnameField.Text != String.Empty
                 && StdLNameFld.Text != String.Empty
                 && StdBirthFld.Text != String.Empty
@@ -415,7 +425,7 @@ namespace Examination_system.Forms
                     .Select(u => u.U_Id)
                     .FirstOrDefault();
                 int deptId = ent.Departments
-                    .Where(d => d.Dept_Name == StdDepartmentFiled.Text)
+                    .Where(d => d.Dept_Name == combo_StdDepartment.Text)
                     .Select(d => d.Dept_Id)
                     .FirstOrDefault();
                 string fName = StdFnameField.Text;
@@ -497,7 +507,7 @@ namespace Examination_system.Forms
                 }
                 StdIdField.Text =
                 StdUserNameField.Text =
-                    StdDepartmentFiled.Text =
+                    combo_StdDepartment.Text =
                     StdFnameField.Text =
                     StdLNameFld.Text =
                     StdBirthFld.Text =
@@ -513,8 +523,7 @@ namespace Examination_system.Forms
             if (StdList.SelectedItems.Count > 0)
             {
                 StdIdField.Text = StdList.SelectedItems[0].SubItems[0].Text;
-                StdUserNameField.Text = StdList.SelectedItems[0].SubItems[1].Text;
-                StdDepartmentFiled.Text = StdList.SelectedItems[0].SubItems[2].Text;
+                StdUserNameField.Text = StdList.SelectedItems[0].SubItems[1].Text;              
                 StdFnameField.Text = StdList.SelectedItems[0].SubItems[3].Text;
                 StdLNameFld.Text = StdList.SelectedItems[0].SubItems[4].Text;
                 try
@@ -1311,8 +1320,8 @@ namespace Examination_system.Forms
 
 
 
+
         #endregion
 
-        
     }
 }
