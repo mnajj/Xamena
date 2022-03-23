@@ -9,6 +9,7 @@ namespace Examination_system.Forms
 {
     public partial class instructorForm : Form
     {
+        bool inserted;
         string ins_username;
         Form logform;
         ExamSystemEntities ent;
@@ -53,8 +54,8 @@ namespace Examination_system.Forms
                         }
                         catch (Exception)
                         {
-                        }                        
-                         DisplayExams();                        
+                        }
+                        DisplayExams();
                     }
                     else
                     {
@@ -162,7 +163,12 @@ namespace Examination_system.Forms
         }
 
         #endregion
-        #region departmennt      
+        #region departmennt
+
+        private void btn_displayAllDepartments_Click(object sender, EventArgs e)
+        {
+            displayDepartments();
+        }
         private void lst_department_Click(object sender, EventArgs e)
         {
             if (lst_department.SelectedItems.Count > 0)
@@ -183,28 +189,28 @@ namespace Examination_system.Forms
         }
         private void btn_deptDisplayByname_Click(object sender, EventArgs e)
         {
-            
+
             if (txt_deptName.Text != "")
             {
                 var dept = ent.Departments.Where(dep => dep.Dept_Name.Contains(txt_deptName.Text)).ToList();
-                if (dept.Count>0)
+                if (dept.Count > 0)
                 {
                     lst_department.Items.Clear();
                     foreach (var item in dept)
-                    {                        
+                    {
                         string[] row = { item.Dept_Id.ToString(),
                     item.Dept_Name,
                     item.Dept_Loc,item.Dept_ManagerHireDate.ToString(),item.Instructor.Ins_Fname};
                         ListViewItem Rowitem = new ListViewItem(row);
                         lst_department.Items.Add(Rowitem);
                     }
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Not found");
                 }
-                
+
             }
             else
             {
@@ -219,7 +225,10 @@ namespace Examination_system.Forms
         {
             if (txt_deptName.Text != "" && txt_deptLoc.Text != "" && cmbo_deptManager.Text != "")
             {
+
+
                 string name = txt_deptName.Text;
+
                 string location = txt_deptLoc.Text;
                 DateTime dt = date_deptHire.Value;
                 string managername = cmbo_deptManager.Text;
@@ -237,6 +246,8 @@ namespace Examination_system.Forms
 
                 ent.SaveChanges();
                 displayDepartments();
+
+
             }
             else
             {
@@ -257,9 +268,7 @@ namespace Examination_system.Forms
                     ListViewItem Rowitem = new ListViewItem(row);
                     lst_department.Items.Add(Rowitem);
                 }
-                btn_deptDelete.Enabled = true;
-                btn_dept_update.Enabled = true;
-                txt_deptId.Text = txt_deptLoc.Text = string.Empty;
+                txt_deptId.Text = txt_deptLoc.Text = txt_deptName.Text = string.Empty;
             }
         }
         private void btn_dept_update_Click(object sender, EventArgs e)
@@ -318,10 +327,13 @@ namespace Examination_system.Forms
         }
         #endregion
         #region Student
-        private void DisplayStd_Click(object sender, EventArgs e)
+        private void btn_displayAllStudents_Click(object sender, EventArgs e)
         {
             displayStudentsData();
-
+        }
+        private void tabpage_students_Enter(object sender, EventArgs e)
+        {
+            displayStudentsData();
         }
         private void displayStudentsData()
         {
@@ -453,15 +465,16 @@ namespace Examination_system.Forms
         }
         private void DisplayStdByName_Click(object sender, EventArgs e)
         {
-            StdList.Items.Clear();
+
             if (StdFnameField.Text != String.Empty && StdLNameFld.Text != String.Empty)
             {
                 var stds = ent.Students
-                    .Where(s => s.Std_Fname == StdFnameField.Text)
-                    .Where(s => s.Std_Lname == StdLNameFld.Text)
+                    .Where(s => s.Std_Fname.Contains(StdFnameField.Text))
+                    .Where(s => s.Std_Lname.Contains(StdLNameFld.Text))
                     .ToList();
                 if (stds.Count > 0)
                 {
+                    StdList.Items.Clear();
                     foreach (var item in stds)
                     {
                         string[] row =
@@ -508,7 +521,7 @@ namespace Examination_system.Forms
                 {
                     StdBirthFld.Value = DateTime.Parse(StdList.SelectedItems[0].SubItems[5].Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -600,37 +613,70 @@ namespace Examination_system.Forms
         }
         private void btn_quesInsert_Click(object sender, EventArgs e)
         {
-
+            bool ok = true; ;
             if (cmbo_QuesCourse.Text != "" && cmbo_quesType.Text != "" && txt_quesContent.Text != "")
             {
 
-                var result = ent.Courses.Where(crs => crs.Crs_Name == cmbo_QuesCourse.Text).ToList().First();
-                try
+                if (cmbo_quesType.Text == "TFQ" && cmbo_TfqModel.Text == "")
                 {
-                    int quecmbo_QuesCourse = result.Crs_Id;
-                    string content = txt_quesContent.Text;
-                    string type = cmbo_quesType.Text;
-                    ent.InsertQues(quecmbo_QuesCourse, content, 1, type, null);
+                    ok = false;
+                    MessageBox.Show("Assign choice to the questions first !");
                 }
-                catch (Exception)
+                else
                 {
-
-
+                    ok = true;
                 }
-                ent.SaveChanges();
-                displayQuestions();
-                var LastID = ent.Questions.Max(ques => ques.Ques_Id);
-                var lastQuesContent = ent.Questions.Where(ques => ques.Ques_Id == LastID).ToList().First();
                 if (cmbo_quesType.Text == "MCQ")
                 {
-                    lbl_lastQuesID.Text = LastID.ToString();
-                    txt_lastQuesContent.Text = lastQuesContent.Ques_Content;
+                    if (txt_choice1Content.Text == ""
+                        || txt_choice2Content.Text == ""
+                        || txt_choice3Content.Text == ""
+                        || txt_choice4Content.Text == "")
+                    {
+                        ok = false;
+                        MessageBox.Show("Assign choices to the questions first !");
+                    }
+                    else
+                    {
+                        ok = true;
+                    }
+
+
                 }
-                else if (cmbo_quesType.Text == "TFQ")
+                if (ok)
                 {
-                    lbl_lastquesIdTFQ.Text = LastID.ToString();
-                    txt_lastquesContentTFQ.Text = lastQuesContent.Ques_Content;
+
+                    var result = ent.Courses.Where(crs => crs.Crs_Name == cmbo_QuesCourse.Text).ToList().First();
+                    try
+                    {
+
+                        int quecmbo_QuesCourse = result.Crs_Id;
+                        string content = txt_quesContent.Text;
+                        string type = cmbo_quesType.Text;
+                        ent.InsertQues(quecmbo_QuesCourse, content, 1, type, null);
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
+                    ent.SaveChanges();
+                    var LastID = ent.Questions.Max(ques => ques.Ques_Id);
+
+                    if (cmbo_quesType.Text == "TFQ")
+                    {
+                        InsertAnswersTFQ(LastID);
+                    }
+                    else
+                    {
+                        InsertAnswers(LastID);
+                    }
+
+                    displayQuestions();
                 }
+
+
+
 
             }
             else
@@ -639,65 +685,87 @@ namespace Examination_system.Forms
             }
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void InsertAnswers(int lastquesId)
         {
             string[] arr = { "A", "B", "C", "D" };
             string[] choices = new string[4];
             bool[] model = new bool[4];
 
-            if (lbl_lastQuesID.Text == "Question ID")
-            {
-                MessageBox.Show("Must insert question first before inserting choices");
-            }
-            else if (txt_choice1Content.Text != "" && txt_choice2Content.Text != "" && txt_choice3Content.Text != "" && txt_choice4Content.Text != "")
-            {
-                choices[0] = txt_choice1Content.Text;
-                choices[1] = txt_choice2Content.Text;
-                choices[2] = txt_choice3Content.Text;
-                choices[3] = txt_choice4Content.Text;
 
-                model[0] = cho1radio.Checked;
-                model[1] = cho2radio.Checked;
-                model[2] = cho3radio.Checked;
-                model[3] = cho4radio.Checked;
+            choices[0] = txt_choice1Content.Text;
+            choices[1] = txt_choice2Content.Text;
+            choices[2] = txt_choice3Content.Text;
+            choices[3] = txt_choice4Content.Text;
 
-                int lastquesId = int.Parse(lbl_lastQuesID.Text);
-                for (int i = 0; i < 4; i++)
+            model[0] = cho1radio.Checked;
+            model[1] = cho2radio.Checked;
+            model[2] = cho3radio.Checked;
+            model[3] = cho4radio.Checked;
+
+            for (int i = 0; i < 4; i++)
+            {
+                try
                 {
+                    ent.sp_InsertChoice(lastquesId, choices[i], arr[i]);
+                }
+                catch (Exception)
+                {
+
+                }
+                ent.SaveChanges();
+                if (model[i])
+                {
+                    var lastchoice = ent.Choices.Max(ch => ch.Cho_Id);
                     try
                     {
-                        ent.sp_InsertChoice(lastquesId, choices[i], arr[i]);
+                        var question = ent.Questions.Where(ques => ques.Ques_Id == lastquesId).ToList().First();
+                        ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, lastchoice);
                     }
                     catch (Exception)
                     {
 
+
                     }
                     ent.SaveChanges();
-                    if (model[i])
-                    {
-                        var lastchoice = ent.Choices.Max(ch => ch.Cho_Id);
-                        try
-                        {
-                            var question = ent.Questions.Where(ques => ques.Ques_Id == lastquesId).ToList().First();
-                            ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, lastchoice);
-                        }
-                        catch (Exception)
-                        {
+                }
 
 
-                        }
-                        ent.SaveChanges();
-                    }
+            }
+            displayQuestions();
+
+
+        }
+        private void InsertAnswersTFQ(int lastquesId)
+        {
+            var question = ent.Questions.Where(ques => ques.Ques_Id == lastquesId).ToList().First();
+            if (cmbo_TfqModel.Text == "True")
+            {
+                try
+                {
+
+                    ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, 1);
+                }
+                catch (Exception)
+                {
 
 
                 }
-                displayQuestions();
 
             }
-            else
+            else if (cmbo_TfqModel.Text == "False")
             {
-                MessageBox.Show("Enter missing fields");
+                try
+                {
+                    ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, 2);
+                }
+                catch (Exception)
+                {
+
+
+                }
             }
+            ent.SaveChanges();
+
         }
         private void btn_quesDelete_Click(object sender, EventArgs e)
         {
@@ -724,78 +792,32 @@ namespace Examination_system.Forms
         }
         private void cmbo_quesType_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (lbl_lastquesIdTFQ.Text == "Question ID" && lbl_lastQuesID.Text == "Question ID")
-            {
-                if (cmbo_quesType.Text == "MCQ")
-                {
-                    grp_choices.Enabled = true;
-                    grp_TFQ.Enabled = false;
-                }
-                else if (cmbo_quesType.Text == "TFQ")
-                {
-                    grp_choices.Enabled = false;
-                    grp_TFQ.Enabled = true;
 
-                }
-            }
-            else
+            if (cmbo_quesType.Text == "MCQ")
             {
-                MessageBox.Show("Enter choices for the last question first");
+                grp_choices.Enabled = true;
+                grp_TFQ.Enabled = false;
+            }
+            else if (cmbo_quesType.Text == "TFQ")
+            {
+                grp_choices.Enabled = false;
+                grp_TFQ.Enabled = true;
+
             }
 
         }
-        private void btn_TfqAdd_Click(object sender, EventArgs e)
+        private void tabPage_questions_Enter(object sender, EventArgs e)
         {
-
-            if (lbl_lastquesIdTFQ.Text == "Question ID")
-            {
-                MessageBox.Show("Must insert question first before inserting choices");
-            }
-            else if (cmbo_TfqModel.Text != "")
-            {
-                int lastquesId = int.Parse(lbl_lastquesIdTFQ.Text);
-                var question = ent.Questions.Where(ques => ques.Ques_Id == lastquesId).ToList().First();
-                if (cmbo_TfqModel.Text == "True")
-                {
-                    try
-                    {
-
-                        ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, 1);
-                    }
-                    catch (Exception)
-                    {
-
-
-                    }
-
-                }
-                else if (cmbo_TfqModel.Text == "False")
-                {
-                    try
-                    {
-                        ent.UpdateQues(question.Ques_Id, question.Crs_Id, question.Ques_Content, question.Ques_Grade, question.Ques_Type, 2);
-                    }
-                    catch (Exception)
-                    {
-
-
-                    }
-                }
-                lbl_lastquesIdTFQ.Text = string.Empty;
-                ent.SaveChanges();
-
-            }
-            else
-            {
-                MessageBox.Show("Must select model answer");
-            }
-
+            displayQuestions();
         }
         #endregion
 
         #region User
-
-        private void Button4_Click(object sender, EventArgs e)
+        private void tabPage_users_Enter(object sender, EventArgs e)
+        {
+            DisplayUsersData();
+        }
+        private void btn_DisplayAllusers_Click(object sender, EventArgs e)
         {
             DisplayUsersData();
         }
@@ -805,15 +827,24 @@ namespace Examination_system.Forms
             var result = ent.Users.Select(u => u).ToList();
             if (result.Count > 0)
             {
+                string[] type = { "Student", "Instructor" };
+                string DisplayedType;
                 foreach (var item in result)
                 {
+                    DisplayedType = type[1];
+                    if (item.U_IsStd)
+                    {
+                        DisplayedType = type[0];
+                    }
                     string[] row =
                     {
                         item.U_Id.ToString(),
                         item.U_UserName,
                         item.U_Email,
                         item.U_Password,
-                        item.U_Sex
+                        item.U_Sex,
+                        DisplayedType
+
                     };
                     ListViewItem Rowitem = new ListViewItem(row);
                     UsersList.Items.Add(Rowitem);
@@ -827,7 +858,7 @@ namespace Examination_system.Forms
                 && UserUserNameFld.Text != String.Empty
                 && UserPassFld.Text != String.Empty
                 && UserMailFld.Text != String.Empty
-                && UserSexFld.Text != String.Empty
+                && combo_UserSexFld.Text != String.Empty
                 && (radioButton1.Checked == true || radioButton2.Checked == true)
                 )
             {
@@ -849,10 +880,10 @@ namespace Examination_system.Forms
                     }
                     try
                     {
-                        ent.UpdateUser(int.Parse(UserIdFld.Text), UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+                        ent.UpdateUser(int.Parse(UserIdFld.Text), UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, combo_UserSexFld.Text, isStd);
                         MessageBox.Show("User Info Updated Successfully");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                     }
@@ -871,11 +902,11 @@ namespace Examination_system.Forms
             if (UserUserNameFld.Text != String.Empty
                 && UserPassFld.Text != String.Empty
                 && UserMailFld.Text != String.Empty
-                && UserSexFld.Text != String.Empty
+                && combo_UserSexFld.Text != String.Empty
                 && (radioButton1.Checked == true || radioButton2.Checked == true)
                 )
             {
-                if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
+                if (ent.Users.Where(u => u.U_UserName == UserUserNameFld.Text).ToList().Count > 0)
                 {
                     MessageBox.Show("Another User has the same user name. Please, enter a new one");
                     return;
@@ -893,16 +924,17 @@ namespace Examination_system.Forms
                     }
                     try
                     {
-                        ent.InsertNewUser(UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+                        ent.InsertNewUser(UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, combo_UserSexFld.Text, isStd);
                         MessageBox.Show("Student Inserted Successfully");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                     }
+                    ent.SaveChanges();
+                    DisplayUsersData();
                 }
-                ent.SaveChanges();
-                DisplayUsersData();
+
             }
             else
             {
@@ -919,12 +951,12 @@ namespace Examination_system.Forms
                     ent.DeleteUserByUserName(UserUserNameFld.Text);
                     MessageBox.Show("User Deleted Successfully");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
                 ent.SaveChanges();
-                displayStudentsData();
+                DisplayUsersData();
             }
             else
             {
@@ -961,8 +993,7 @@ namespace Examination_system.Forms
                 }
                 UserUserNameFld.Text =
                  UserPassFld.Text =
-                 UserMailFld.Text =
-                 UserSexFld.Text = String.Empty;
+                 UserMailFld.Text = String.Empty;
                 radioButton1.Checked = radioButton2.Checked = false;
             }
             else
@@ -978,7 +1009,6 @@ namespace Examination_system.Forms
                 UserUserNameFld.Text = UsersList.SelectedItems[0].SubItems[1].Text;
                 UserMailFld.Text = UsersList.SelectedItems[0].SubItems[2].Text;
                 UserPassFld.Text = UsersList.SelectedItems[0].SubItems[3].Text;
-                UserSexFld.Text = UsersList.SelectedItems[0].SubItems[4].Text;
             }
         }
         #endregion
@@ -1039,7 +1069,7 @@ namespace Examination_system.Forms
                     ent.InsertInstructor(userName, deptId, fName, lName, deg, salary);
                     MessageBox.Show("Instructor Inserted Successfully");
                 }
-                catch (Exception ex) { }
+                catch (Exception) { }
                 ent.SaveChanges();
                 DisplayInsData();
             }
@@ -1101,7 +1131,7 @@ namespace Examination_system.Forms
                     ent.DeleteInstructor(id);
                     MessageBox.Show("Instructor Deleted Successfully");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -1170,6 +1200,10 @@ namespace Examination_system.Forms
                 InsDegFld.Text = InsList.SelectedItems[0].SubItems[5].Text;
                 InsSalaryFld.Text = InsList.SelectedItems[0].SubItems[6].Text;
             }
+        }
+        private void tabPage_instructors_Enter(object sender, EventArgs e)
+        {
+            DisplayInsData();
         }
         #endregion
 
@@ -1276,8 +1310,9 @@ namespace Examination_system.Forms
         }
 
 
+
         #endregion
 
-       
+        
     }
 }

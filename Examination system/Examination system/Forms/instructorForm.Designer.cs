@@ -63,6 +63,7 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_generate = new System.Windows.Forms.Button();
             this.tabpage_department = new System.Windows.Forms.TabPage();
+            this.btn_displayAllDepartments = new System.Windows.Forms.Button();
             this.date_deptHire = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbo_deptManager = new System.Windows.Forms.ComboBox();
@@ -84,6 +85,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabpage_students = new System.Windows.Forms.TabPage();
+            this.btn_displayAllStudents = new System.Windows.Forms.Button();
             this.StdLNameFld = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.StdAddressFld = new System.Windows.Forms.TextBox();
@@ -109,17 +111,11 @@
             this.InsertStd = new System.Windows.Forms.Button();
             this.DeleteStd = new System.Windows.Forms.Button();
             this.DisplayStdByName = new System.Windows.Forms.Button();
-            this.DisplayStd = new System.Windows.Forms.Button();
             this.UpdateStd = new System.Windows.Forms.Button();
             this.tabPage_questions = new System.Windows.Forms.TabPage();
             this.grp_TFQ = new System.Windows.Forms.GroupBox();
-            this.txt_lastquesContentTFQ = new System.Windows.Forms.TextBox();
-            this.btn_TfqAdd = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
             this.cmbo_TfqModel = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.lbl_lastquesIdTFQ = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.txt_searchText = new System.Windows.Forms.TextBox();
@@ -128,11 +124,6 @@
             this.cho3radio = new System.Windows.Forms.RadioButton();
             this.cho2radio = new System.Windows.Forms.RadioButton();
             this.cho1radio = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txt_lastQuesContent = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lbl_lastQuesID = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.txt_choice3Content = new System.Windows.Forms.TextBox();
             this.txt_choice4Content = new System.Windows.Forms.TextBox();
             this.txt_choice2Content = new System.Windows.Forms.TextBox();
@@ -160,9 +151,9 @@
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage_users = new System.Windows.Forms.TabPage();
+            this.combo_UserSexFld = new System.Windows.Forms.ComboBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.UserSexFld = new System.Windows.Forms.TextBox();
             this.UserPassFld = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -175,7 +166,7 @@
             this.InsertUserBtn = new System.Windows.Forms.Button();
             this.DeleteUser = new System.Windows.Forms.Button();
             this.DisplayUserByUserName = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_DisplayAllusers = new System.Windows.Forms.Button();
             this.UpdateUser = new System.Windows.Forms.Button();
             this.UsersList = new System.Windows.Forms.ListView();
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -183,6 +174,7 @@
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage_instructors = new System.Windows.Forms.TabPage();
             this.InsDegFld = new System.Windows.Forms.TextBox();
             this.InsLnameFld = new System.Windows.Forms.TextBox();
@@ -285,9 +277,9 @@
             this.tabPage1.BackgroundImage = global::Examination_system.Properties.Resources.image_processing20210504_13513_dw5uip;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1103, 712);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "Home 🏠";
@@ -604,6 +596,7 @@
             // 
             // tabpage_department
             // 
+            this.tabpage_department.Controls.Add(this.btn_displayAllDepartments);
             this.tabpage_department.Controls.Add(this.date_deptHire);
             this.tabpage_department.Controls.Add(this.label11);
             this.tabpage_department.Controls.Add(this.cmbo_deptManager);
@@ -629,6 +622,16 @@
             this.tabpage_department.Text = "Departments 🏢";
             this.tabpage_department.UseVisualStyleBackColor = true;
             this.tabpage_department.Enter += new System.EventHandler(this.tabpage_department_Enter);
+            // 
+            // btn_displayAllDepartments
+            // 
+            this.btn_displayAllDepartments.Location = new System.Drawing.Point(680, 486);
+            this.btn_displayAllDepartments.Name = "btn_displayAllDepartments";
+            this.btn_displayAllDepartments.Size = new System.Drawing.Size(243, 57);
+            this.btn_displayAllDepartments.TabIndex = 7;
+            this.btn_displayAllDepartments.Text = "Display all";
+            this.btn_displayAllDepartments.UseVisualStyleBackColor = true;
+            this.btn_displayAllDepartments.Click += new System.EventHandler(this.btn_displayAllDepartments_Click);
             // 
             // date_deptHire
             // 
@@ -733,7 +736,6 @@
             // 
             // btn_deptDelete
             // 
-            this.btn_deptDelete.Enabled = false;
             this.btn_deptDelete.Location = new System.Drawing.Point(786, 424);
             this.btn_deptDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deptDelete.Name = "btn_deptDelete";
@@ -756,7 +758,6 @@
             // 
             // btn_dept_update
             // 
-            this.btn_dept_update.Enabled = false;
             this.btn_dept_update.Location = new System.Drawing.Point(786, 340);
             this.btn_dept_update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_dept_update.Name = "btn_dept_update";
@@ -815,6 +816,7 @@
             // 
             // tabpage_students
             // 
+            this.tabpage_students.Controls.Add(this.btn_displayAllStudents);
             this.tabpage_students.Controls.Add(this.StdLNameFld);
             this.tabpage_students.Controls.Add(this.label18);
             this.tabpage_students.Controls.Add(this.StdAddressFld);
@@ -833,7 +835,6 @@
             this.tabpage_students.Controls.Add(this.InsertStd);
             this.tabpage_students.Controls.Add(this.DeleteStd);
             this.tabpage_students.Controls.Add(this.DisplayStdByName);
-            this.tabpage_students.Controls.Add(this.DisplayStd);
             this.tabpage_students.Controls.Add(this.UpdateStd);
             this.tabpage_students.Location = new System.Drawing.Point(4, 34);
             this.tabpage_students.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -843,6 +844,17 @@
             this.tabpage_students.TabIndex = 2;
             this.tabpage_students.Text = "Students 🙍";
             this.tabpage_students.UseVisualStyleBackColor = true;
+            this.tabpage_students.Enter += new System.EventHandler(this.tabpage_students_Enter);
+            // 
+            // btn_displayAllStudents
+            // 
+            this.btn_displayAllStudents.Location = new System.Drawing.Point(710, 479);
+            this.btn_displayAllStudents.Name = "btn_displayAllStudents";
+            this.btn_displayAllStudents.Size = new System.Drawing.Size(243, 57);
+            this.btn_displayAllStudents.TabIndex = 23;
+            this.btn_displayAllStudents.Text = "Display all";
+            this.btn_displayAllStudents.UseVisualStyleBackColor = true;
+            this.btn_displayAllStudents.Click += new System.EventHandler(this.btn_displayAllStudents_Click);
             // 
             // StdLNameFld
             // 
@@ -1026,7 +1038,7 @@
             // 
             // InsertStd
             // 
-            this.InsertStd.Location = new System.Drawing.Point(548, 417);
+            this.InsertStd.Location = new System.Drawing.Point(584, 417);
             this.InsertStd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InsertStd.Name = "InsertStd";
             this.InsertStd.Size = new System.Drawing.Size(243, 57);
@@ -1048,25 +1060,14 @@
             // 
             // DisplayStdByName
             // 
-            this.DisplayStdByName.Location = new System.Drawing.Point(661, 479);
+            this.DisplayStdByName.Location = new System.Drawing.Point(584, 334);
             this.DisplayStdByName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DisplayStdByName.Name = "DisplayStdByName";
-            this.DisplayStdByName.Size = new System.Drawing.Size(305, 57);
+            this.DisplayStdByName.Size = new System.Drawing.Size(243, 57);
             this.DisplayStdByName.TabIndex = 4;
             this.DisplayStdByName.Text = "Display by Student Name";
             this.DisplayStdByName.UseVisualStyleBackColor = true;
             this.DisplayStdByName.Click += new System.EventHandler(this.DisplayStdByName_Click);
-            // 
-            // DisplayStd
-            // 
-            this.DisplayStd.Location = new System.Drawing.Point(548, 334);
-            this.DisplayStd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DisplayStd.Name = "DisplayStd";
-            this.DisplayStd.Size = new System.Drawing.Size(243, 57);
-            this.DisplayStd.TabIndex = 5;
-            this.DisplayStd.Text = "Display";
-            this.DisplayStd.UseVisualStyleBackColor = true;
-            this.DisplayStd.Click += new System.EventHandler(this.DisplayStd_Click);
             // 
             // UpdateStd
             // 
@@ -1105,16 +1106,12 @@
             this.tabPage_questions.TabIndex = 3;
             this.tabPage_questions.Text = "Questions ❓";
             this.tabPage_questions.UseVisualStyleBackColor = true;
+            this.tabPage_questions.Enter += new System.EventHandler(this.tabPage_questions_Enter);
             // 
             // grp_TFQ
             // 
-            this.grp_TFQ.Controls.Add(this.txt_lastquesContentTFQ);
-            this.grp_TFQ.Controls.Add(this.btn_TfqAdd);
-            this.grp_TFQ.Controls.Add(this.label28);
             this.grp_TFQ.Controls.Add(this.cmbo_TfqModel);
             this.grp_TFQ.Controls.Add(this.label26);
-            this.grp_TFQ.Controls.Add(this.lbl_lastquesIdTFQ);
-            this.grp_TFQ.Controls.Add(this.label30);
             this.grp_TFQ.Enabled = false;
             this.grp_TFQ.Location = new System.Drawing.Point(25, 506);
             this.grp_TFQ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1125,35 +1122,6 @@
             this.grp_TFQ.TabStop = false;
             this.grp_TFQ.Text = "TFQ";
             // 
-            // txt_lastquesContentTFQ
-            // 
-            this.txt_lastquesContentTFQ.Location = new System.Drawing.Point(7, 96);
-            this.txt_lastquesContentTFQ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_lastquesContentTFQ.Name = "txt_lastquesContentTFQ";
-            this.txt_lastquesContentTFQ.ReadOnly = true;
-            this.txt_lastquesContentTFQ.Size = new System.Drawing.Size(481, 30);
-            this.txt_lastquesContentTFQ.TabIndex = 15;
-            // 
-            // btn_TfqAdd
-            // 
-            this.btn_TfqAdd.Location = new System.Drawing.Point(340, 145);
-            this.btn_TfqAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_TfqAdd.Name = "btn_TfqAdd";
-            this.btn_TfqAdd.Size = new System.Drawing.Size(97, 38);
-            this.btn_TfqAdd.TabIndex = 12;
-            this.btn_TfqAdd.Text = "Add";
-            this.btn_TfqAdd.UseVisualStyleBackColor = true;
-            this.btn_TfqAdd.Click += new System.EventHandler(this.btn_TfqAdd_Click);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(19, 66);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(171, 25);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "Question Content:";
-            // 
             // cmbo_TfqModel
             // 
             this.cmbo_TfqModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1161,39 +1129,20 @@
             this.cmbo_TfqModel.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cmbo_TfqModel.Location = new System.Drawing.Point(160, 148);
+            this.cmbo_TfqModel.Location = new System.Drawing.Point(180, 92);
             this.cmbo_TfqModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbo_TfqModel.Name = "cmbo_TfqModel";
-            this.cmbo_TfqModel.Size = new System.Drawing.Size(121, 33);
+            this.cmbo_TfqModel.Size = new System.Drawing.Size(94, 33);
             this.cmbo_TfqModel.TabIndex = 2;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(19, 153);
+            this.label26.Location = new System.Drawing.Point(39, 97);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(134, 25);
             this.label26.TabIndex = 1;
             this.label26.Text = "Model answer";
-            // 
-            // lbl_lastquesIdTFQ
-            // 
-            this.lbl_lastquesIdTFQ.AutoSize = true;
-            this.lbl_lastquesIdTFQ.ForeColor = System.Drawing.Color.Red;
-            this.lbl_lastquesIdTFQ.Location = new System.Drawing.Point(140, 37);
-            this.lbl_lastquesIdTFQ.Name = "lbl_lastquesIdTFQ";
-            this.lbl_lastquesIdTFQ.Size = new System.Drawing.Size(115, 25);
-            this.lbl_lastquesIdTFQ.TabIndex = 14;
-            this.lbl_lastquesIdTFQ.Text = "Question ID";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(19, 37);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(121, 25);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Question ID:";
             // 
             // groupBox5
             // 
@@ -1233,11 +1182,6 @@
             this.grp_choices.Controls.Add(this.cho3radio);
             this.grp_choices.Controls.Add(this.cho2radio);
             this.grp_choices.Controls.Add(this.cho1radio);
-            this.grp_choices.Controls.Add(this.button1);
-            this.grp_choices.Controls.Add(this.txt_lastQuesContent);
-            this.grp_choices.Controls.Add(this.label32);
-            this.grp_choices.Controls.Add(this.lbl_lastQuesID);
-            this.grp_choices.Controls.Add(this.label31);
             this.grp_choices.Controls.Add(this.txt_choice3Content);
             this.grp_choices.Controls.Add(this.txt_choice4Content);
             this.grp_choices.Controls.Add(this.txt_choice2Content);
@@ -1260,7 +1204,7 @@
             // 
             this.cho4radio.AutoSize = true;
             this.cho4radio.ForeColor = System.Drawing.Color.Red;
-            this.cho4radio.Location = new System.Drawing.Point(408, 276);
+            this.cho4radio.Location = new System.Drawing.Point(408, 252);
             this.cho4radio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cho4radio.Name = "cho4radio";
             this.cho4radio.Size = new System.Drawing.Size(106, 29);
@@ -1272,7 +1216,7 @@
             // 
             this.cho3radio.AutoSize = true;
             this.cho3radio.ForeColor = System.Drawing.Color.Red;
-            this.cho3radio.Location = new System.Drawing.Point(408, 222);
+            this.cho3radio.Location = new System.Drawing.Point(408, 198);
             this.cho3radio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cho3radio.Name = "cho3radio";
             this.cho3radio.Size = new System.Drawing.Size(106, 29);
@@ -1284,7 +1228,7 @@
             // 
             this.cho2radio.AutoSize = true;
             this.cho2radio.ForeColor = System.Drawing.Color.Red;
-            this.cho2radio.Location = new System.Drawing.Point(408, 167);
+            this.cho2radio.Location = new System.Drawing.Point(408, 143);
             this.cho2radio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cho2radio.Name = "cho2radio";
             this.cho2radio.Size = new System.Drawing.Size(106, 29);
@@ -1297,7 +1241,7 @@
             this.cho1radio.AutoSize = true;
             this.cho1radio.Checked = true;
             this.cho1radio.ForeColor = System.Drawing.Color.Red;
-            this.cho1radio.Location = new System.Drawing.Point(408, 114);
+            this.cho1radio.Location = new System.Drawing.Point(408, 90);
             this.cho1radio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cho1radio.Name = "cho1radio";
             this.cho1radio.Size = new System.Drawing.Size(106, 29);
@@ -1306,57 +1250,9 @@
             this.cho1radio.Text = "Is model";
             this.cho1radio.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(408, 314);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 38);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txt_lastQuesContent
-            // 
-            this.txt_lastQuesContent.Location = new System.Drawing.Point(28, 81);
-            this.txt_lastQuesContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_lastQuesContent.Name = "txt_lastQuesContent";
-            this.txt_lastQuesContent.ReadOnly = true;
-            this.txt_lastQuesContent.Size = new System.Drawing.Size(496, 30);
-            this.txt_lastQuesContent.TabIndex = 6;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(21, 57);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(171, 25);
-            this.label32.TabIndex = 4;
-            this.label32.Text = "Question Content:";
-            // 
-            // lbl_lastQuesID
-            // 
-            this.lbl_lastQuesID.AutoSize = true;
-            this.lbl_lastQuesID.ForeColor = System.Drawing.Color.Red;
-            this.lbl_lastQuesID.Location = new System.Drawing.Point(141, 26);
-            this.lbl_lastQuesID.Name = "lbl_lastQuesID";
-            this.lbl_lastQuesID.Size = new System.Drawing.Size(115, 25);
-            this.lbl_lastQuesID.TabIndex = 5;
-            this.lbl_lastQuesID.Text = "Question ID";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(21, 26);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(121, 25);
-            this.label31.TabIndex = 4;
-            this.label31.Text = "Question ID:";
-            // 
             // txt_choice3Content
             // 
-            this.txt_choice3Content.Location = new System.Drawing.Point(173, 222);
+            this.txt_choice3Content.Location = new System.Drawing.Point(173, 198);
             this.txt_choice3Content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_choice3Content.Name = "txt_choice3Content";
             this.txt_choice3Content.Size = new System.Drawing.Size(213, 30);
@@ -1364,7 +1260,7 @@
             // 
             // txt_choice4Content
             // 
-            this.txt_choice4Content.Location = new System.Drawing.Point(173, 274);
+            this.txt_choice4Content.Location = new System.Drawing.Point(173, 250);
             this.txt_choice4Content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_choice4Content.Name = "txt_choice4Content";
             this.txt_choice4Content.Size = new System.Drawing.Size(213, 30);
@@ -1372,7 +1268,7 @@
             // 
             // txt_choice2Content
             // 
-            this.txt_choice2Content.Location = new System.Drawing.Point(173, 167);
+            this.txt_choice2Content.Location = new System.Drawing.Point(173, 143);
             this.txt_choice2Content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_choice2Content.Name = "txt_choice2Content";
             this.txt_choice2Content.Size = new System.Drawing.Size(213, 30);
@@ -1380,7 +1276,7 @@
             // 
             // txt_choice1Content
             // 
-            this.txt_choice1Content.Location = new System.Drawing.Point(173, 113);
+            this.txt_choice1Content.Location = new System.Drawing.Point(173, 89);
             this.txt_choice1Content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_choice1Content.Name = "txt_choice1Content";
             this.txt_choice1Content.Size = new System.Drawing.Size(213, 30);
@@ -1389,7 +1285,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(21, 224);
+            this.label27.Location = new System.Drawing.Point(21, 200);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(143, 25);
             this.label27.TabIndex = 1;
@@ -1398,7 +1294,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(21, 278);
+            this.label22.Location = new System.Drawing.Point(21, 254);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(143, 25);
             this.label22.TabIndex = 1;
@@ -1407,7 +1303,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(21, 170);
+            this.label20.Location = new System.Drawing.Point(21, 146);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(143, 25);
             this.label20.TabIndex = 1;
@@ -1416,7 +1312,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(21, 116);
+            this.label19.Location = new System.Drawing.Point(21, 92);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(143, 25);
             this.label19.TabIndex = 1;
@@ -1539,7 +1435,7 @@
             this.btn_quesDisplay.Name = "btn_quesDisplay";
             this.btn_quesDisplay.Size = new System.Drawing.Size(243, 57);
             this.btn_quesDisplay.TabIndex = 26;
-            this.btn_quesDisplay.Text = "Display";
+            this.btn_quesDisplay.Text = "Display all";
             this.btn_quesDisplay.UseVisualStyleBackColor = true;
             this.btn_quesDisplay.Click += new System.EventHandler(this.btn_quesDisplay_Click);
             // 
@@ -1590,9 +1486,9 @@
             // 
             // tabPage_users
             // 
+            this.tabPage_users.Controls.Add(this.combo_UserSexFld);
             this.tabPage_users.Controls.Add(this.radioButton2);
             this.tabPage_users.Controls.Add(this.radioButton1);
-            this.tabPage_users.Controls.Add(this.UserSexFld);
             this.tabPage_users.Controls.Add(this.UserPassFld);
             this.tabPage_users.Controls.Add(this.label29);
             this.tabPage_users.Controls.Add(this.label33);
@@ -1605,7 +1501,7 @@
             this.tabPage_users.Controls.Add(this.InsertUserBtn);
             this.tabPage_users.Controls.Add(this.DeleteUser);
             this.tabPage_users.Controls.Add(this.DisplayUserByUserName);
-            this.tabPage_users.Controls.Add(this.button4);
+            this.tabPage_users.Controls.Add(this.btn_DisplayAllusers);
             this.tabPage_users.Controls.Add(this.UpdateUser);
             this.tabPage_users.Controls.Add(this.UsersList);
             this.tabPage_users.Location = new System.Drawing.Point(4, 34);
@@ -1616,12 +1512,25 @@
             this.tabPage_users.TabIndex = 4;
             this.tabPage_users.Text = "Users 📇";
             this.tabPage_users.UseVisualStyleBackColor = true;
+            this.tabPage_users.Enter += new System.EventHandler(this.tabPage_users_Enter);
+            // 
+            // combo_UserSexFld
+            // 
+            this.combo_UserSexFld.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_UserSexFld.FormattingEnabled = true;
+            this.combo_UserSexFld.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.combo_UserSexFld.Location = new System.Drawing.Point(221, 548);
+            this.combo_UserSexFld.Name = "combo_UserSexFld";
+            this.combo_UserSexFld.Size = new System.Drawing.Size(224, 33);
+            this.combo_UserSexFld.TabIndex = 62;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(263, 594);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(113, 29);
             this.radioButton2.TabIndex = 61;
@@ -1632,22 +1541,15 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(89, 594);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(101, 29);
             this.radioButton1.TabIndex = 60;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Student";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // UserSexFld
-            // 
-            this.UserSexFld.Location = new System.Drawing.Point(221, 549);
-            this.UserSexFld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UserSexFld.Name = "UserSexFld";
-            this.UserSexFld.Size = new System.Drawing.Size(224, 30);
-            this.UserSexFld.TabIndex = 59;
             // 
             // UserPassFld
             // 
@@ -1760,16 +1662,16 @@
             this.DisplayUserByUserName.UseVisualStyleBackColor = true;
             this.DisplayUserByUserName.Click += new System.EventHandler(this.DisplayUserByUserName_Click);
             // 
-            // button4
+            // btn_DisplayAllusers
             // 
-            this.button4.Location = new System.Drawing.Point(503, 428);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(243, 57);
-            this.button4.TabIndex = 48;
-            this.button4.Text = "Display";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.btn_DisplayAllusers.Location = new System.Drawing.Point(503, 428);
+            this.btn_DisplayAllusers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_DisplayAllusers.Name = "btn_DisplayAllusers";
+            this.btn_DisplayAllusers.Size = new System.Drawing.Size(243, 57);
+            this.btn_DisplayAllusers.TabIndex = 48;
+            this.btn_DisplayAllusers.Text = "Display all";
+            this.btn_DisplayAllusers.UseVisualStyleBackColor = true;
+            this.btn_DisplayAllusers.Click += new System.EventHandler(this.btn_DisplayAllusers_Click);
             // 
             // UpdateUser
             // 
@@ -1789,7 +1691,8 @@
             this.columnHeader19,
             this.columnHeader20,
             this.columnHeader21,
-            this.columnHeader22});
+            this.columnHeader22,
+            this.columnHeader30});
             this.UsersList.Dock = System.Windows.Forms.DockStyle.Top;
             this.UsersList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersList.FullRowSelect = true;
@@ -1817,7 +1720,7 @@
             // columnHeader20
             // 
             this.columnHeader20.Text = "E-mail";
-            this.columnHeader20.Width = 253;
+            this.columnHeader20.Width = 241;
             // 
             // columnHeader21
             // 
@@ -1827,7 +1730,12 @@
             // columnHeader22
             // 
             this.columnHeader22.Text = "Sex";
-            this.columnHeader22.Width = 100;
+            this.columnHeader22.Width = 40;
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "Type";
+            this.columnHeader30.Width = 116;
             // 
             // tabPage_instructors
             // 
@@ -1859,6 +1767,7 @@
             this.tabPage_instructors.TabIndex = 6;
             this.tabPage_instructors.Text = "Instructors 🧑‍🏫";
             this.tabPage_instructors.UseVisualStyleBackColor = true;
+            this.tabPage_instructors.Enter += new System.EventHandler(this.tabPage_instructors_Enter);
             // 
             // InsDegFld
             // 
@@ -2020,7 +1929,7 @@
             this.DisplayIns.Name = "DisplayIns";
             this.DisplayIns.Size = new System.Drawing.Size(243, 57);
             this.DisplayIns.TabIndex = 47;
-            this.DisplayIns.Text = "Display";
+            this.DisplayIns.Text = "Display all";
             this.DisplayIns.UseVisualStyleBackColor = true;
             this.DisplayIns.Click += new System.EventHandler(this.DisplayIns_Click);
             // 
@@ -2121,6 +2030,7 @@
             // 
             // ReportsComboBox
             // 
+            this.ReportsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ReportsComboBox.FormattingEnabled = true;
             this.ReportsComboBox.Items.AddRange(new object[] {
             "Student per Department",
@@ -2130,7 +2040,7 @@
             "Exam Questions and Answers",
             "Student Answers at Exam"});
             this.ReportsComboBox.Location = new System.Drawing.Point(7, 6);
-            this.ReportsComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportsComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportsComboBox.Name = "ReportsComboBox";
             this.ReportsComboBox.Size = new System.Drawing.Size(1081, 33);
             this.ReportsComboBox.TabIndex = 0;
@@ -2153,7 +2063,7 @@
             // 
             this.pictureBox1.Image = global::Examination_system.Properties.Resources.image_processing20200415_30469_4yiukf;
             this.pictureBox1.Location = new System.Drawing.Point(-505, 58);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1135, 683);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2408,7 +2318,6 @@
 		private System.Windows.Forms.Button InsertStd;
 		private System.Windows.Forms.Button DeleteStd;
 		private System.Windows.Forms.Button DisplayStdByName;
-		private System.Windows.Forms.Button DisplayStd;
 		private System.Windows.Forms.Button UpdateStd;
 		private System.Windows.Forms.ListView StdList;
 		private System.Windows.Forms.ColumnHeader columnHeader6;
@@ -2462,11 +2371,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_choice4Content;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label lbl_lastQuesID;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txt_lastQuesContent;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton cho4radio;
         private System.Windows.Forms.RadioButton cho3radio;
         private System.Windows.Forms.RadioButton cho2radio;
@@ -2474,16 +2378,10 @@
         private System.Windows.Forms.GroupBox grp_TFQ;
         private System.Windows.Forms.ComboBox cmbo_TfqModel;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button btn_TfqAdd;
-        private System.Windows.Forms.TextBox txt_lastquesContentTFQ;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label lbl_lastquesIdTFQ;
-        private System.Windows.Forms.Label label30;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.RadioButton radioButton2;
 		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.TextBox UserSexFld;
 		private System.Windows.Forms.TextBox UserPassFld;
 		private System.Windows.Forms.Label label29;
 		private System.Windows.Forms.Label label33;
@@ -2496,7 +2394,7 @@
 		private System.Windows.Forms.Button InsertUserBtn;
 		private System.Windows.Forms.Button DeleteUser;
 		private System.Windows.Forms.Button DisplayUserByUserName;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button btn_DisplayAllusers;
 		private System.Windows.Forms.Button UpdateUser;
 		private System.Windows.Forms.ListView UsersList;
 		private System.Windows.Forms.ColumnHeader columnHeader16;
@@ -2539,5 +2437,9 @@
 		private Stimulsoft.Report.StiReport CourseTopicReport;
 		private Stimulsoft.Report.StiReport ExamQAndAReport;
 		private Stimulsoft.Report.StiReport StdExamAnswersReport;
-	}
+        private System.Windows.Forms.Button btn_displayAllDepartments;
+        private System.Windows.Forms.Button btn_displayAllStudents;
+        private System.Windows.Forms.ComboBox combo_UserSexFld;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+    }
 }

@@ -51,7 +51,7 @@ namespace Examination_system.Forms.Dialogs
 					Ent.sp_InsertStdForCrs(PrevForm.StudentId, crsId, null, null);
 					MessageBox.Show("Enrollment Succeeded");
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 
 				}
