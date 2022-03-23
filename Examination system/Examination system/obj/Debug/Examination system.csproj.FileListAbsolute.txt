@@ -36,9 +36,6 @@ D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportSource.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Shared.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.Windows.Forms.dll
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.Common.dll
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\ShockwaveFlashObjects.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
@@ -98,7 +95,6 @@ C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\
 C:\Users\DELL\repos\New\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.ChooseCrsExamDialog.resources
 D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Student.resources
-D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.ReportViewer.WebForms.dll
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe.config
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.exe
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\bin\Debug\Examination system.pdb
@@ -252,3 +248,74 @@ C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.CourseTopicPrompet.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.ExamQuesPrompet.resources
 C:\Users\DELL\repos\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.StdExamAnsPrompet.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\LibExcel.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Base.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Blockly.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.BlocklyEditor.Wpf.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.Win.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Data.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Database.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Design.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Editor.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Map.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.MathFX.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Check.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Design.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Helper.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Web.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Win.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Svg.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\ADODB.dll
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Base.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Base.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Blockly.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Blockly.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.BlocklyEditor.Wpf.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.BlocklyEditor.Wpf.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.Win.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Controls.Win.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Data.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Data.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Database.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Database.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Design.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Design.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Editor.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Editor.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Map.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Map.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.MathFX.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.MathFX.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Check.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Check.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Design.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Design.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Helper.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Helper.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Web.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Web.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Win.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Report.Win.xml
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\bin\Debug\Stimulsoft.Svg.pdb
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.CourseEnrollDialog.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.CourseTopicPrompet.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.DepartmentPrompetDialog.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.ExamQuesPrompet.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.InstructorCoursesPrompet.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.StdExamAnsPrompet.resources
+D:\ITI Projects\Examination system(Project)\ExaminationSystem\Examination system\Examination system\obj\Debug\Examination_system.Forms.Dialogs.StudentCourseGradePrompet.resources

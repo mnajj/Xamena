@@ -27,7 +27,6 @@ namespace Examination_system.Forms
             lbl_username.Text = insData.Ins_Fname;
 
         }
-
         private void instructorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             logform.Close();
@@ -54,7 +53,8 @@ namespace Examination_system.Forms
                         }
                         catch (Exception)
                         {
-                        }
+                        }                        
+                         DisplayExams();                        
                     }
                     else
                     {
@@ -75,7 +75,6 @@ namespace Examination_system.Forms
 
             ent.SaveChanges();
         }
-
         private void cmbo_crsname_DropDown(object sender, EventArgs e)
         {
             cmbo_crsname.Items.Clear();
@@ -86,7 +85,6 @@ namespace Examination_system.Forms
                 cmbo_crsname.Items.Add(item.Crs_Name);
             }
         }
-
         private void txt_id_TextChanged(object sender, EventArgs e)
         {
             int id;
@@ -111,7 +109,6 @@ namespace Examination_system.Forms
                 }
             }
         }
-
         private void btn_delete_Click(object sender, EventArgs e)
         {
             int id;
@@ -128,6 +125,7 @@ namespace Examination_system.Forms
                     {
                         ent.sp_deleteExam(id);
                         ent.SaveChanges();
+                        DisplayExams();
                     }
                 }
             }
@@ -136,11 +134,10 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter missing field data");
             }
         }
-
-        private void btn_display_Click(object sender, EventArgs e)
+        private void DisplayExams()
         {
             var result = ent.Exams.Select(ex => ex).ToList();
-            listView1.Items.Clear();
+            lst_exams.Items.Clear();
             foreach (var item in result)
             {
 
@@ -148,18 +145,24 @@ namespace Examination_system.Forms
                     item.Course.Crs_Name,
                     item.Instructor.Ins_Fname,item.Exm_Grade.ToString()};
                 ListViewItem Rowitem = new ListViewItem(row);
-                listView1.Items.Add(Rowitem);
+                lst_exams.Items.Add(Rowitem);
 
             }
         }
-        #endregion
-        #region departmennt
-        private void btn_deptDisplay_Click(object sender, EventArgs e)
+        private void tabpage_exams_Enter(object sender, EventArgs e)
         {
-            displayDepartments();
-
+            DisplayExams();
+        }
+        private void lst_exams_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lst_exams.SelectedItems.Count > 0)
+            {
+                txt_id.Text = lst_exams.SelectedItems[0].SubItems[0].Text;
+            }
         }
 
+        #endregion
+        #region departmennt      
         private void lst_department_Click(object sender, EventArgs e)
         {
             if (lst_department.SelectedItems.Count > 0)
@@ -169,7 +172,6 @@ namespace Examination_system.Forms
                 txt_deptId.Text = lst_department.SelectedItems[0].SubItems[0].Text;
             }
         }
-
         private void cmbo_deptManager_DropDown(object sender, EventArgs e)
         {
             cmbo_deptManager.Items.Clear();
@@ -179,38 +181,40 @@ namespace Examination_system.Forms
                 cmbo_deptManager.Items.Add(item.Ins_Fname);
             }
         }
-
         private void btn_deptDisplayByname_Click(object sender, EventArgs e)
         {
-            lst_department.Items.Clear();
+            
             if (txt_deptName.Text != "")
             {
-                var dept = ent.Departments.Where(dep => dep.Dept_Name == txt_deptName.Text).ToList();
-                if (dept.Count > 0)
+                var dept = ent.Departments.Where(dep => dep.Dept_Name.Contains(txt_deptName.Text)).ToList();
+                if (dept.Count>0)
                 {
+                    lst_department.Items.Clear();
                     foreach (var item in dept)
-                    {
-                        string[] row = { dept[0].Dept_Id.ToString(),
-                    dept[0].Dept_Name,
-                    dept[0].Dept_Loc,dept[0].Dept_ManagerHireDate.ToString(),dept[0].Instructor.Ins_Fname};
+                    {                        
+                        string[] row = { item.Dept_Id.ToString(),
+                    item.Dept_Name,
+                    item.Dept_Loc,item.Dept_ManagerHireDate.ToString(),item.Instructor.Ins_Fname};
                         ListViewItem Rowitem = new ListViewItem(row);
                         lst_department.Items.Add(Rowitem);
-
                     }
+                   
                 }
                 else
                 {
                     MessageBox.Show("Not found");
                 }
-                txt_deptId.Text = txt_deptLoc.Text = string.Empty;
+                
             }
             else
             {
                 MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
             }
         }
-
-
+        private void tabpage_department_Enter(object sender, EventArgs e)
+        {
+            displayDepartments();
+        }
         private void btn_deptInsert_Click(object sender, EventArgs e)
         {
             if (txt_deptName.Text != "" && txt_deptLoc.Text != "" && cmbo_deptManager.Text != "")
@@ -239,7 +243,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter missing filed data");
             }
         }
-
         private void displayDepartments()
         {
             lst_department.Items.Clear();
@@ -256,9 +259,9 @@ namespace Examination_system.Forms
                 }
                 btn_deptDelete.Enabled = true;
                 btn_dept_update.Enabled = true;
+                txt_deptId.Text = txt_deptLoc.Text = string.Empty;
             }
         }
-
         private void btn_dept_update_Click(object sender, EventArgs e)
         {
             if (txt_deptName.Text != "" && txt_deptLoc.Text != "" && txt_deptId.Text != "" && cmbo_deptManager.Text != "")
@@ -286,7 +289,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter full data to update");
             }
         }
-
         private void btn_deptDelete_Click(object sender, EventArgs e)
         {
             if (txt_deptId.Text != "")
@@ -315,7 +317,6 @@ namespace Examination_system.Forms
             }
         }
         #endregion
-
         #region Student
         private void DisplayStd_Click(object sender, EventArgs e)
         {
@@ -385,7 +386,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter missing filed data");
             }
         }
-
         private void UpdateStd_Click(object sender, EventArgs e)
         {
             if (StdIdField.Text != String.Empty
@@ -427,7 +427,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter full data to update");
             }
         }
-
         private void DeleteStd_Click(object sender, EventArgs e)
         {
             if (StdIdField.Text != String.Empty)
@@ -452,7 +451,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Select department to delete");
             }
         }
-
         private void DisplayStdByName_Click(object sender, EventArgs e)
         {
             StdList.Items.Clear();
@@ -497,7 +495,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
             }
         }
-
         private void StdList_Click(object sender, EventArgs e)
         {
             if (StdList.SelectedItems.Count > 0)
@@ -518,12 +515,9 @@ namespace Examination_system.Forms
                 StdAddressFld.Text = StdList.SelectedItems[0].SubItems[6].Text;
             }
         }
-
         #endregion
 
         #region questions
-        #endregion
-
         private void btn_quesDisplay_Click(object sender, EventArgs e)
         {
             displayQuestions();
@@ -558,8 +552,6 @@ namespace Examination_system.Forms
                 }
             }
         }
-
-
         private void btn_search_Click(object sender, EventArgs e)
         {
             if (lst_questions.Items.Count > 0)
@@ -585,7 +577,6 @@ namespace Examination_system.Forms
                 }
             }
         }
-
         private void lst_questions_MouseClick(object sender, MouseEventArgs e)
         {
             if (lst_questions.SelectedItems.Count > 0)
@@ -594,9 +585,6 @@ namespace Examination_system.Forms
                 txt_quesContent.Text = lst_questions.SelectedItems[0].SubItems[2].Text;
             }
         }
-
-
-
         private void cmbo_QuesCourse_DropDown(object sender, EventArgs e)
         {
             cmbo_QuesCourse.Items.Clear();
@@ -610,7 +598,6 @@ namespace Examination_system.Forms
             }
 
         }
-
         private void btn_quesInsert_Click(object sender, EventArgs e)
         {
 
@@ -652,7 +639,6 @@ namespace Examination_system.Forms
             }
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string[] arr = { "A", "B", "C", "D" };
@@ -713,7 +699,6 @@ namespace Examination_system.Forms
                 MessageBox.Show("Enter missing fields");
             }
         }
-
         private void btn_quesDelete_Click(object sender, EventArgs e)
         {
             if (lst_questions.SelectedItems.Count > 0)
@@ -737,7 +722,6 @@ namespace Examination_system.Forms
                 displayQuestions();
             }
         }
-
         private void cmbo_quesType_SelectedValueChanged(object sender, EventArgs e)
         {
             if (lbl_lastquesIdTFQ.Text == "Question ID" && lbl_lastQuesID.Text == "Question ID")
@@ -760,7 +744,6 @@ namespace Examination_system.Forms
             }
 
         }
-
         private void btn_TfqAdd_Click(object sender, EventArgs e)
         {
 
@@ -808,512 +791,493 @@ namespace Examination_system.Forms
             }
 
         }
+        #endregion
 
-		#region User
+        #region User
 
-		private void Button4_Click(object sender, EventArgs e)
-		{
-			DisplayUsersData();
-		}
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            DisplayUsersData();
+        }
+        private void DisplayUsersData()
+        {
+            UsersList.Items.Clear();
+            var result = ent.Users.Select(u => u).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    string[] row =
+                    {
+                        item.U_Id.ToString(),
+                        item.U_UserName,
+                        item.U_Email,
+                        item.U_Password,
+                        item.U_Sex
+                    };
+                    ListViewItem Rowitem = new ListViewItem(row);
+                    UsersList.Items.Add(Rowitem);
+                }
+            }
+        }
+        private void UpdateUser_Click(object sender, EventArgs e)
+        {
+            if (
+                UserIdFld.Text != String.Empty
+                && UserUserNameFld.Text != String.Empty
+                && UserPassFld.Text != String.Empty
+                && UserMailFld.Text != String.Empty
+                && UserSexFld.Text != String.Empty
+                && (radioButton1.Checked == true || radioButton2.Checked == true)
+                )
+            {
+                if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
+                {
+                    MessageBox.Show("Another User has the same user name. Please, enter a new one");
+                    return;
+                }
+                else
+                {
+                    bool isStd = false;
+                    if (radioButton1.Checked == true)
+                    {
+                        isStd = true;
+                    }
+                    else
+                    {
+                        isStd = false;
+                    }
+                    try
+                    {
+                        ent.UpdateUser(int.Parse(UserIdFld.Text), UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+                        MessageBox.Show("User Info Updated Successfully");
+                    }
+                    catch (Exception ex)
+                    {
 
-		private void DisplayUsersData()
-		{
-			UsersList.Items.Clear();
-			var result = ent.Users.Select(u => u).ToList();
-			if (result.Count > 0)
-			{
-				foreach (var item in result)
-				{
-					string[] row =
-					{
-						item.U_Id.ToString(),
-						item.U_UserName,
-						item.U_Email,
-						item.U_Password,
-						item.U_Sex
-					};
-					ListViewItem Rowitem = new ListViewItem(row);
-					UsersList.Items.Add(Rowitem);
-				}
-			}
-		}
+                    }
+                    ent.SaveChanges();
+                    DisplayUsersData();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter full data to update");
+            }
 
-		private void UpdateUser_Click(object sender, EventArgs e)
-		{
-			if (
-				UserIdFld.Text != String.Empty
-				&& UserUserNameFld.Text != String.Empty
-				&& UserPassFld.Text != String.Empty
-				&& UserMailFld.Text != String.Empty
-				&& UserSexFld.Text != String.Empty
-				&& (radioButton1.Checked == true || radioButton2.Checked == true)
-				)
-			{
-				if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
-				{
-					MessageBox.Show("Another User has the same user name. Please, enter a new one");
-					return;
-				}
-				else
-				{
-					bool isStd = false;
-					if (radioButton1.Checked == true)
-					{
-						isStd = true;
-					}
-					else
-					{
-						isStd = false;
-					}
-					try
-					{
-						ent.UpdateUser(int.Parse(UserIdFld.Text), UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
-						MessageBox.Show("User Info Updated Successfully");
-					}
-					catch (Exception ex)
-					{
+        }
+        private void InsertUserBtn_Click(object sender, EventArgs e)
+        {
+            if (UserUserNameFld.Text != String.Empty
+                && UserPassFld.Text != String.Empty
+                && UserMailFld.Text != String.Empty
+                && UserSexFld.Text != String.Empty
+                && (radioButton1.Checked == true || radioButton2.Checked == true)
+                )
+            {
+                if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
+                {
+                    MessageBox.Show("Another User has the same user name. Please, enter a new one");
+                    return;
+                }
+                else
+                {
+                    bool isStd = false;
+                    if (radioButton1.Checked == true)
+                    {
+                        isStd = true;
+                    }
+                    else
+                    {
+                        isStd = false;
+                    }
+                    try
+                    {
+                        ent.InsertNewUser(UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
+                        MessageBox.Show("Student Inserted Successfully");
+                    }
+                    catch (Exception ex)
+                    {
 
-					}
-					ent.SaveChanges();
-					DisplayUsersData();
-				}
-			}
-			else
-			{
-				MessageBox.Show("Enter full data to update");
-			}
+                    }
+                }
+                ent.SaveChanges();
+                DisplayUsersData();
+            }
+            else
+            {
+                MessageBox.Show("Enter missing filed data");
+            }
 
-		}
+        }
+        private void DeleteUser_Click(object sender, EventArgs e)
+        {
+            if (UserUserNameFld.Text != String.Empty)
+            {
+                try
+                {
+                    ent.DeleteUserByUserName(UserUserNameFld.Text);
+                    MessageBox.Show("User Deleted Successfully");
+                }
+                catch (Exception ex)
+                {
 
-		private void InsertUserBtn_Click(object sender, EventArgs e)
-		{
-			if (UserUserNameFld.Text != String.Empty
-				&& UserPassFld.Text != String.Empty
-				&& UserMailFld.Text != String.Empty
-				&& UserSexFld.Text != String.Empty
-				&& (radioButton1.Checked == true || radioButton2.Checked == true)
-				)
-			{
-				if (ent.Users.Contains(new User { U_UserName = UserUserNameFld.Text }))
-				{
-					MessageBox.Show("Another User has the same user name. Please, enter a new one");
-					return;
-				}
-				else
-				{
-					bool isStd = false;
-					if (radioButton1.Checked == true)
-					{
-						isStd = true;
-					}
-					else
-					{
-						isStd = false;
-					}
-					try
-					{
-						ent.InsertNewUser(UserUserNameFld.Text, UserMailFld.Text, UserPassFld.Text, UserSexFld.Text, isStd);
-						MessageBox.Show("Student Inserted Successfully");
-					}
-					catch (Exception ex)
-					{
+                }
+                ent.SaveChanges();
+                displayStudentsData();
+            }
+            else
+            {
+                MessageBox.Show("Select User to delete");
+            }
+        }
+        private void DisplayUserByUserName_Click(object sender, EventArgs e)
+        {
+            UsersList.Items.Clear();
+            if (UserUserNameFld.Text != String.Empty)
+            {
+                var users = ent.Users
+                    .Where(u => u.U_UserName == UserUserNameFld.Text)
+                    .ToList();
+                if (users.Count > 0)
+                {
+                    foreach (var item in users)
+                    {
+                        string[] row =
+                        {
+                            item.U_Id.ToString(),
+                            item.U_UserName,
+                            item.U_Email,
+                            item.U_Password,
+                            item.U_Sex
+                        };
+                        ListViewItem Rowitem = new ListViewItem(row);
+                        StdList.Items.Add(Rowitem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Not found");
+                }
+                UserUserNameFld.Text =
+                 UserPassFld.Text =
+                 UserMailFld.Text =
+                 UserSexFld.Text = String.Empty;
+                radioButton1.Checked = radioButton2.Checked = false;
+            }
+            else
+            {
+                MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+            }
+        }
+        private void UsersList_Click(object sender, EventArgs e)
+        {
+            if (UsersList.SelectedItems.Count > 0)
+            {
+                UserIdFld.Text = UsersList.SelectedItems[0].SubItems[0].Text;
+                UserUserNameFld.Text = UsersList.SelectedItems[0].SubItems[1].Text;
+                UserMailFld.Text = UsersList.SelectedItems[0].SubItems[2].Text;
+                UserPassFld.Text = UsersList.SelectedItems[0].SubItems[3].Text;
+                UserSexFld.Text = UsersList.SelectedItems[0].SubItems[4].Text;
+            }
+        }
+        #endregion
 
-					}
-				}
-				ent.SaveChanges();
-				DisplayUsersData();
-			}
-			else
-			{
-				MessageBox.Show("Enter missing filed data");
-			}
+        #region Instructor
+        private void DisplayIns_Click(object sender, EventArgs e)
+        {
+            DisplayInsData();
+        }
+        private void DisplayInsData()
+        {
+            InsList.Items.Clear();
+            var result = ent.Instructors.Select(i => i).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    string[] row =
+                    {
+                        item.Ins_Id.ToString(),
+                        item.User.U_UserName,
+                        item.Department.Dept_Name,
+                        item.Ins_Fname,
+                        item.Ins_Lname,
+                        item.Ins_Degree,
+                        item.Ins_Salary.ToString()
+                    };
+                    ListViewItem Rowitem = new ListViewItem(row);
+                    InsList.Items.Add(Rowitem);
+                }
+            }
+        }
+        private void InsertIns_Click(object sender, EventArgs e)
+        {
+            if (InsUserNameFld.Text != String.Empty
+                && InsDeptFld.Text != String.Empty
+                && InsFnameFld.Text != String.Empty
+                && InsLnameFld.Text != String.Empty
+                && InsDegFld.Text != String.Empty
+                && InsSalaryFld.Text != String.Empty
+                )
+            {
+                int userName = ent.Users
+                    .Where(u => u.U_UserName == InsUserNameFld.Text)
+                    .Select(u => u.U_Id)
+                    .FirstOrDefault();
+                int deptId = ent.Departments
+                    .Where(d => d.Dept_Name == InsDeptFld.Text)
+                    .Select(d => d.Dept_Id)
+                    .FirstOrDefault();
+                string fName = InsFnameFld.Text;
+                string lName = InsLnameFld.Text;
+                string deg = InsDegFld.Text;
+                int salary = int.Parse(InsSalaryFld.Text);
 
-		}
+                try
+                {
+                    ent.InsertInstructor(userName, deptId, fName, lName, deg, salary);
+                    MessageBox.Show("Instructor Inserted Successfully");
+                }
+                catch (Exception ex) { }
+                ent.SaveChanges();
+                DisplayInsData();
+            }
+            else
+            {
+                MessageBox.Show("Enter missing filed data");
+            }
+
+        }
+        private void UpdateIns_Click(object sender, EventArgs e)
+        {
+            if (
+                InsIdFld.Text != String.Empty
+                && InsUserNameFld.Text != String.Empty
+                && InsDeptFld.Text != String.Empty
+                && InsFnameFld.Text != String.Empty
+                && InsLnameFld.Text != String.Empty
+                && InsDegFld.Text != String.Empty
+                && InsSalaryFld.Text != String.Empty
+                )
+            {
+                int id = int.Parse(InsIdFld.Text);
+                int userNameId = ent.Users
+                    .Where(u => u.U_UserName == InsUserNameFld.Text)
+                    .Select(u => u.U_Id)
+                    .FirstOrDefault();
+                int deptId = ent.Departments
+                    .Where(d => d.Dept_Name == InsDeptFld.Text)
+                    .Select(d => d.Dept_Id)
+                    .FirstOrDefault();
+                string fName = InsFnameFld.Text;
+                string lName = InsLnameFld.Text;
+                string deg = InsDegFld.Text;
+                int salary = int.Parse(InsSalaryFld.Text);
+                try
+                {
+                    ent.UpdateInstructor(id, userNameId, deptId, fName, lName, deg, salary);
+                    MessageBox.Show("Instructor Info Updated Successfully");
+                }
+                catch (Exception)
+                {
+
+                }
+                ent.SaveChanges();
+                DisplayInsData();
+            }
+            else
+            {
+                MessageBox.Show("Enter full data to update");
+            }
+        }
+        private void DeleteIns_Click(object sender, EventArgs e)
+        {
+            if (InsIdFld.Text != String.Empty)
+            {
+                int id = int.Parse(InsIdFld.Text);
+                try
+                {
+                    ent.DeleteInstructor(id);
+                    MessageBox.Show("Instructor Deleted Successfully");
+                }
+                catch (Exception ex)
+                {
+
+                }
+                ent.SaveChanges();
+                DisplayInsData();
+            }
+            else
+            {
+                MessageBox.Show("Select Instructor to delete");
+            }
+        }
+        private void DisplayInsByName_Click(object sender, EventArgs e)
+        {
+            InsList.Items.Clear();
+            if (InsFnameFld.Text != String.Empty && InsLnameFld.Text != String.Empty)
+            {
+                var inss = ent.Instructors
+                    .Where(s => s.Ins_Fname == InsFnameFld.Text)
+                    .Where(s => s.Ins_Lname == InsLnameFld.Text)
+                    .ToList();
+                if (inss.Count > 0)
+                {
+                    foreach (var item in inss)
+                    {
+                        string[] row =
+                        {
+                        item.Ins_Id.ToString(),
+                        item.User.U_UserName,
+                        item.Department.Dept_Name,
+                        item.Ins_Fname,
+                        item.Ins_Lname,
+                        item.Ins_Degree,
+                        item.Ins_Salary.ToString()
+                        };
+                        ListViewItem Rowitem = new ListViewItem(row);
+                        InsList.Items.Add(Rowitem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Not found");
+                }
+                InsIdFld.Text =
+                InsUserNameFld.Text =
+                    InsDeptFld.Text =
+                    InsFnameFld.Text =
+                    InsLnameFld.Text =
+                    InsDegFld.Text =
+                    InsSalaryFld.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
+            }
+
+        }
+        private void InsList_Click(object sender, EventArgs e)
+        {
+            if (InsList.SelectedItems.Count > 0)
+            {
+                InsIdFld.Text = InsList.SelectedItems[0].SubItems[0].Text;
+                InsUserNameFld.Text = InsList.SelectedItems[0].SubItems[1].Text;
+                InsDeptFld.Text = InsList.SelectedItems[0].SubItems[2].Text;
+                InsFnameFld.Text = InsList.SelectedItems[0].SubItems[3].Text;
+                InsLnameFld.Text = InsList.SelectedItems[0].SubItems[4].Text;
+                InsDegFld.Text = InsList.SelectedItems[0].SubItems[5].Text;
+                InsSalaryFld.Text = InsList.SelectedItems[0].SubItems[6].Text;
+            }
+        }
+        #endregion
+
+        #region Reports
+
+        private void ReportsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (ReportsComboBox.Text)
+            {
+                case "Student per Department":
+                    GenerateStudentPerDepartment();
+                    break;
+                case "Student Grades per Course":
+                    GenerateStudentGradesPerCourse();
+                    break;
+                case "Courses Names with Student Count by Instructor Id":
+                    GenerateCoursesNamesByInstructorId();
+                    break;
+                case "Course Topics":
+                    GenerateCourseTopics();
+                    break;
+                case "Exam Questions and Answers":
+                    GenerateExamQuestionsAndAnswers();
+                    break;
+                case "Student Answers at Exam":
+                    GenerateStudentAnswersAtExam();
+                    break;
+            }
+        }
+        private void GenerateStudentAnswersAtExam()
+        {
+            StdExamAnsPrompet stdExamAnsPrompet = new StdExamAnsPrompet();
+            DialogResult dlgRes = stdExamAnsPrompet.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                StdExamAnswersReport.Compile();
+                StdExamAnswersReport["@exm_id"] = stdExamAnsPrompet.ExamId.ToString();
+                StdExamAnswersReport["@std_id"] = stdExamAnsPrompet.StdId.ToString();
+                StdExamAnswersReport.Show();
+                StiReportViewerControl.Report = StdExamAnswersReport;
+            }
+        }
+        private void GenerateExamQuestionsAndAnswers()
+        {
+            ExamQuesPrompet examQuesPrompet = new ExamQuesPrompet();
+            DialogResult dlgRes = examQuesPrompet.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                ExamQAndAReport.Compile();
+                ExamQAndAReport["@exm_id"] = examQuesPrompet.ExamId.ToString();
+                ExamQAndAReport.Show();
+                StiReportViewerControl.Report = ExamQAndAReport;
+            }
+        }
+        private void GenerateCourseTopics()
+        {
+            CourseTopicPrompet courseTopicPrompet = new CourseTopicPrompet();
+            DialogResult dlgRes = courseTopicPrompet.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                CourseTopicReport.Compile();
+                CourseTopicReport["@crs_id"] = courseTopicPrompet.CrsId.ToString();
+                CourseTopicReport.Show();
+                StiReportViewerControl.Report = CourseTopicReport;
+            }
+        }
+        private void GenerateCoursesNamesByInstructorId()
+        {
+            InstructorCoursesPrompet instructorCoursesPrompet = new InstructorCoursesPrompet();
+            DialogResult dlgRes = instructorCoursesPrompet.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                InsCrsReport.Compile();
+                InsCrsReport["@ins_id"] = instructorCoursesPrompet.InsId.ToString();
+                MessageBox.Show(InsCrsReport["@ins_id"].ToString());
+                InsCrsReport.Show();
+                StiReportViewerControl.Report = InsCrsReport;
+            }
+        }
+        private void GenerateStudentGradesPerCourse()
+        {
+            StudentCourseGradePrompet studentCourseGradePrompet = new StudentCourseGradePrompet();
+            DialogResult dlgRes = studentCourseGradePrompet.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                StudentGradePerCourse.Compile();
+                StudentGradePerCourse["@std_id"] = studentCourseGradePrompet.StdId.ToString();
+                StudentGradePerCourse.Show();
+                StiReportViewerControl.Report = StudentGradePerCourse;
+            }
+
+        }
+        private void GenerateStudentPerDepartment()
+        {
+            DepartmentPrompetDialog departmentPrompetDlg = new DepartmentPrompetDialog();
+            DialogResult dlgRes = departmentPrompetDlg.ShowDialog();
+            if (dlgRes == DialogResult.OK)
+            {
+                StudentperDepartmentReport.Compile();
+                StudentperDepartmentReport["@dept_id"] = departmentPrompetDlg.DeptId.ToString();
+                StudentperDepartmentReport.Show();
+                StiReportViewerControl.Report = StudentperDepartmentReport;
+            }
+        }
 
 
-		private void DeleteUser_Click(object sender, EventArgs e)
-		{
-			if (UserUserNameFld.Text != String.Empty)
-			{
-				try
-				{
-					ent.DeleteUserByUserName(UserUserNameFld.Text);
-					MessageBox.Show("User Deleted Successfully");
-				}
-				catch (Exception ex)
-				{
+        #endregion
 
-				}
-				ent.SaveChanges();
-				displayStudentsData();
-			}
-			else
-			{
-				MessageBox.Show("Select User to delete");
-			}
-		}
-
-		private void DisplayUserByUserName_Click(object sender, EventArgs e)
-		{
-			UsersList.Items.Clear();
-			if (UserUserNameFld.Text != String.Empty)
-			{
-				var users = ent.Users
-					.Where(u => u.U_UserName == UserUserNameFld.Text)
-					.ToList();
-				if (users.Count > 0)
-				{
-					foreach (var item in users)
-					{
-						string[] row =
-						{
-							item.U_Id.ToString(),
-							item.U_UserName,
-							item.U_Email,
-							item.U_Password,
-							item.U_Sex
-						};
-						ListViewItem Rowitem = new ListViewItem(row);
-						StdList.Items.Add(Rowitem);
-					}
-				}
-				else
-				{
-					MessageBox.Show("Not found");
-				}
-				UserUserNameFld.Text =
-				 UserPassFld.Text =
-				 UserMailFld.Text =
-				 UserSexFld.Text = String.Empty;
-				radioButton1.Checked = radioButton2.Checked = false;
-			}
-			else
-			{
-				MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
-			}
-		}
-
-		private void UsersList_Click(object sender, EventArgs e)
-		{
-			if (UsersList.SelectedItems.Count > 0)
-			{
-				UserIdFld.Text = UsersList.SelectedItems[0].SubItems[0].Text;
-				UserUserNameFld.Text = UsersList.SelectedItems[0].SubItems[1].Text;
-				UserMailFld.Text = UsersList.SelectedItems[0].SubItems[2].Text;
-				UserPassFld.Text = UsersList.SelectedItems[0].SubItems[3].Text;
-				UserSexFld.Text = UsersList.SelectedItems[0].SubItems[4].Text;
-			}
-		}
-		#endregion
-
-		#region Instructor
-		private void DisplayIns_Click(object sender, EventArgs e)
-		{
-			DisplayInsData();
-		}
-		private void DisplayInsData()
-		{
-			InsList.Items.Clear();
-			var result = ent.Instructors.Select(i => i).ToList();
-			if (result.Count > 0)
-			{
-				foreach (var item in result)
-				{
-					string[] row =
-					{
-						item.Ins_Id.ToString(),
-						item.User.U_UserName,
-						item.Department.Dept_Name,
-						item.Ins_Fname,
-						item.Ins_Lname,
-						item.Ins_Degree,
-						item.Ins_Salary.ToString()
-					};
-					ListViewItem Rowitem = new ListViewItem(row);
-					InsList.Items.Add(Rowitem);
-				}
-			}
-		}
-
-
-		private void InsertIns_Click(object sender, EventArgs e)
-		{
-			if (InsUserNameFld.Text != String.Empty
-				&& InsDeptFld.Text != String.Empty
-				&& InsFnameFld.Text != String.Empty
-				&& InsLnameFld.Text != String.Empty
-				&& InsDegFld.Text != String.Empty
-				&& InsSalaryFld.Text != String.Empty
-				)
-			{
-				int userName = ent.Users
-					.Where(u => u.U_UserName == InsUserNameFld.Text)
-					.Select(u => u.U_Id)
-					.FirstOrDefault();
-				int deptId = ent.Departments
-					.Where(d => d.Dept_Name == InsDeptFld.Text)
-					.Select(d => d.Dept_Id)
-					.FirstOrDefault();
-				string fName = InsFnameFld.Text;
-				string lName = InsLnameFld.Text;
-				string deg = InsDegFld.Text;
-				int salary = int.Parse(InsSalaryFld.Text);
-
-				try
-				{
-					ent.InsertInstructor(userName, deptId, fName, lName, deg, salary);
-					MessageBox.Show("Instructor Inserted Successfully");
-				}
-				catch (Exception ex) { }
-				ent.SaveChanges();
-				DisplayInsData();
-			}
-			else
-			{
-				MessageBox.Show("Enter missing filed data");
-			}
-
-		}
-
-		private void UpdateIns_Click(object sender, EventArgs e)
-		{
-			if (
-				InsIdFld.Text != String.Empty
-				&& InsUserNameFld.Text != String.Empty
-				&& InsDeptFld.Text != String.Empty
-				&& InsFnameFld.Text != String.Empty
-				&& InsLnameFld.Text != String.Empty
-				&& InsDegFld.Text != String.Empty
-				&& InsSalaryFld.Text != String.Empty
-				)
-			{
-				int id = int.Parse(InsIdFld.Text);
-				int userNameId = ent.Users
-					.Where(u => u.U_UserName == InsUserNameFld.Text)
-					.Select(u => u.U_Id)
-					.FirstOrDefault();
-				int deptId = ent.Departments
-					.Where(d => d.Dept_Name == InsDeptFld.Text)
-					.Select(d => d.Dept_Id)
-					.FirstOrDefault();
-				string fName = InsFnameFld.Text;
-				string lName = InsLnameFld.Text;
-				string deg = InsDegFld.Text;
-				int salary = int.Parse(InsSalaryFld.Text);
-				try
-				{
-					ent.UpdateInstructor(id, userNameId, deptId, fName, lName, deg, salary);
-					MessageBox.Show("Instructor Info Updated Successfully");
-				}
-				catch (Exception)
-				{
-
-				}
-				ent.SaveChanges();
-				DisplayInsData();
-			}
-			else
-			{
-				MessageBox.Show("Enter full data to update");
-			}
-		}
-
-		private void DeleteIns_Click(object sender, EventArgs e)
-		{
-			if (InsIdFld.Text != String.Empty)
-			{
-				int id = int.Parse(InsIdFld.Text);
-				try
-				{
-					ent.DeleteInstructor(id);
-					MessageBox.Show("Instructor Deleted Successfully");
-				}
-				catch (Exception ex)
-				{
-
-				}
-				ent.SaveChanges();
-				DisplayInsData();
-			}
-			else
-			{
-				MessageBox.Show("Select Instructor to delete");
-			}
-		}
-
-		private void DisplayInsByName_Click(object sender, EventArgs e)
-		{
-			InsList.Items.Clear();
-			if (InsFnameFld.Text != String.Empty && InsLnameFld.Text != String.Empty)
-			{
-				var inss = ent.Instructors
-					.Where(s => s.Ins_Fname == InsFnameFld.Text)
-					.Where(s => s.Ins_Lname == InsLnameFld.Text)
-					.ToList();
-				if (inss.Count > 0)
-				{
-					foreach (var item in inss)
-					{
-						string[] row =
-						{
-						item.Ins_Id.ToString(),
-						item.User.U_UserName,
-						item.Department.Dept_Name,
-						item.Ins_Fname,
-						item.Ins_Lname,
-						item.Ins_Degree,
-						item.Ins_Salary.ToString()
-						};
-						ListViewItem Rowitem = new ListViewItem(row);
-						InsList.Items.Add(Rowitem);
-					}
-				}
-				else
-				{
-					MessageBox.Show("Not found");
-				}
-				InsIdFld.Text =
-				InsUserNameFld.Text =
-					InsDeptFld.Text =
-					InsFnameFld.Text =
-					InsLnameFld.Text =
-					InsDegFld.Text =
-					InsSalaryFld.Text = string.Empty;
-			}
-			else
-			{
-				MessageBox.Show("Type the name you want to search by in name \"textbox\" ");
-			}
-
-		}
-
-
-		private void InsList_Click(object sender, EventArgs e)
-		{
-			if (InsList.SelectedItems.Count > 0)
-			{
-				InsIdFld.Text = InsList.SelectedItems[0].SubItems[0].Text;
-				InsUserNameFld.Text = InsList.SelectedItems[0].SubItems[1].Text;
-				InsDeptFld.Text = InsList.SelectedItems[0].SubItems[2].Text;
-				InsFnameFld.Text = InsList.SelectedItems[0].SubItems[3].Text;
-				InsLnameFld.Text = InsList.SelectedItems[0].SubItems[4].Text;
-				InsDegFld.Text = InsList.SelectedItems[0].SubItems[5].Text;
-				InsSalaryFld.Text = InsList.SelectedItems[0].SubItems[6].Text;
-			}
-		}
-
-    #endregion
-
-    #region Reports
-
-    private void ReportsComboBox_SelectedIndexChanged(object sender, EventArgs e)
-    {
-			switch (ReportsComboBox.Text)
-			{
-        case "Student per Department":
-          GenerateStudentPerDepartment();
-          break;
-        case "Student Grades per Course":
-          GenerateStudentGradesPerCourse();
-          break;
-        case "Courses Names with Student Count by Instructor Id":
-          GenerateCoursesNamesByInstructorId();
-          break;
-        case "Course Topics":
-          GenerateCourseTopics();
-          break;
-        case "Exam Questions and Answers":
-          GenerateExamQuestionsAndAnswers();
-          break;
-        case "Student Answers at Exam":
-          GenerateStudentAnswersAtExam();
-          break;
-      }
+       
     }
-
-		private void GenerateStudentAnswersAtExam()
-		{
-			StdExamAnsPrompet stdExamAnsPrompet = new StdExamAnsPrompet();
-      DialogResult dlgRes = stdExamAnsPrompet.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        StdExamAnswersReport.Compile();
-        StdExamAnswersReport["@exm_id"] = stdExamAnsPrompet.ExamId.ToString();
-        StdExamAnswersReport["@std_id"] = stdExamAnsPrompet.StdId.ToString();
-        StdExamAnswersReport.Show();
-        StiReportViewerControl.Report = StdExamAnswersReport;
-      }
-    }
-
-		private void GenerateExamQuestionsAndAnswers()
-		{
-			ExamQuesPrompet examQuesPrompet = new ExamQuesPrompet();
-      DialogResult dlgRes = examQuesPrompet.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        ExamQAndAReport.Compile();
-        ExamQAndAReport["@exm_id"] = examQuesPrompet.ExamId.ToString();
-        ExamQAndAReport.Show();
-        StiReportViewerControl.Report = ExamQAndAReport;
-      }
-    }
-
-		private void GenerateCourseTopics()
-		{
-      CourseTopicPrompet courseTopicPrompet = new CourseTopicPrompet();
-      DialogResult dlgRes = courseTopicPrompet.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        CourseTopicReport.Compile();
-        CourseTopicReport["@crs_id"] = courseTopicPrompet.CrsId.ToString();
-        CourseTopicReport.Show();
-        StiReportViewerControl.Report = CourseTopicReport;
-      }
-    }
-
-		private void GenerateCoursesNamesByInstructorId()
-		{
-			InstructorCoursesPrompet instructorCoursesPrompet = new InstructorCoursesPrompet();
-      DialogResult dlgRes = instructorCoursesPrompet.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        InsCrsReport.Compile();
-        InsCrsReport["@ins_id"] = instructorCoursesPrompet.InsId.ToString();
-        MessageBox.Show(InsCrsReport["@ins_id"].ToString());
-        InsCrsReport.Show();
-        StiReportViewerControl.Report = InsCrsReport;
-      }
-    }
-
-		private void GenerateStudentGradesPerCourse()
-		{
-			StudentCourseGradePrompet studentCourseGradePrompet = new StudentCourseGradePrompet();
-      DialogResult dlgRes = studentCourseGradePrompet.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        StudentGradePerCourse.Compile();
-        StudentGradePerCourse["@std_id"] = studentCourseGradePrompet.StdId.ToString();
-        StudentGradePerCourse.Show();
-        StiReportViewerControl.Report = StudentGradePerCourse;
-      }
-
-    }
-
-		private void GenerateStudentPerDepartment()
-		{
-      DepartmentPrompetDialog departmentPrompetDlg = new DepartmentPrompetDialog();
-      DialogResult dlgRes = departmentPrompetDlg.ShowDialog();
-      if (dlgRes == DialogResult.OK)
-			{
-        StudentperDepartmentReport.Compile();
-        StudentperDepartmentReport["@dept_id"] = departmentPrompetDlg.DeptId.ToString();
-        StudentperDepartmentReport.Show();
-        StiReportViewerControl.Report = StudentperDepartmentReport;
-      }
-    }
-
-    #endregion
-
-
-  }
 }
