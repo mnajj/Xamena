@@ -78,5 +78,10 @@ namespace Examination_system.Forms
 			CourseEnrollDialog enrollDlg = new CourseEnrollDialog(this);
 			enrollDlg.ShowDialog();
 		}
+
+		private void ShowGrade_Click(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }
