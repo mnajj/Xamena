@@ -168,5 +168,10 @@ namespace Examination_system.Forms
 				radioButton3.Checked =
 				radioButton4.Checked = false;
 		}
+
+		private void Exam_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			PrevForm.PrevForm.Close();
+		}
 	}
 }

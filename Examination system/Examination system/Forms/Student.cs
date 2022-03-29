@@ -92,5 +92,10 @@ namespace Examination_system.Forms
 				StudentGradePerCourse.Show();
 
 		}
+
+		private void Student_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			PrevForm.Close();
+		}
 	}
 }
