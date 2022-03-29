@@ -79,9 +79,18 @@ namespace Examination_system.Forms
 			enrollDlg.ShowDialog();
 		}
 
-		private void ShowGrade_Click(object sender, EventArgs e)
+        private void ShowGrade_Click(object sender, EventArgs e)
+        {
+			GenerateStudentGradesPerCourse();
+
+		}
+
+		private void GenerateStudentGradesPerCourse()
 		{
-			
+				StudentGradePerCourse.Compile();
+				StudentGradePerCourse["@std_id"] = StudentId.ToString();
+				StudentGradePerCourse.Show();
+
 		}
 	}
 }

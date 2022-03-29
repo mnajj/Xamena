@@ -1317,6 +1317,7 @@ namespace Examination_system.Forms
                 StiReportViewerControl.Report = StudentperDepartmentReport;
             }
         }
+       
 
 
 
