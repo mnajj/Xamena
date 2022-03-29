@@ -35,7 +35,7 @@ namespace Examination_system.Forms
 
 		private void ShowExamFirstQuestion()
 		{
-			label1.Text = Questions[Iterator].Ques_Content;
+			QuesBox.Text = Questions[Iterator].Ques_Content;
 			if (Questions[Iterator].Ques_Type == "MCQ")
 			{
 				FillQuestion(Questions[Iterator].Ques_Id, true);
@@ -90,7 +90,7 @@ namespace Examination_system.Forms
 				{
 					button1.Text = "Finish";
 				}
-				label1.Text = Questions[Iterator].Ques_Content;
+				QuesBox.Text = Questions[Iterator].Ques_Content;
 				if (Questions[Iterator].Ques_Type == "MCQ")
 				{
 					FillQuestion(Questions[Iterator].Ques_Id, true);
@@ -120,7 +120,6 @@ namespace Examination_system.Forms
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show($"{e.Message}");
 			}
 		}
 
