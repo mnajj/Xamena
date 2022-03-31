@@ -1,4 +1,4 @@
-# Examination System
+# Xamena
 
 ![Logo](https://imgur.com/ls2RAW6.png)
 
