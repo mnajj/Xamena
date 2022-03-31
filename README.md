@@ -4,7 +4,7 @@ A project submitted in partial fulfillment of the requirement to complete Advanc
 
 ## ERD Diagram
 
-![Pic](https://imgur.com/undefined.png)
+![Pic](https://imgur.com/JI1qoez.png)
 
 ## Authors
 
