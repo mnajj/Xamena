@@ -17,7 +17,11 @@ A project submitted in partial fulfillment of the requirement to complete Advanc
 ![Pic](https://imgur.com/E4EmjV9.png)
 ![Pic](https://imgur.com/k6IV20M.png)
 
-
+## Features
+The system provides:
+1. Add, update and delete a new account for an instructor or student.
+2. Generate random exams for students.
+3. Generate reports of test results for each student.
 ## Authors
 
 - [Abdullah El-Zayat](https://github.com/AbdullahElZayat23)
